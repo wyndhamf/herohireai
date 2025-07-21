@@ -32,7 +32,7 @@ const Index = () => {
                 transition={{ delay: 0.3 }}
                 className="inline-block mb-6 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
               >
-                A-Player Recruiting Platform
+                AI Recruiting Platform
               </motion.div>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-2 leading-tight">
