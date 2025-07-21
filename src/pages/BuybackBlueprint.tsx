@@ -16,39 +16,86 @@ export default function BuybackBlueprint() {
       <main className="pt-24">
         {/* Hero Section */}
         <section className="bg-background container px-4 py-16">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-5xl md:text-6xl font-bold mb-6"
-            >
-              The <span className="text-gradient font-medium">Buyback Blueprint™</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="text-2xl font-semibold mb-4"
-            >
-              Hire a world-class Executive Assistant in 60 minutes!
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-xl text-primary mb-8 font-medium"
-            >
-              Attract · Develop · Retain
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-lg text-muted-foreground max-w-3xl mx-auto"
-            >
-              To win in business, you need the right people in the right seats. We'll help you attract, develop and retain a world-class Executive Assistant - the kind who protects your time, drives outcomes and acts as a true extension of you, so you can stay locked in on growth.
-            </motion.p>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Column - Main Content */}
+              <div className="text-center lg:text-left">
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-4xl md:text-5xl font-bold mb-6"
+                >
+                  The <span className="text-gradient font-medium">Buyback Blueprint™</span>
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1, duration: 0.5 }}
+                  className="text-xl font-semibold mb-4"
+                >
+                  Hire a world-class Executive Assistant in 60 minutes!
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
+                  className="text-lg text-primary mb-6 font-medium"
+                >
+                  Attract · Develop · Retain
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
+                  className="text-base text-muted-foreground"
+                >
+                  To win in business, you need the right people in the right seats. We'll help you attract, develop and retain a world-class Executive Assistant - the kind who protects your time, drives outcomes and acts as a true extension of you, so you can stay locked in on growth.
+                </motion.p>
+              </div>
+
+              {/* Right Column - Investment Section */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="bg-secondary/80 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10"
+              >
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                  Your Founding Investment: <span className="text-primary">$10,000 USD</span>
+                </h2>
+                <p className="text-white/80 mb-8 text-base">
+                  (limited to the first 10 founders and CEOs)
+                </p>
+                
+                {/* QR Code */}
+                <div className="bg-white p-6 rounded-xl inline-block mb-6">
+                  <QRCodeSVG 
+                    value={stripePaymentLink}
+                    size={160}
+                    level="H"
+                    includeMargin={true}
+                  />
+                  <p className="text-sm text-muted-foreground mt-3">
+                    Scan to complete your investment
+                  </p>
+                </div>
+
+                <div className="mb-6">
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90 text-base px-6 py-3 w-full"
+                    onClick={() => window.open(stripePaymentLink, '_blank')}
+                  >
+                    Secure Your Spot Now
+                  </Button>
+                </div>
+
+                <blockquote className="text-lg md:text-xl font-bold text-white italic">
+                  "IF YOU DON'T HAVE AN ASSISTANT, YOU ARE ONE."
+                </blockquote>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -208,46 +255,7 @@ export default function BuybackBlueprint() {
           </div>
         </section>
 
-        {/* Investment & QR Code */}
-        <section className="bg-secondary w-full">
-          <div className="container px-4 py-16">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-white">
-                Your Founding Investment: <span className="text-primary">$10,000 USD</span>
-              </h2>
-              <p className="text-white/80 mb-8 text-lg">
-                (limited to the first 10 founders and CEOs)
-              </p>
-              
-              {/* QR Code */}
-              <div className="bg-white p-8 rounded-2xl inline-block mb-8">
-                <QRCodeSVG 
-                  value={stripePaymentLink}
-                  size={200}
-                  level="H"
-                  includeMargin={true}
-                />
-                <p className="text-sm text-muted-foreground mt-4">
-                  Scan to complete your investment
-                </p>
-              </div>
-
-              <div className="mb-8">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-lg px-8 py-4"
-                  onClick={() => window.open(stripePaymentLink, '_blank')}
-                >
-                  Secure Your Spot Now
-                </Button>
-              </div>
-
-              <blockquote className="text-2xl md:text-3xl font-bold text-white italic">
-                "IF YOU DON'T HAVE AN ASSISTANT, YOU ARE ONE."
-              </blockquote>
-            </div>
-          </div>
-        </section>
+        {/* CTA Section - Removed since investment section moved to top */}
       </main>
 
       <Footer />
