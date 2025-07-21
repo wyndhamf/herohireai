@@ -48,10 +48,10 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  Start Hiring in 60 Minutes <ArrowRight className="ml-2 w-4 h-4" />
+                  Claim 1-10 Initial <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
                 <Button size="lg" variant="outline">
-                  Watch the 2-Min Demo First <ArrowRight className="ml-2 w-4 h-4" />
+                  Book a Demo <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
             </motion.div>
