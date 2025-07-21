@@ -96,8 +96,8 @@ const Index = () => {
               className="text-center"
             >
               <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">1-Hour Hire System™</h3>
-              <p className="text-sm text-muted-foreground">Complete hiring in 60 minutes</p>
+              <h3 className="font-semibold mb-2">Placement Guarantee™</h3>
+              <p className="text-sm text-muted-foreground">4-6 week placement guaranteed</p>
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
