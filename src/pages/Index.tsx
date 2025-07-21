@@ -46,7 +46,12 @@ const Index = () => {
                 HeroHire finds, vets, and delivers A-player candidates for founders and lean teams — in one hour of your time, flat pricing, and zero hiring headaches.
               </p>
               
-              <div className="flex justify-center">
+              <div className="text-center">
+                <div className="mb-4">
+                  <span className="bg-red-500/20 text-red-400 px-4 py-2 rounded-full text-sm font-semibold border border-red-400/30">
+                    ⚡ Limited Time Offer • Only 10 Spots
+                  </span>
+                </div>
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90 text-lg px-8 py-4"
@@ -415,7 +420,12 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Apply Now to Reclaim Your Time
             </h2>
-            <div className="flex justify-center">
+            <div className="text-center">
+              <div className="mb-4">
+                <span className="bg-red-500/20 text-red-400 px-4 py-2 rounded-full text-sm font-semibold border border-red-400/30">
+                  ⚡ Limited Time Offer • Only 10 Spots
+                </span>
+              </div>
               <Button 
                 size="lg" 
                 variant="secondary" 
