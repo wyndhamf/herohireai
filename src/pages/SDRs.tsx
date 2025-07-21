@@ -36,10 +36,10 @@ export default function SDRs() {
         </section>
 
         {/* What SDRs Do */}
-        <section className="bg-muted/5 w-full">
+        <section className="bg-primary w-full">
           <div className="container px-4 py-16">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-white">
               What Our SDRs Deliver
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -49,11 +49,11 @@ export default function SDRs() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Lead Generation</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Lead Generation</h3>
+                <p className="text-white/80 text-sm">
                   Research and identify high-quality prospects that match your ideal customer profile
                 </p>
               </motion.div>
@@ -64,11 +64,11 @@ export default function SDRs() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Mail className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Email Outreach</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Email Outreach</h3>
+                <p className="text-white/80 text-sm">
                   Craft personalized email campaigns that get responses and drive engagement
                 </p>
               </motion.div>
@@ -79,11 +79,11 @@ export default function SDRs() {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Phone className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Cold Calling</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Cold Calling</h3>
+                <p className="text-white/80 text-sm">
                   Make strategic cold calls to prospects and qualify leads for your sales team
                 </p>
               </motion.div>
@@ -94,11 +94,11 @@ export default function SDRs() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Pipeline Management</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Pipeline Management</h3>
+                <p className="text-white/80 text-sm">
                   Track and nurture leads through your sales funnel using your preferred CRM
                 </p>
               </motion.div>
@@ -108,12 +108,12 @@ export default function SDRs() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-background container px-4 py-16">
+        <section className="bg-secondary container px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-white">
               Ready to Scale Your Sales?
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-white/80 mb-8">
               Get expert SDRs working on your pipeline today
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90">

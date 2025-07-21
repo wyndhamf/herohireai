@@ -36,9 +36,12 @@ export default function HowItWorks() {
         </section>
 
         {/* Process Steps */}
-        <section className="bg-muted/5 w-full">
+        <section className="bg-primary w-full">
           <div className="container px-4 py-16">
           <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-white">
+              How It Works
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -46,11 +49,11 @@ export default function HowItWorks() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">1. Tell Us What You Need</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-2 text-white">1. Tell Us What You Need</h3>
+                <p className="text-white/80">
                   Share your requirements, and we'll match you with pre-vetted professionals from our talent pool.
                 </p>
               </motion.div>
@@ -61,11 +64,11 @@ export default function HowItWorks() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Clock className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">2. Get Matched in 60 Minutes</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-2 text-white">2. Get Matched in 60 Minutes</h3>
+                <p className="text-white/80">
                   Our AI-powered matching system connects you with the perfect candidate within an hour.
                 </p>
               </motion.div>
@@ -76,11 +79,11 @@ export default function HowItWorks() {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">3. Start Working Together</h3>
-                <p className="text-muted-foreground">
+                <h3 className="text-xl font-semibold mb-2 text-white">3. Start Working Together</h3>
+                <p className="text-white/80">
                   Begin collaborating immediately with your new team member, backed by our guarantee.
                 </p>
               </motion.div>
@@ -90,12 +93,12 @@ export default function HowItWorks() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-background container px-4 py-16">
+        <section className="bg-secondary container px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-white">
               Ready to Get Started?
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-white/80 mb-8">
               Join the companies already scaling with HeroHire
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90">

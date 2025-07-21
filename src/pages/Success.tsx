@@ -36,10 +36,10 @@ export default function Success() {
         </section>
 
         {/* What Success Specialists Do */}
-        <section className="bg-muted/5 w-full">
+        <section className="bg-primary w-full">
           <div className="container px-4 py-16">
             <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-white">
               How Our Success Specialists Help
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -49,11 +49,11 @@ export default function Success() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Headphones className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Headphones className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Customer Support</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Customer Support</h3>
+                <p className="text-white/80 text-sm">
                   Provide exceptional support across all channels and resolve issues quickly
                 </p>
               </motion.div>
@@ -64,11 +64,11 @@ export default function Success() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Customer Onboarding</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Customer Onboarding</h3>
+                <p className="text-white/80 text-sm">
                   Guide new customers through smooth onboarding experiences
                 </p>
               </motion.div>
@@ -79,11 +79,11 @@ export default function Success() {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Relationship Management</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Relationship Management</h3>
+                <p className="text-white/80 text-sm">
                   Build strong relationships and ensure long-term customer satisfaction
                 </p>
               </motion.div>
@@ -94,11 +94,11 @@ export default function Success() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Award className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Success Metrics</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Success Metrics</h3>
+                <p className="text-white/80 text-sm">
                   Track customer health scores and identify expansion opportunities
                 </p>
               </motion.div>
@@ -108,12 +108,12 @@ export default function Success() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-background container px-4 py-16">
+        <section className="bg-secondary container px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-white">
               Ready to Improve Customer Success?
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-white/80 mb-8">
               Get Customer Success experts working on client satisfaction today
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90">

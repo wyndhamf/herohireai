@@ -36,10 +36,10 @@ export default function EAs() {
         </section>
 
         {/* What EAs Do */}
-        <section className="bg-muted/5 w-full">
+        <section className="bg-primary w-full">
           <div className="container px-4 py-16">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12 text-white">
               What Our EAs Can Do For You
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -49,11 +49,11 @@ export default function EAs() {
                 transition={{ delay: 0.2, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Calendar className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Calendar className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Calendar Management</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Calendar Management</h3>
+                <p className="text-white/80 text-sm">
                   Schedule meetings, manage appointments, and optimize your daily schedule
                 </p>
               </motion.div>
@@ -64,11 +64,11 @@ export default function EAs() {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageSquare className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MessageSquare className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Email Management</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Email Management</h3>
+                <p className="text-white/80 text-sm">
                   Filter, organize, and respond to emails on your behalf
                 </p>
               </motion.div>
@@ -79,11 +79,11 @@ export default function EAs() {
                 transition={{ delay: 0.4, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FileText className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FileText className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Document Preparation</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Document Preparation</h3>
+                <p className="text-white/80 text-sm">
                   Create presentations, reports, and other business documents
                 </p>
               </motion.div>
@@ -94,11 +94,11 @@ export default function EAs() {
                 transition={{ delay: 0.5, duration: 0.5 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">Travel Coordination</h3>
-                <p className="text-muted-foreground text-sm">
+                <h3 className="text-lg font-semibold mb-2 text-white">Travel Coordination</h3>
+                <p className="text-white/80 text-sm">
                   Plan and book travel arrangements, accommodations, and itineraries
                 </p>
               </motion.div>
@@ -108,12 +108,12 @@ export default function EAs() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-background container px-4 py-16">
+        <section className="bg-secondary container px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-white">
               Ready to Get Your EA?
             </h2>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-white/80 mb-8">
               Start working with a world-class Executive Assistant today
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90">
