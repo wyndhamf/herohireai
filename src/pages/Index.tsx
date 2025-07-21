@@ -34,10 +34,12 @@ const Index = () => {
             AI-Powered Recruiting Platform
           </motion.div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Stop Wasting 100+ Hours Hiring—Get a Fully-Vetted EA in 60 Minutes with{" "}
-            <span className="text-primary">AI</span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-2 leading-tight">
+            Stop Wasting 100+ Hours Hiring
           </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground mb-6">
+            Hero Uses AI to Fix That Fast
+          </p>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             HeroHire finds, screens, and delivers top-tier executive assistants using AI—so you don{"'"}t have to. One hour of your time. Zero friction. Fully onboarded in 7 days.
