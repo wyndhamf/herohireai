@@ -11,7 +11,7 @@ export default function Marketing() {
       
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="container px-4 py-16">
+        <section className="bg-background container px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -36,8 +36,9 @@ export default function Marketing() {
         </section>
 
         {/* What Marketing Pros Do */}
-        <section className="container px-4 py-16">
-          <div className="max-w-6xl mx-auto">
+        <section className="bg-muted/5 w-full">
+          <div className="container px-4 py-16">
+            <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-semibold text-center mb-12">
               What Our Marketing Experts Deliver
             </h2>
@@ -103,10 +104,11 @@ export default function Marketing() {
               </motion.div>
             </div>
           </div>
+          </div>
         </section>
 
         {/* CTA Section */}
-        <section className="container px-4 py-16">
+        <section className="bg-background container px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-semibold mb-4">
               Ready to Grow Your Marketing?
