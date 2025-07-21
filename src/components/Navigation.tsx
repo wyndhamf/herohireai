@@ -78,18 +78,6 @@ const Navigation = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Pricing Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Pricing
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border-border">
-                <DropdownMenuItem className="cursor-pointer">Flat-rate</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">What's Included</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">Backfill Guarantee</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
 
             {/* Resources Dropdown */}
             <DropdownMenu>
@@ -152,15 +140,6 @@ const Navigation = () => {
                     </div>
                   </div>
 
-                  {/* Mobile Pricing Section */}
-                  <div>
-                    <h3 className="font-semibold mb-3">Pricing</h3>
-                    <div className="flex flex-col gap-2 ml-4">
-                      <a href="#" className="text-muted-foreground hover:text-foreground">Flat-rate</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">What's Included</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">Backfill Guarantee</a>
-                    </div>
-                  </div>
 
                   {/* Mobile Resources Section */}
                   <div>
