@@ -96,7 +96,7 @@ const Index = () => {
               className="text-center"
             >
               <Clock className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Placement Guarantee™</h3>
+              <h3 className="font-semibold mb-2">Placement Guarantee</h3>
               <p className="text-sm text-muted-foreground">4-6 week placement guaranteed</p>
             </motion.div>
             <motion.div 
