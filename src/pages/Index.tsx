@@ -35,20 +35,20 @@ const Index = () => {
           </motion.div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Founders Waste 100+ Hours Hiring—We Fixed That with{" "}
+            Stop Wasting 100+ Hours Hiring—Get a Fully-Vetted EA in 60 Minutes with{" "}
             <span className="text-primary">AI</span>
           </h1>
           
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            HeroHire is the AI recruiting engine that delivers fully-vetted, executive-level assistants—fast. One hour of your time. Zero wasted effort. Join the AI hiring revolution.
+            HeroHire finds, screens, and delivers top-tier executive assistants using AI—so you don{"'"}t have to. One hour of your time. Zero friction. Fully onboarded in 7 days.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Get Started Today (Only 10 Founding Seats Available)
+              Start Hiring in 60 Minutes <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button size="lg" variant="outline">
-              Watch 2-Min Demo
+              Watch the 2-Min Demo First <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
         </div>
