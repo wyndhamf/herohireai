@@ -69,12 +69,24 @@ const Navigation = () => {
                 <ChevronDown className="h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border-border">
-                <DropdownMenuItem className="cursor-pointer">How it Works</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">EAs</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">SDRs</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">Ops</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">Marketing</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">Success</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <a href="/how-it-works" className="w-full">How it Works</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <a href="/eas" className="w-full">EAs</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <a href="/sdrs" className="w-full">SDRs</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <a href="/ops" className="w-full">Ops</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <a href="/marketing" className="w-full">Marketing</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">
+                  <a href="/success" className="w-full">Success</a>
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -131,12 +143,12 @@ const Navigation = () => {
                   <div>
                     <h3 className="font-semibold mb-3">Product</h3>
                     <div className="flex flex-col gap-2 ml-4">
-                      <a href="#" className="text-muted-foreground hover:text-foreground">How it Works</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">EAs</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">SDRs</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">Ops</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">Marketing</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">Success</a>
+                      <a href="/how-it-works" className="text-muted-foreground hover:text-foreground">How it Works</a>
+                      <a href="/eas" className="text-muted-foreground hover:text-foreground">EAs</a>
+                      <a href="/sdrs" className="text-muted-foreground hover:text-foreground">SDRs</a>
+                      <a href="/ops" className="text-muted-foreground hover:text-foreground">Ops</a>
+                      <a href="/marketing" className="text-muted-foreground hover:text-foreground">Marketing</a>
+                      <a href="/success" className="text-muted-foreground hover:text-foreground">Success</a>
                     </div>
                   </div>
 
