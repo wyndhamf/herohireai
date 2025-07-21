@@ -29,7 +29,11 @@ export default function EAs() {
             >
               Get a world-class Executive Assistant to handle your administrative tasks and free up your time for what matters most
             </motion.p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
@@ -116,7 +120,11 @@ export default function EAs() {
             <p className="text-white/80 mb-8">
               Start working with a world-class Executive Assistant today
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>

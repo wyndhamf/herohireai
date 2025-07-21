@@ -29,7 +29,11 @@ export default function Ops() {
             >
               Streamline your business operations with experienced professionals who optimize processes and drive efficiency
             </motion.p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
@@ -116,7 +120,11 @@ export default function Ops() {
             <p className="text-white/80 mb-8">
               Get operations experts working on your business efficiency today
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>

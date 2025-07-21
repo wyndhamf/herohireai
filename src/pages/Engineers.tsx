@@ -29,7 +29,11 @@ export default function Engineers() {
             >
               Scale your development team with expert engineers who build, maintain, and optimize your technology stack
             </motion.p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
@@ -116,7 +120,11 @@ export default function Engineers() {
             <p className="text-white/80 mb-8">
               Get expert engineers building your technology solutions today
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>

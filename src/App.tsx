@@ -9,7 +9,7 @@ import EAs from "./pages/EAs";
 import SDRs from "./pages/SDRs";
 import Ops from "./pages/Ops";
 import Marketing from "./pages/Marketing";
-import Success from "./pages/Success";
+import BuybackBlueprint from "./pages/BuybackBlueprint";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +27,7 @@ const App = () => (
             <Route path="/sdrs" element={<SDRs />} />
             <Route path="/ops" element={<Ops />} />
             <Route path="/marketing" element={<Marketing />} />
-            <Route path="/success" element={<Success />} />
+            <Route path="/buyback-blueprint" element={<BuybackBlueprint />} />
           </Routes>
         </BrowserRouter>
       </div>

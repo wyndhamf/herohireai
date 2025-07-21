@@ -29,7 +29,11 @@ export default function Marketing() {
             >
               Grow your brand and reach your target audience with expert marketers who drive results across all channels
             </motion.p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
@@ -116,7 +120,11 @@ export default function Marketing() {
             <p className="text-white/80 mb-8">
               Get marketing experts working on your growth today
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>

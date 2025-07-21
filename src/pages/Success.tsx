@@ -29,7 +29,11 @@ export default function Success() {
             >
               Delight your customers and reduce churn with dedicated Customer Success professionals who ensure client satisfaction
             </motion.p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
@@ -116,7 +120,11 @@ export default function Success() {
             <p className="text-white/80 mb-8">
               Get Customer Success experts working on client satisfaction today
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => window.location.href = '/buyback-blueprint'}
+            >
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
