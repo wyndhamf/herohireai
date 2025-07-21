@@ -70,7 +70,7 @@ const Navigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border-border">
                 <DropdownMenuItem className="cursor-pointer">
-                  <a href="/how-it-works" className="w-full">How it Works</a>
+                  <a href="/engineers" className="w-full">Engineers</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
                   <a href="/eas" className="w-full">EAs</a>
@@ -143,7 +143,7 @@ const Navigation = () => {
                   <div>
                     <h3 className="font-semibold mb-3">Product</h3>
                     <div className="flex flex-col gap-2 ml-4">
-                      <a href="/how-it-works" className="text-muted-foreground hover:text-foreground">How it Works</a>
+                      <a href="/engineers" className="text-muted-foreground hover:text-foreground">Engineers</a>
                       <a href="/eas" className="text-muted-foreground hover:text-foreground">EAs</a>
                       <a href="/sdrs" className="text-muted-foreground hover:text-foreground">SDRs</a>
                       <a href="/ops" className="text-muted-foreground hover:text-foreground">Ops</a>
