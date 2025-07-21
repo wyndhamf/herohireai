@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clock, Users, CheckCircle, Target, Calendar, FileText, Shield, Zap, Star, Building, Briefcase, Scale, Calculator, Hammer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import heroImage from "@/assets/hero-image.jpg";
 
 const Index = () => {
   return (
@@ -24,34 +25,61 @@ const Index = () => {
         transition={{ duration: 0.5 }}
         className="pt-24 pb-16 px-4"
       >
-        <div className="container mx-auto text-center max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block mb-6 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
-          >
-            AI-Powered Recruiting Platform
-          </motion.div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-2 leading-tight">
-            Stop Wasting 100+ Hours Hiring
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-6">
-            Hero Uses AI to Fix That Fast
-          </p>
-          
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            HeroHire finds, screens, and delivers top-tier executive assistants using AI—so you don{"'"}t have to. One hour of your time. Zero friction. Fully onboarded in 7 days.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Start Hiring in 60 Minutes <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button size="lg" variant="outline">
-              Watch the 2-Min Demo First <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Hero Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-left"
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="inline-block mb-6 px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
+              >
+                AI-Powered Recruiting Platform
+              </motion.div>
+              
+              <h1 className="text-4xl md:text-6xl font-bold mb-2 leading-tight">
+                Stop Wasting 100+ Hours Hiring
+              </h1>
+              <p className="text-xl md:text-2xl text-muted-foreground mb-6">
+                Hero Uses AI to Fix That Fast
+              </p>
+              
+              <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
+                HeroHire finds, screens, and delivers top-tier executive assistants using AI—so you don{"'"}t have to. One hour of your time. Zero friction. Fully onboarded in 7 days.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                  Start Hiring in 60 Minutes <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+                <Button size="lg" variant="outline">
+                  Watch the 2-Min Demo First <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Hero Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden rounded-2xl">
+                <img 
+                  src={heroImage} 
+                  alt="Professional executive assistant working efficiently" 
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
