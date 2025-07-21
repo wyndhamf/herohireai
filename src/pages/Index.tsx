@@ -51,7 +51,7 @@ const Index = () => {
               </p>
               
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
-                HeroHire finds, screens, and delivers top-tier executive assistants using AI—so you don{"'"}t have to. One hour of your time. Zero friction. Fully onboarded in 7 days.
+                HeroHire finds, vets, and delivers A-player candidates for founders and lean teams — in one hour of your time, flat pricing, and zero hiring headaches.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
