@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle, Clock, Shield, Users, Target, Zap } from "lucide-react";
+import { CheckCircle, Clock, Shield, Users, Target, Zap, UserPlus, TrendingUp, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -36,14 +36,25 @@ export default function BuybackBlueprint() {
                 >
                   Hire a world-class Executive Assistant in 60 minutes!
                 </motion.p>
-                <motion.p
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
-                  className="text-lg text-primary mb-6 font-medium"
+                  className="flex items-center justify-center lg:justify-start gap-8 mb-6"
                 >
-                  Attract · Develop · Retain
-                </motion.p>
+                  <div className="flex items-center gap-2 text-primary">
+                    <UserPlus className="w-6 h-6" />
+                    <span className="text-lg font-medium">Attract</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-primary">
+                    <TrendingUp className="w-6 h-6" />
+                    <span className="text-lg font-medium">Develop</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-primary">
+                    <Heart className="w-6 h-6" />
+                    <span className="text-lg font-medium">Retain</span>
+                  </div>
+                </motion.div>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
