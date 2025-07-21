@@ -69,9 +69,12 @@ const Navigation = () => {
                 <ChevronDown className="h-3 w-3" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border-border">
-                <DropdownMenuItem className="cursor-pointer">How It Works</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">Role Coverage (EAs, SDRs, Ops, Marketing)</DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">Guarantees & Timeline</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">How it Works</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">EAs</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">SDRs</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">Ops</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">Marketing</DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer">Success</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -140,9 +143,12 @@ const Navigation = () => {
                   <div>
                     <h3 className="font-semibold mb-3">Product</h3>
                     <div className="flex flex-col gap-2 ml-4">
-                      <a href="#" className="text-muted-foreground hover:text-foreground">How It Works</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">Role Coverage</a>
-                      <a href="#" className="text-muted-foreground hover:text-foreground">Guarantees & Timeline</a>
+                      <a href="#" className="text-muted-foreground hover:text-foreground">How it Works</a>
+                      <a href="#" className="text-muted-foreground hover:text-foreground">EAs</a>
+                      <a href="#" className="text-muted-foreground hover:text-foreground">SDRs</a>
+                      <a href="#" className="text-muted-foreground hover:text-foreground">Ops</a>
+                      <a href="#" className="text-muted-foreground hover:text-foreground">Marketing</a>
+                      <a href="#" className="text-muted-foreground hover:text-foreground">Success</a>
                     </div>
                   </div>
 
