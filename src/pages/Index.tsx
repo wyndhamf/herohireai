@@ -46,12 +46,13 @@ const Index = () => {
                 HeroHire finds, vets, and delivers A-player candidates for founders and lean teams — in one hour of your time, flat pricing, and zero hiring headaches.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  Claim 1-10 Initial <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-                <Button size="lg" variant="outline">
-                  Book a Demo <ArrowRight className="ml-2 w-4 h-4" />
+              <div className="flex justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-lg px-8 py-4"
+                  onClick={() => window.location.href = '/buyback-blueprint'}
+                >
+                  Start Today (Limited Time Offer) <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </div>
             </motion.div>
@@ -414,13 +415,14 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Apply Now to Reclaim Your Time
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
-                Get Started Today
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Chat With a Hiring Strategist
+            <div className="flex justify-center">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4"
+                onClick={() => window.location.href = '/buyback-blueprint'}
+              >
+                Start Today (Limited Time Offer) <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </div>
           </motion.div>
