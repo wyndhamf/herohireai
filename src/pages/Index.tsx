@@ -41,7 +41,7 @@ const Index = () => {
                 className="inline-flex items-center gap-2 mb-8 px-6 py-3 glass rounded-full text-sm font-medium shadow-lg"
               >
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                AI Recruiting Platform
+                AI-Powered Hiring Platform
               </motion.div>
               
               <motion.h1
@@ -50,7 +50,8 @@ const Index = () => {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
               >
-                Hiring, <span className="text-gradient">Solved</span> for Founders
+                Hire Top Talent in 
+                <span className="text-gradient block">4 Weeks, Not Months</span>
               </motion.h1>
               
               <motion.p
@@ -59,7 +60,7 @@ const Index = () => {
                 transition={{ delay: 0.5 }}
                 className="text-2xl md:text-3xl text-muted-foreground mb-6 font-light"
               >
-                Forget job boards and recruiter fees
+                Skip the job boards. Skip the recruiters.
               </motion.p>
               
               <motion.p
@@ -68,7 +69,7 @@ const Index = () => {
                 transition={{ delay: 0.6 }}
                 className="text-xl text-muted-foreground mb-12 max-w-2xl leading-relaxed"
               >
-                Hero matches you with top global talent—and helps you onboard fast. Built for founders who want to scale without the hiring headaches.
+                We deliver pre-vetted global talent directly to your inbox—with full onboarding support. Built for founders who value their time.
               </motion.p>
               
               <motion.div
@@ -82,16 +83,23 @@ const Index = () => {
                   className="button-gradient text-lg px-10 py-6 shadow-glow hover:shadow-xl transition-all duration-300 hover:scale-105"
                   onClick={() => window.location.href = '/buyback-blueprint'}
                 >
-                  Get Started <ArrowRight className="ml-2 w-5 h-5" />
+                  Find Your Perfect Hire <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>No setup fees • Flat pricing</span>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-1">
+                      <CheckCircle className="w-4 h-4 text-green-400" />
+                      <span className="font-medium">4-6 week guarantee</span>
+                    </div>
+                    <div className="w-1 h-1 bg-muted-foreground/30 rounded-full" />
+                    <div className="flex items-center gap-1">
+                      <CheckCircle className="w-4 h-4 text-green-400" />
+                      <span className="font-medium">Flat pricing</span>
+                    </div>
                   </div>
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>4-6 week placement guarantee</span>
+                    <span>Only 1 hour of your time required</span>
                   </div>
                 </div>
               </motion.div>
