@@ -1,3 +1,4 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -10,39 +11,43 @@ import SDRs from "./pages/SDRs";
 import Ops from "./pages/Ops";
 import Marketing from "./pages/Marketing";
 import BuybackBlueprint from "./pages/BuybackBlueprint";
-
 import HiringPlaybooks from "./pages/HiringPlaybooks";
-
 import FAQ from "./pages/FAQ";
 import HerosMission from "./pages/HerosMission";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 1000,
+    },
+  },
+});
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <div className="min-h-screen bg-background">
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/engineers" element={<Engineers />} />
-            <Route path="/eas" element={<EAs />} />
-            <Route path="/sdrs" element={<SDRs />} />
-            <Route path="/ops" element={<Ops />} />
-            <Route path="/marketing" element={<Marketing />} />
-            <Route path="/buyback-blueprint" element={<BuybackBlueprint />} />
-            
-            <Route path="/hiring-playbooks" element={<HiringPlaybooks />} />
-            
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/heros-mission" element={<HerosMission />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <div className="min-h-screen bg-background">
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/engineers" element={<Engineers />} />
+              <Route path="/eas" element={<EAs />} />
+              <Route path="/sdrs" element={<SDRs />} />
+              <Route path="/ops" element={<Ops />} />
+              <Route path="/marketing" element={<Marketing />} />
+              <Route path="/buyback-blueprint" element={<BuybackBlueprint />} />
+              <Route path="/hiring-playbooks" element={<HiringPlaybooks />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/heros-mission" element={<HerosMission />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
