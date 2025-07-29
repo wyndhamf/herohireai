@@ -15,8 +15,6 @@ import HiringPlaybooks from "./pages/HiringPlaybooks";
 import CaseStudies from "./pages/CaseStudies";
 import FAQ from "./pages/FAQ";
 import HerosMission from "./pages/HerosMission";
-import BackedByMartellVentures from "./pages/BackedByMartellVentures";
-import MeetTheTeam from "./pages/MeetTheTeam";
 
 const queryClient = new QueryClient();
 
@@ -40,8 +38,6 @@ const App = () => (
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/heros-mission" element={<HerosMission />} />
-            <Route path="/backed-by-martell-ventures" element={<BackedByMartellVentures />} />
-            <Route path="/meet-the-team" element={<MeetTheTeam />} />
           </Routes>
         </BrowserRouter>
       </div>

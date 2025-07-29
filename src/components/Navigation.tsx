@@ -123,12 +123,6 @@ const Navigation = () => {
                 <DropdownMenuItem className="cursor-pointer">
                   <a href="/heros-mission" className="w-full">Hero's Mission</a>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/backed-by-martell-ventures" className="w-full">Backed by Martell Ventures</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/meet-the-team" className="w-full">Meet the Team</a>
-                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -183,8 +177,6 @@ const Navigation = () => {
                     <h3 className="font-semibold mb-3">About</h3>
                     <div className="flex flex-col gap-2 ml-4">
                       <a href="/heros-mission" className="text-muted-foreground hover:text-foreground">Hero's Mission</a>
-                      <a href="/backed-by-martell-ventures" className="text-muted-foreground hover:text-foreground">Backed by Martell Ventures</a>
-                      <a href="/meet-the-team" className="text-muted-foreground hover:text-foreground">Meet the Team</a>
                     </div>
                   </div>
 
