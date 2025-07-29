@@ -102,9 +102,6 @@ const Navigation = () => {
                   <a href="/hiring-playbooks" className="w-full">Hiring Playbooks</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
-                  <a href="/case-studies" className="w-full">Case Studies</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
                   <a href="/faq" className="w-full">FAQ</a>
                 </DropdownMenuItem>
               </DropdownMenuContent>
@@ -164,7 +161,7 @@ const Navigation = () => {
                     <div className="flex flex-col gap-2 ml-4">
                       
                       <a href="/hiring-playbooks" className="text-muted-foreground hover:text-foreground">Hiring Playbooks</a>
-                      <a href="/case-studies" className="text-muted-foreground hover:text-foreground">Case Studies</a>
+                      
                       <a href="/faq" className="text-muted-foreground hover:text-foreground">FAQ</a>
                     </div>
                   </div>

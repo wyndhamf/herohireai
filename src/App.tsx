@@ -12,7 +12,7 @@ import Marketing from "./pages/Marketing";
 import BuybackBlueprint from "./pages/BuybackBlueprint";
 
 import HiringPlaybooks from "./pages/HiringPlaybooks";
-import CaseStudies from "./pages/CaseStudies";
+
 import FAQ from "./pages/FAQ";
 import HerosMission from "./pages/HerosMission";
 
@@ -35,7 +35,7 @@ const App = () => (
             <Route path="/buyback-blueprint" element={<BuybackBlueprint />} />
             
             <Route path="/hiring-playbooks" element={<HiringPlaybooks />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
+            
             <Route path="/faq" element={<FAQ />} />
             <Route path="/heros-mission" element={<HerosMission />} />
           </Routes>
