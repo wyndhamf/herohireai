@@ -10,6 +10,10 @@ import SDRs from "./pages/SDRs";
 import Ops from "./pages/Ops";
 import Marketing from "./pages/Marketing";
 import BuybackBlueprint from "./pages/BuybackBlueprint";
+import Blog from "./pages/Blog";
+import HiringPlaybooks from "./pages/HiringPlaybooks";
+import CaseStudies from "./pages/CaseStudies";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +32,10 @@ const App = () => (
             <Route path="/ops" element={<Ops />} />
             <Route path="/marketing" element={<Marketing />} />
             <Route path="/buyback-blueprint" element={<BuybackBlueprint />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/hiring-playbooks" element={<HiringPlaybooks />} />
+            <Route path="/case-studies" element={<CaseStudies />} />
+            <Route path="/faq" element={<FAQ />} />
           </Routes>
         </BrowserRouter>
       </div>
