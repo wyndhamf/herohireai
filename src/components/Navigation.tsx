@@ -99,9 +99,6 @@ const Navigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border-border">
                 <DropdownMenuItem className="cursor-pointer">
-                  <a href="/blog" className="w-full">Blog</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
                   <a href="/hiring-playbooks" className="w-full">Hiring Playbooks</a>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer">
@@ -165,7 +162,7 @@ const Navigation = () => {
                   <div>
                     <h3 className="font-semibold mb-3">Resources</h3>
                     <div className="flex flex-col gap-2 ml-4">
-                      <a href="/blog" className="text-muted-foreground hover:text-foreground">Blog</a>
+                      
                       <a href="/hiring-playbooks" className="text-muted-foreground hover:text-foreground">Hiring Playbooks</a>
                       <a href="/case-studies" className="text-muted-foreground hover:text-foreground">Case Studies</a>
                       <a href="/faq" className="text-muted-foreground hover:text-foreground">FAQ</a>
