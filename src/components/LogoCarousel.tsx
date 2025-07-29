@@ -12,7 +12,18 @@ const LogoCarousel = () => {
   const extendedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <div className="w-full overflow-hidden bg-background/50 backdrop-blur-sm py-12 mt-20">
+    <div className="w-full overflow-hidden glass py-16 mt-32 relative">
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5" />
+      <div className="container mx-auto mb-8 text-center relative z-10">
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-2xl font-bold text-muted-foreground mb-2"
+        >
+          Trusted by founders at
+        </motion.h3>
+      </div>
       <motion.div 
         className="flex space-x-16"
         initial={{ opacity: 0, x: "0%" }}
@@ -23,7 +34,7 @@ const LogoCarousel = () => {
         transition={{
           opacity: { duration: 0.5 },
           x: {
-            duration: 15, // Reduced from 25 to 15 seconds
+            duration: 25, // Slower for better readability
             repeat: Infinity,
             ease: "linear",
             delay: 0.5
@@ -40,11 +51,9 @@ const LogoCarousel = () => {
             key={`logo-${index}`}
             src={logo}
             alt={`Partner logo ${index + 1}`}
-            className="h-8 object-contain"
-            initial={{ opacity: 0.5 }}
+            className="h-10 object-contain opacity-60 hover:opacity-100 transition-opacity duration-300"
             whileHover={{ 
-              opacity: 1,
-              scale: 1.05,
+              scale: 1.1,
               transition: { duration: 0.2 }
             }}
           />
