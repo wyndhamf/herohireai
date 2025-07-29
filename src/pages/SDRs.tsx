@@ -9,6 +9,13 @@ export default function SDRs() {
     <div className="min-h-screen bg-background">
       <Navigation />
       
+      {/* Coming Soon Banner */}
+      <div className="bg-primary/10 border-b border-primary/20">
+        <div className="container px-4 py-3">
+          <p className="text-center text-primary font-semibold">Coming Soon - SDRs</p>
+        </div>
+      </div>
+      
       <main className="pt-24">
         {/* Hero Section */}
         <section className="bg-background container px-4 py-16">
