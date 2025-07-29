@@ -31,7 +31,7 @@ export default function HiringPlaybooks() {
               transition={{ delay: 0.1, duration: 0.5 }}
               className="text-5xl md:text-7xl font-bold mb-6"
             >
-              Hiring, <span className="text-gradient">Solved for Founders</span>
+              Elite Talent, <span className="text-gradient">Zero Hassle</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -39,15 +39,15 @@ export default function HiringPlaybooks() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="text-2xl md:text-3xl text-muted-foreground mb-8 font-light"
             >
-              Forget job boards and recruiter fees
+              From application to onboarding in 30 days
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="text-xl text-muted-foreground leading-relaxed"
+              className="text-xl text-muted-foreground leading-relaxed max-w-4xl mx-auto"
             >
-              Hero matches you with top global talent—and helps you onboard fast. Built for founders who want to scale without the hiring headaches.
+              We handle the entire hiring process—sourcing, vetting, and onboarding world-class talent so you can focus on what matters: growing your business.
             </motion.p>
           </div>
         </section>
