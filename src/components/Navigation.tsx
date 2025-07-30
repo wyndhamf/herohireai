@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Command, Menu, ChevronDown } from "lucide-react";
-import heroLogo from "@/assets/hero-icon.png";
+import heroLogo from "@/assets/hero-floating-icon.png";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import {
