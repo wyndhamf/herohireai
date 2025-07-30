@@ -50,8 +50,8 @@ const Index = () => {
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
               >
-                Hire Top Talent in 
-                <span className="text-gradient block">4 Weeks, Not Months</span>
+                Hire Top Talent 
+                <span className="text-gradient block">Lightning Fast</span>
               </motion.h1>
               
               <motion.p
