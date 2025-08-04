@@ -106,6 +106,9 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Email Capture Section */}
+      <EmailCapture />
+
       {/* Problem Statement Section */}
       <section className="py-32 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
@@ -150,9 +153,6 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Email Capture Section */}
-      <EmailCapture />
 
       {/* How It Works Section */}
       <section id="how-it-works" className="py-32 px-6 bg-white">
