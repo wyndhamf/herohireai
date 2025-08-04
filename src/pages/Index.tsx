@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Users, CheckCircle, Target, Calendar, FileText, Shield, Zap, Star, Building, Briefcase, Scale, Calculator, Hammer } from "lucide-react";
+import { ArrowRight, Clock, Users, CheckCircle, Target, Calendar, FileText, Shield, Zap, Star, Building, Briefcase, Scale, Calculator, Hammer, TrendingUp, Award, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
@@ -12,369 +12,437 @@ const Index = () => {
       <Navigation />
 
       {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="relative pt-24 pb-32 px-4 overflow-hidden"
-      >
-        {/* Background Effects */}
-        <div className="absolute inset-0 hero-pattern" />
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-primary-glow/15 rounded-full blur-3xl animate-pulse delay-1000" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Sophisticated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950/80 to-slate-900" />
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-blue-500/5 to-transparent rounded-full" />
+        </div>
         
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Hero Text */}
+        <div className="container mx-auto px-6 relative z-10 pt-20">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="max-w-6xl mx-auto text-center"
+          >
+            {/* Status Badge */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-left"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-sm font-medium"
             >
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-                className="inline-flex items-center gap-2 mb-8 px-6 py-3 glass rounded-full text-sm font-medium shadow-lg"
-              >
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                AI-Powered Hiring Platform
-              </motion.div>
-              
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.9] tracking-tight"
-              >
-                Hire Top Talent 
-                <span className="text-gradient block">Lightning Fast</span>
-              </motion.h1>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-2xl md:text-3xl text-muted-foreground mb-6 font-light"
-              >
-                Skip the job boards. Skip the recruiters.
-              </motion.p>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 }}
-                className="text-xl text-muted-foreground mb-12 max-w-2xl leading-relaxed"
-              >
-                We deliver pre-vetted global talent directly to your inbox—with full onboarding support. Built for founders who value their time.
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-                className="flex flex-col sm:flex-row gap-6 items-start"
-              >
-                <Button 
-                  size="lg" 
-                  className="button-gradient text-lg px-12 py-7 shadow-glow hover:shadow-xl transition-all duration-500 hover:scale-105 group"
-                  onClick={() => window.location.href = '/buyback-blueprint'}
-                >
-                  Find Your Perfect Hire 
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <div className="flex flex-col gap-3">
-                  <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span className="font-medium">4-6 week guarantee</span>
-                    </div>
-                    <div className="w-1 h-1 bg-muted-foreground/30 rounded-full" />
-                    <div className="flex items-center gap-1">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
-                      <span className="font-medium">Flat pricing</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-green-400" />
-                    <span>Only 1 hour of your time required</span>
-                  </div>
-                </div>
-              </motion.div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+                <span className="text-emerald-400 font-medium">Live Platform</span>
+              </div>
+              <div className="w-px h-4 bg-white/20" />
+              <span className="text-white/70">Trusted by 200+ companies</span>
             </motion.div>
-
-            {/* Hero Visual */}
-            <motion.div
-              initial={{ opacity: 0, x: 20, scale: 0.9 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative"
+            
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.85] tracking-tight"
             >
-              <div className="relative">
-                {/* Floating Cards */}
-                <motion.div
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-8 -left-8 glass glass-hover p-6 rounded-3xl shadow-card z-10 animate-glow-pulse"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center shadow-lg">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-base font-semibold">AI Screening</div>
-                      <div className="text-sm text-muted-foreground">24/7 Active</div>
-                    </div>
-                  </div>
-                </motion.div>
-                
-                <motion.div
-                  animate={{ y: [10, -10, 10] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-8 -right-8 glass glass-hover p-6 rounded-3xl shadow-card z-10 animate-glow-pulse"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center shadow-lg">
-                      <Target className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-base font-semibold">98% Match Rate</div>
-                      <div className="text-sm text-muted-foreground">Quality Guaranteed</div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Main Hero Image */}
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-accent/20" />
-                  <img 
-                    src={heroImage} 
-                    alt="Professional hiring process visualization" 
-                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-1000"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                </div>
+              <span className="text-white">Hire</span>
+              <br />
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium">Elite Talent</span>
+              <br />
+              <span className="text-white/60 text-5xl md:text-6xl lg:text-7xl">in 4 weeks</span>
+            </motion.h1>
+            
+            {/* Subheading */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="max-w-3xl mx-auto mb-12"
+            >
+              <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed mb-6">
+                Access pre-vetted global professionals without the overhead of traditional recruiting.
+              </p>
+              <p className="text-lg text-white/50">
+                One platform. One process. Zero compromises.
+              </p>
+            </motion.div>
+            
+            {/* CTA Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+            >
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 px-12 py-6 text-lg font-medium rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+                onClick={() => window.location.href = '/buyback-blueprint'}
+              >
+                Start Hiring Today
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm"
+              >
+                See How It Works
+              </Button>
+            </motion.div>
+            
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.6 }}
+              className="flex flex-wrap justify-center gap-8 text-sm text-white/40"
+            >
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-emerald-400" />
+                <span>4-week guarantee</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-emerald-400" />
+                <span>98% success rate</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-emerald-400" />
+                <span>Global talent pool</span>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Why Hero Exists Section */}
-      <section className="relative py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 gradient-mesh" />
-        <div className="container mx-auto max-w-6xl relative z-10">
+      {/* Problem Statement Section */}
+      <section className="py-24 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-8">
-              Why Hero <span className="text-gradient">Exists</span>
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-red-50 rounded-full text-sm font-medium text-red-600">
+              <div className="w-2 h-2 bg-red-500 rounded-full" />
+              The Current Reality
+            </div>
+            <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900">
+              Traditional hiring <span className="text-red-500 font-medium">wastes time</span>
             </h2>
-            <p className="text-2xl text-muted-foreground mb-4">Hiring is broken.</p>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Recruiters are expensive. Job boards are noisy. And finding a great EA or operator takes weeks—even when you know exactly what you need.
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Companies spend months sorting through unqualified candidates, 
+              paying hefty recruiter fees, and still end up with mismatched hires.
             </p>
-            <motion.p
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-2xl font-bold text-primary mt-8"
-            >
-              Hero fixes that.
-            </motion.p>
           </motion.div>
 
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold mb-12">We help founders:</h3>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Problem Stats */}
+          <div className="grid md:grid-cols-3 gap-8 mb-20">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="glass glass-hover card-glow rounded-3xl p-10 text-center group hover:scale-105 transition-all duration-500"
+              className="text-center p-8 bg-slate-50 rounded-2xl"
             >
-              <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary-glow rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-glow">
-                <Users className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-6 text-gradient">Match with high-leverage global talent</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">Connect with pre-vetted professionals who understand your business needs</p>
+              <div className="text-4xl font-bold text-slate-900 mb-2">12 weeks</div>
+              <p className="text-slate-600">Average time to hire for senior roles</p>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="glass glass-hover card-glow rounded-3xl p-10 text-center group hover:scale-105 transition-all duration-500"
+              className="text-center p-8 bg-slate-50 rounded-2xl"
             >
-              <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-400 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-glow">
-                <Target className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-6 text-gradient-accent">Interview 1-3 vetted finalists</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">Skip the noise and focus on quality candidates who've already been screened</p>
+              <div className="text-4xl font-bold text-slate-900 mb-2">30%</div>
+              <p className="text-slate-600">Recruiter fees for executive placement</p>
             </motion.div>
-
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="glass glass-hover card-glow rounded-3xl p-10 text-center group hover:scale-105 transition-all duration-500"
+              className="text-center p-8 bg-slate-50 rounded-2xl"
             >
-              <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-400 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-glow">
-                <CheckCircle className="w-12 h-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-6 text-gradient">Onboard in 30 days with a done-for-you playbook</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">Get your new hire productive fast with our proven onboarding system</p>
+              <div className="text-4xl font-bold text-slate-900 mb-2">89%</div>
+              <p className="text-slate-600">Of job applications are unqualified</p>
             </motion.div>
           </div>
-        </div>
-      </section>
 
-      {/* Founder Impact Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Your Time Back, Your Focus Restored
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-              className="flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Clock className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold">+20 hrs/week of freed up time</h3>
-                <p className="text-muted-foreground">Focus on what matters most</p>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold">Inbox + calendar streamlined by Day 7</h3>
-                <p className="text-muted-foreground">Organized from the start</p>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <FileText className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold">Auto-generated SOPs</h3>
-                <p className="text-muted-foreground">Standardized processes</p>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex items-center gap-4"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Shield className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold">Shielded deep work</h3>
-                <p className="text-muted-foreground">Uninterrupted productivity</p>
-              </div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 }}
-              className="flex items-center gap-4 md:col-span-2 justify-center"
-            >
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 className="font-semibold">Admin, travel, and comms fully offloaded</h3>
-                <p className="text-muted-foreground">Complete operational support</p>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* What's Included Section */}
-      <section className="py-16 px-4 bg-muted/50">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Everything You Need to Hire Smarter
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {[
-              { icon: Target, title: "AI job ads", description: "Optimized descriptions" },
-              { icon: Zap, title: "Paid ad launch", description: "Multi-platform campaigns" },
-              { icon: Users, title: "Smart screening", description: "AI-powered interviews" },
-              { icon: Star, title: "Candidate scoring", description: "Intelligent ranking" },
-              { icon: CheckCircle, title: "Onboarding setup", description: "Complete integration" },
-              { icon: Shield, title: "Full integration", description: "Seamless workflow" }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="p-6 text-center h-full">
-                  <CardContent className="pt-0">
-                    <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground text-sm">{feature.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-          
-          {/* Bonus Callout */}
+          {/* Solution Preview */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="bg-primary/5 border-2 border-primary/20 rounded-lg p-6 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
           >
-            <h3 className="text-xl font-bold mb-4">Bonus Included</h3>
-            <div className="flex flex-wrap justify-center gap-6">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                <span>Talent Quality Audit</span>
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-emerald-50 rounded-full text-sm font-medium text-emerald-600">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+              Our Solution
+            </div>
+            <h3 className="text-4xl md:text-5xl font-light mb-8 text-slate-900">
+              Pre-vetted talent in <span className="text-emerald-600 font-medium">4 weeks</span>
+            </h3>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              We handle the entire process—from sourcing to screening to onboarding—
+              delivering only qualified candidates who match your exact requirements.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="container mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900">
+              How it <span className="text-blue-600 font-medium">works</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Our streamlined process eliminates the traditional hiring headaches
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-3 gap-12">
+            {/* Step 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="relative"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                  <FileText className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-sm font-medium text-blue-600 mb-2">STEP 1</div>
+                <h3 className="text-2xl font-semibold mb-4 text-slate-900">Define Requirements</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Tell us exactly what you need in a 30-minute consultation. We'll create a detailed role specification and candidate profile.
+                </p>
+                <div className="text-sm text-slate-500">
+                  ⏱️ 30 minutes of your time
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                <span>Team Builder Map</span>
+              <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
+                <ArrowRight className="w-6 h-6 text-slate-300" />
               </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-primary" />
-                <span>12-Month Backfill Guarantee</span>
+            </motion.div>
+
+            {/* Step 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="relative"
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-sm font-medium text-indigo-600 mb-2">STEP 2</div>
+                <h3 className="text-2xl font-semibold mb-4 text-slate-900">AI-Powered Sourcing</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Our platform screens thousands of candidates using advanced AI, testing skills, cultural fit, and experience to find perfect matches.
+                </p>
+                <div className="text-sm text-slate-500">
+                  ⚡ 2-3 weeks automated process
+                </div>
+              </div>
+              <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
+                <ArrowRight className="w-6 h-6 text-slate-300" />
+              </div>
+            </motion.div>
+
+            {/* Step 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 h-full">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-sm font-medium text-purple-600 mb-2">STEP 3</div>
+                <h3 className="text-2xl font-semibold mb-4 text-slate-900">Interview & Hire</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">
+                  Meet 2-3 pre-vetted finalists. Each comes with detailed profiles, work samples, and reference checks already completed.
+                </p>
+                <div className="text-sm text-slate-500">
+                  🎯 1 week to final decision
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Results Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white"
+          >
+            <h3 className="text-3xl font-semibold mb-6">The Result</h3>
+            <p className="text-xl mb-8 text-blue-100">
+              You get a perfectly matched hire in 4 weeks, not 4 months
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold mb-2">4 weeks</div>
+                <div className="text-blue-200">Total time to hire</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">98%</div>
+                <div className="text-blue-200">Success rate</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">1 hour</div>
+                <div className="text-blue-200">Your time invested</div>
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Platform Features Section */}
+      <section className="py-24 px-6">
+        <div className="container mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900">
+              Complete <span className="text-blue-600 font-medium">hiring platform</span>
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Everything you need to find, evaluate, and onboard world-class talent
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+            {/* AI Screening */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-3xl font-semibold mb-4 text-slate-900">AI-Powered Screening</h3>
+                <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                  Our proprietary AI evaluates candidates across 47 different criteria, including technical skills, 
+                  communication abilities, and cultural alignment with your company values.
+                </p>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-500" />
+                    <span className="text-slate-700">Automated skill assessments</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-500" />
+                    <span className="text-slate-700">Personality & culture fit analysis</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-500" />
+                    <span className="text-slate-700">Work sample evaluations</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl p-8 shadow-lg border border-slate-200"
+            >
+              <div className="text-center">
+                <div className="text-6xl font-bold text-blue-600 mb-2">98.3%</div>
+                <div className="text-lg text-slate-600 mb-6">Accuracy in matching candidates to role requirements</div>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="bg-slate-50 rounded-lg p-3">
+                    <div className="font-semibold text-slate-900">Traditional Methods</div>
+                    <div className="text-slate-600">47% accuracy</div>
+                  </div>
+                  <div className="bg-blue-50 rounded-lg p-3">
+                    <div className="font-semibold text-blue-900">Hero AI</div>
+                    <div className="text-blue-600">98.3% accuracy</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Feature Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { 
+                icon: Globe, 
+                title: "Global Talent Pool", 
+                description: "Access to pre-vetted professionals across 40+ countries and time zones"
+              },
+              { 
+                icon: Shield, 
+                title: "Background Verified", 
+                description: "Complete reference checks, education verification, and work history validation"
+              },
+              { 
+                icon: TrendingUp, 
+                title: "Performance Tracking", 
+                description: "Monitor hire success rates and long-term performance metrics"
+              },
+              { 
+                icon: Award, 
+                title: "Quality Guarantee", 
+                description: "If your hire doesn't work out in 90 days, we'll replace them for free"
+              },
+              { 
+                icon: Clock, 
+                title: "24/7 Support", 
+                description: "Dedicated success manager throughout the entire hiring and onboarding process"
+              },
+              { 
+                icon: CheckCircle, 
+                title: "Onboarding Included", 
+                description: "Complete 30-day onboarding program with tools, training, and integration"
+              }
+            ].map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
+                  <feature.icon className="w-6 h-6 text-slate-600" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3 text-slate-900">{feature.title}</h3>
+                <p className="text-slate-600 text-sm leading-relaxed">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
