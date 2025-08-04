@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle, Download, Mail, Star, Users } from "lucide-react";
+import { ArrowRight, CheckCircle, Sparkles, Timer, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface EmailCaptureProps {
   className?: string;
@@ -27,23 +26,20 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
 
   if (isSubmitted) {
     return (
-      <section className={`py-20 px-6 bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50 ${className}`}>
-        <div className="container mx-auto max-w-2xl text-center">
+      <section className={`py-16 px-6 ${className}`}>
+        <div className="container mx-auto max-w-lg text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl p-12 shadow-lg border border-emerald-100"
+            className="bg-white rounded-3xl p-12 shadow-2xl border border-slate-100"
           >
-            <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-emerald-600" />
+            <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-8 h-8 text-emerald-600" />
             </div>
-            <h3 className="text-3xl font-semibold mb-4 text-slate-900">Check Your Email!</h3>
-            <p className="text-lg text-slate-600 mb-6">
-              Your hiring guide is on its way. We'll also send you exclusive insights on building world-class teams.
-            </p>
-            <p className="text-sm text-slate-500">
-              Didn't receive it? Check your spam folder or contact us directly.
+            <h3 className="text-2xl font-semibold mb-4 text-slate-900">You're In!</h3>
+            <p className="text-slate-600">
+              We'll be in touch within 24 hours to discuss your hiring needs.
             </p>
           </motion.div>
         </div>
@@ -52,120 +48,120 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
   }
 
   return (
-    <section className={`py-20 px-6 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 ${className}`}>
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="text-white"
-          >
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full text-sm font-medium text-blue-300">
-              <Download className="w-4 h-4" />
-              Free Download
-            </div>
-            <h2 className="text-4xl md:text-5xl font-light mb-6 leading-tight">
-              Get the <span className="text-blue-400 font-medium">Hiring Playbook</span> that top companies use
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              Download our proven framework for identifying, attracting, and securing elite talent in any market.
-            </p>
-            
-            {/* Benefits List */}
-            <div className="space-y-4 mb-8">
-              {[
-                "Complete candidate evaluation framework",
-                "Interview scripts that reveal true potential", 
-                "Negotiation tactics for competitive offers",
-                "Onboarding checklist for immediate impact"
-              ].map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-center gap-3"
+    <section className={`py-20 px-6 bg-white ${className}`}>
+      <div className="container mx-auto max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          {/* Background Elements */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl" />
+          <div className="absolute top-6 right-6 w-32 h-32 bg-blue-200/30 rounded-full blur-2xl" />
+          <div className="absolute bottom-6 left-6 w-24 h-24 bg-purple-200/30 rounded-full blur-xl" />
+          
+          {/* Content */}
+          <div className="relative z-10 text-center p-12">
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium shadow-lg"
+            >
+              <Sparkles className="w-4 h-4" />
+              Limited Time Offer
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl font-light mb-4 text-slate-900 leading-tight"
+            >
+              Skip the line. <span className="text-blue-600 font-medium">Hire in 2 weeks.</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto"
+            >
+              Get matched with 3 pre-vetted candidates this month. No job posts, no screening calls, no wasted time.
+            </motion.p>
+
+            {/* Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="max-w-md mx-auto mb-8"
+            >
+              <form onSubmit={handleSubmit} className="flex gap-3">
+                <Input
+                  type="email"
+                  placeholder="Your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="flex-1 py-6 text-lg border-2 border-slate-200 focus:border-blue-500 bg-white/80 backdrop-blur-sm"
+                />
+                <Button 
+                  type="submit" 
+                  disabled={isLoading}
+                  className="px-8 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  <CheckCircle className="w-5 h-5 text-emerald-400" />
-                  <span className="text-blue-100">{benefit}</span>
-                </motion.div>
-              ))}
-            </div>
+                  {isLoading ? (
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      Start
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </>
+                  )}
+                </Button>
+              </form>
+            </motion.div>
 
-            {/* Social Proof */}
-            <div className="flex items-center gap-4 text-sm text-blue-200">
+            {/* Benefits */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-6 text-sm text-slate-600"
+            >
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4" />
-                <span>Downloaded by 12,000+ founders</span>
+                <Timer className="w-4 h-4 text-blue-600" />
+                <span>2-week guarantee</span>
               </div>
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                ))}
-                <span className="ml-1">4.9/5</span>
+              <div className="flex items-center gap-2">
+                <Zap className="w-4 h-4 text-blue-600" />
+                <span>Pre-screened candidates</span>
               </div>
-            </div>
-          </motion.div>
+              <div className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-blue-600" />
+                <span>No setup fees</span>
+              </div>
+            </motion.div>
 
-          {/* Right Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-white/10 backdrop-blur-sm border-white/20 shadow-2xl">
-              <CardContent className="p-8">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-semibold text-white mb-2">
-                    Get Instant Access
-                  </h3>
-                  <p className="text-blue-200">
-                    Enter your email to download the complete guide
-                  </p>
-                </div>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-                    <Input
-                      type="email"
-                      placeholder="Enter your email address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="pl-12 py-6 text-lg bg-white border-white/20 text-slate-900 placeholder-slate-500"
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit" 
-                    disabled={isLoading}
-                    className="w-full py-6 text-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                  >
-                    {isLoading ? (
-                      <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        Sending...
-                      </div>
-                    ) : (
-                      <>
-                        Download Free Guide
-                        <ArrowRight className="ml-2 w-5 h-5" />
-                      </>
-                    )}
-                  </Button>
-                </form>
-                
-                <p className="text-xs text-blue-200 text-center mt-4">
-                  No spam. Unsubscribe anytime. Trusted by top companies.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="text-xs text-slate-500 mt-4"
+            >
+              Join 500+ companies who've streamlined their hiring process
+            </motion.p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
