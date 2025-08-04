@@ -1,5 +1,6 @@
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Users, CheckCircle, Target, Calendar, FileText, Shield, Zap, Star, Building, Briefcase, Scale, Calculator, Hammer, TrendingUp, Award, Globe } from "lucide-react";
+import { ArrowRight, Clock, Users, CheckCircle, Target, Calendar, FileText, Shield, Zap, Star, Building, Briefcase, Scale, Calculator, Hammer, TrendingUp, Award, Globe, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
@@ -7,6 +8,19 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Calculate text color based on scroll position
+  const getHeroTextColor = () => {
+    if (scrollY > 600) return "text-slate-900"; // Dark text for light backgrounds
+    return "text-white"; // White text for dark hero background
+  };
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navigation />
@@ -48,13 +62,13 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.85] tracking-tight"
+              className={`text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.85] tracking-tight transition-colors duration-300 ${getHeroTextColor()}`}
             >
-              <span className="text-white">Hire</span>
+              <span>Hire</span>
               <br />
               <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium">Elite Talent</span>
               <br />
-              <span className="text-white/60 text-5xl md:text-6xl lg:text-7xl">in 4 weeks</span>
+              <span className={`text-5xl md:text-6xl lg:text-7xl ${scrollY > 600 ? 'text-slate-500' : 'text-white/60'} transition-colors duration-300`}>in 4 weeks</span>
             </motion.h1>
             
             {/* Subheading */}
@@ -64,10 +78,10 @@ const Index = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="max-w-3xl mx-auto mb-12"
             >
-              <p className="text-xl md:text-2xl text-white/70 font-light leading-relaxed mb-6">
+              <p className={`text-xl md:text-2xl font-light leading-relaxed mb-6 transition-colors duration-300 ${scrollY > 600 ? 'text-slate-600' : 'text-white/70'}`}>
                 Access pre-vetted global professionals without the overhead of traditional recruiting.
               </p>
-              <p className="text-lg text-white/50">
+              <p className={`text-lg transition-colors duration-300 ${scrollY > 600 ? 'text-slate-500' : 'text-white/50'}`}>
                 One platform. One process. Zero compromises.
               </p>
             </motion.div>
@@ -90,8 +104,10 @@ const Index = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-white/30 text-white/90 hover:bg-white/10 hover:border-white/50 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
               >
+                <Play className="mr-2 h-5 w-5" />
                 See How It Works
               </Button>
             </motion.div>
@@ -199,7 +215,7 @@ const Index = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-32 px-6 bg-white">
+      <section id="how-it-works" className="py-32 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -321,7 +337,7 @@ const Index = () => {
       </section>
 
       {/* Platform Features Section */}
-      <section className="py-32 px-6 bg-slate-50">
+      <section className="py-32 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -344,7 +360,7 @@ const Index = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-10 shadow-sm border border-blue-100">"
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg">
                   <Target className="w-8 h-8 text-white" />
                 </div>

@@ -14,6 +14,8 @@ import BuybackBlueprint from "./pages/BuybackBlueprint";
 import HiringPlaybooks from "./pages/HiringPlaybooks";
 import FAQ from "./pages/FAQ";
 import HerosMission from "./pages/HerosMission";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,6 +44,8 @@ const App = () => {
               <Route path="/hiring-playbooks" element={<HiringPlaybooks />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/heros-mission" element={<HerosMission />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
             </Routes>
           </BrowserRouter>
         </div>

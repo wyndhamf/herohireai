@@ -26,10 +26,10 @@ const Footer = () => {
             </div>
 
             <div className="flex space-x-8">
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              <a href="/terms-of-service" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Terms of Service
               </a>
               <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
