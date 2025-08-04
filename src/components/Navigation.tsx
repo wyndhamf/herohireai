@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, ChevronDown, Command } from "lucide-react";
+import { ProcessedLogo } from "./ProcessedLogo";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import {
@@ -56,7 +57,7 @@ const Navigation = () => {
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
           <a href="/" className="flex items-center gap-2">
-            <Command className="w-5 h-5 text-primary" />
+            <ProcessedLogo className="w-5 h-5" />
             <span className="font-bold text-base text-white">Hero</span>
           </a>
 
