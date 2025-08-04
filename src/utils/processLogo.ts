@@ -5,7 +5,7 @@ export const processAndSaveLogo = async () => {
     console.log('Starting logo processing...');
     
     // Load the uploaded image
-    const originalImage = await loadImageFromUrl('/lovable-uploads/14e85ce2-af11-4fae-98d4-fef8f6af99d7.png');
+    const originalImage = await loadImageFromUrl('/lovable-uploads/35dc568a-a0eb-444a-95ae-47a589406fba.png');
     console.log('Original image loaded');
     
     // Remove background

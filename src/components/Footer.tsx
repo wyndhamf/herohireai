@@ -1,5 +1,6 @@
-import { Command, Twitter, Linkedin } from "lucide-react";
+import { Twitter, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
+import { ProcessedLogo } from "./ProcessedLogo";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
           <div className="flex justify-between items-start">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <Command className="w-5 h-5 text-primary" />
+                <ProcessedLogo className="w-5 h-5" />
                 <h3 className="font-bold text-lg">Hero</h3>
               </div>
               <p className="text-sm text-muted-foreground">
