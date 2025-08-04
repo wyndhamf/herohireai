@@ -46,7 +46,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+                className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.9] tracking-tight"
               >
                 Hire Top Talent 
                 <span className="text-gradient block">Lightning Fast</span>
@@ -78,10 +78,11 @@ const Index = () => {
               >
                 <Button 
                   size="lg" 
-                  className="button-gradient text-lg px-10 py-6 shadow-glow hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="button-gradient text-lg px-12 py-7 shadow-glow hover:shadow-xl transition-all duration-500 hover:scale-105 group"
                   onClick={() => window.location.href = '/buyback-blueprint'}
                 >
-                  Find Your Perfect Hire <ArrowRight className="ml-2 w-5 h-5" />
+                  Find Your Perfect Hire 
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <div className="flex flex-col gap-3">
                   <div className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -115,15 +116,15 @@ const Index = () => {
                 <motion.div
                   animate={{ y: [-10, 10, -10] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-8 -left-8 glass p-4 rounded-2xl shadow-card z-10"
+                  className="absolute -top-8 -left-8 glass glass-hover p-6 rounded-3xl shadow-card z-10 animate-glow-pulse"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary-glow rounded-lg flex items-center justify-center">
-                      <Users className="w-5 h-5 text-white" />
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary-glow rounded-xl flex items-center justify-center shadow-lg">
+                      <Users className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold">AI Screening</div>
-                      <div className="text-xs text-muted-foreground">24/7 Active</div>
+                      <div className="text-base font-semibold">AI Screening</div>
+                      <div className="text-sm text-muted-foreground">24/7 Active</div>
                     </div>
                   </div>
                 </motion.div>
@@ -131,28 +132,28 @@ const Index = () => {
                 <motion.div
                   animate={{ y: [10, -10, 10] }}
                   transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -bottom-8 -right-8 glass p-4 rounded-2xl shadow-card z-10"
+                  className="absolute -bottom-8 -right-8 glass glass-hover p-6 rounded-3xl shadow-card z-10 animate-glow-pulse"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
-                      <Target className="w-5 h-5 text-white" />
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-400 rounded-xl flex items-center justify-center shadow-lg">
+                      <Target className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold">98% Match Rate</div>
-                      <div className="text-xs text-muted-foreground">Quality Guaranteed</div>
+                      <div className="text-base font-semibold">98% Match Rate</div>
+                      <div className="text-sm text-muted-foreground">Quality Guaranteed</div>
                     </div>
                   </div>
                 </motion.div>
 
                 {/* Main Hero Image */}
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-primary-glow/20" />
+                <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-accent/20" />
                   <img 
                     src={heroImage} 
                     alt="Professional hiring process visualization" 
-                    className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                    className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-1000"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 </div>
               </div>
             </motion.div>
@@ -198,13 +199,13 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="glass card-glow rounded-3xl p-8 text-center group hover:scale-105 transition-all duration-300"
+              className="glass glass-hover card-glow rounded-3xl p-10 text-center group hover:scale-105 transition-all duration-500"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-10 h-10 text-white" />
+              <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary-glow rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-glow">
+                <Users className="w-12 h-12 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Match with high-leverage global talent</h3>
-              <p className="text-muted-foreground">Connect with pre-vetted professionals who understand your business needs</p>
+              <h3 className="text-2xl font-bold mb-6 text-gradient">Match with high-leverage global talent</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">Connect with pre-vetted professionals who understand your business needs</p>
             </motion.div>
 
             <motion.div
@@ -212,13 +213,13 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="glass card-glow rounded-3xl p-8 text-center group hover:scale-105 transition-all duration-300"
+              className="glass glass-hover card-glow rounded-3xl p-10 text-center group hover:scale-105 transition-all duration-500"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-10 h-10 text-white" />
+              <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-400 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-glow">
+                <Target className="w-12 h-12 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Interview 1-3 vetted finalists</h3>
-              <p className="text-muted-foreground">Skip the noise and focus on quality candidates who've already been screened</p>
+              <h3 className="text-2xl font-bold mb-6 text-gradient-accent">Interview 1-3 vetted finalists</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">Skip the noise and focus on quality candidates who've already been screened</p>
             </motion.div>
 
             <motion.div
@@ -226,13 +227,13 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="glass card-glow rounded-3xl p-8 text-center group hover:scale-105 transition-all duration-300"
+              className="glass glass-hover card-glow rounded-3xl p-10 text-center group hover:scale-105 transition-all duration-500"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <CheckCircle className="w-10 h-10 text-white" />
+              <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-400 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform duration-500 shadow-glow">
+                <CheckCircle className="w-12 h-12 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Onboard in 30 days with a done-for-you playbook</h3>
-              <p className="text-muted-foreground">Get your new hire productive fast with our proven onboarding system</p>
+              <h3 className="text-2xl font-bold mb-6 text-gradient">Onboard in 30 days with a done-for-you playbook</h3>
+              <p className="text-muted-foreground text-lg leading-relaxed">Get your new hire productive fast with our proven onboarding system</p>
             </motion.div>
           </div>
         </div>
