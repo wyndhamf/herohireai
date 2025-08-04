@@ -47,18 +47,6 @@ const TestimonialsSection = () => {
   return (
     <section className="py-20 overflow-hidden bg-black">
       <div className="container px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-5xl font-normal mb-4">Trusted by Traders</h2>
-          <p className="text-muted-foreground text-lg">
-            Join thousands of satisfied traders on CryptoTrade
-          </p>
-        </motion.div>
 
         <div className="relative flex flex-col antialiased">
           <div className="relative flex overflow-hidden py-4">
