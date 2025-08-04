@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { EmailCapture } from "@/components/EmailCapture";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -332,6 +333,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Email Capture Section */}
+      <EmailCapture />
 
       {/* Platform Features Section */}
       <section className="py-32 px-6 bg-white">
