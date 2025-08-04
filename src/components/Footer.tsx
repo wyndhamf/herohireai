@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <Command className="w-5 h-5 text-primary" />
-                <h3 className="font-bold text-lg">HeroHire</h3>
+                <h3 className="font-bold text-lg">Hero</h3>
               </div>
               <p className="text-sm text-muted-foreground">
                 Empowering founders with world-class talent in 60 minutes or less.
@@ -40,7 +40,7 @@ const Footer = () => {
 
           <div className="mt-8 pt-8 border-t border-white/10">
             <p className="text-sm text-muted-foreground text-center">
-              © {new Date().getFullYear()} HeroHire. All rights reserved.
+              © {new Date().getFullYear()} Hero. All rights reserved.
             </p>
           </div>
         </div>

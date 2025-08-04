@@ -19,7 +19,7 @@ export default function HowItWorks() {
               transition={{ duration: 0.5 }}
               className="text-5xl md:text-6xl font-normal mb-6"
             >
-              How <span className="text-gradient font-medium">HeroHire</span> Works
+              How <span className="text-gradient font-medium">Hero</span> Works
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -99,7 +99,7 @@ export default function HowItWorks() {
               Ready to Get Started?
             </h2>
             <p className="text-white/80 mb-8">
-              Join the companies already scaling with HeroHire
+              Join the companies already scaling with Hero
             </p>
             <Button size="lg" className="bg-primary hover:bg-primary/90">
               Start Today (Claim 1/10 initial spots) <ArrowRight className="ml-2 w-4 h-4" />
