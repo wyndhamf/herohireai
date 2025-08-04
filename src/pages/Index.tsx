@@ -18,11 +18,22 @@ const Index = () => {
 
   // Calculate text color based on scroll position
   const getHeroTextColor = () => {
-    if (scrollY > 600) return "text-slate-900"; // Dark text for light backgrounds
-    return "text-white"; // White text for dark hero background
+    // Change to dark text when scrolled past the hero section (approximately 800px)
+    if (scrollY > 800) return "text-slate-900";
+    return "text-white";
+  };
+
+  const getHeroSubtextColor = () => {
+    if (scrollY > 800) return "text-slate-600";
+    return "text-white/70";
+  };
+
+  const getHeroSmallTextColor = () => {
+    if (scrollY > 800) return "text-slate-500";
+    return "text-white/60";
   };
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-white">
       <Navigation />
 
       {/* Hero Section */}
@@ -62,13 +73,13 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className={`text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.85] tracking-tight transition-colors duration-300 ${getHeroTextColor()}`}
+              className={`text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.85] tracking-tight transition-colors duration-500 ${getHeroTextColor()}`}
             >
               <span>Hire</span>
               <br />
               <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium">Elite Talent</span>
               <br />
-              <span className={`text-5xl md:text-6xl lg:text-7xl ${scrollY > 600 ? 'text-slate-500' : 'text-white/60'} transition-colors duration-300`}>in 4 weeks</span>
+              <span className={`text-5xl md:text-6xl lg:text-7xl transition-colors duration-500 ${getHeroSmallTextColor()}`}>in 4 weeks</span>
             </motion.h1>
             
             {/* Subheading */}
@@ -78,10 +89,10 @@ const Index = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="max-w-3xl mx-auto mb-12"
             >
-              <p className={`text-xl md:text-2xl font-light leading-relaxed mb-6 transition-colors duration-300 ${scrollY > 600 ? 'text-slate-600' : 'text-white/70'}`}>
+              <p className={`text-xl md:text-2xl font-light leading-relaxed mb-6 transition-colors duration-500 ${getHeroSubtextColor()}`}>
                 Access pre-vetted global professionals without the overhead of traditional recruiting.
               </p>
-              <p className={`text-lg transition-colors duration-300 ${scrollY > 600 ? 'text-slate-500' : 'text-white/50'}`}>
+              <p className={`text-lg transition-colors duration-500 ${getHeroSmallTextColor()}`}>
                 One platform. One process. Zero compromises.
               </p>
             </motion.div>
