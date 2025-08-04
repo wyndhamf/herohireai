@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Clock, Users, CheckCircle, Target, Calendar, FileText, Shield, Zap, Star, Building, Briefcase, Scale, Calculator, Hammer, TrendingUp, Award, Globe, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import heroImage from "@/assets/hero-image.jpg";
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
