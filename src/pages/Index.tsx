@@ -4,6 +4,7 @@ import { ArrowRight, Clock, Users, CheckCircle, Target, Calendar, FileText, Shie
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
+import { EmailCapture } from "@/components/EmailCapture";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -149,6 +150,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Email Capture Section */}
+      <EmailCapture />
 
       {/* How It Works Section */}
       <section id="how-it-works" className="py-32 px-6 bg-white">
