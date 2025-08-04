@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { EmailCapture } from "@/components/EmailCapture";
+
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -99,37 +99,8 @@ const Index = () => {
                 Start Hiring Today
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-slate-900 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300 hover:scale-105"
-                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                <Play className="mr-2 h-5 w-5" />
-                See How It Works
-              </Button>
             </motion.div>
             
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.6 }}
-              className="flex flex-wrap justify-center gap-8 text-sm text-white/40"
-            >
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-400" />
-                <span>4-week guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-400" />
-                <span>98% success rate</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-400" />
-                <span>Global talent pool</span>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -156,39 +127,6 @@ const Index = () => {
             </p>
           </motion.div>
 
-          {/* Problem Stats */}
-          <div className="grid md:grid-cols-3 gap-8 mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-center p-8 bg-slate-50 rounded-2xl shadow-sm border border-slate-100"
-            >
-              <div className="text-4xl font-bold text-red-500 mb-3">12 weeks</div>
-              <p className="text-slate-600">Average time to hire for senior roles</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-center p-8 bg-slate-50 rounded-2xl shadow-sm border border-slate-100"
-            >
-              <div className="text-4xl font-bold text-red-500 mb-3">30%</div>
-              <p className="text-slate-600">Recruiter fees for executive placement</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="text-center p-8 bg-slate-50 rounded-2xl shadow-sm border border-slate-100"
-            >
-              <div className="text-4xl font-bold text-red-500 mb-3">89%</div>
-              <p className="text-slate-600">Of job applications are unqualified</p>
-            </motion.div>
-          </div>
 
           {/* Solution Preview */}
           <motion.div
@@ -334,199 +272,45 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Email Capture Section */}
-      <EmailCapture />
-
-      {/* Platform Features Section */}
-      <section className="py-32 px-6 bg-white">
-        <div className="container mx-auto max-w-7xl">
+      {/* Simplified Guarantees Section */}
+      <section className="py-16 px-6 bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50">
+        <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-24"
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900">
-              Complete <span className="text-blue-600 font-medium">hiring platform</span>
+            <h2 className="text-4xl md:text-5xl font-light mb-8 text-slate-900">
+              Our <span className="text-emerald-600 font-medium">guarantee</span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Everything you need to find, evaluate, and onboard world-class talent
-            </p>
           </motion.div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-            {/* AI Screening */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-10 shadow-sm border border-blue-100">"
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-3xl font-semibold mb-6 text-slate-900">AI-Powered Screening</h3>
-                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                  Our proprietary AI evaluates candidates across 47 different criteria, including technical skills, 
-                  communication abilities, and cultural alignment with your company values.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500" />
-                    <span className="text-slate-700">Automated skill assessments</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500" />
-                    <span className="text-slate-700">Personality & culture fit analysis</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-emerald-500" />
-                    <span className="text-slate-700">Work sample evaluations</span>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 shadow-lg border border-slate-200"
-            >
-              <div className="text-center">
-                <div className="text-6xl font-bold text-blue-600 mb-2">98.3%</div>
-                <div className="text-lg text-slate-600 mb-6">Accuracy in matching candidates to role requirements</div>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="bg-slate-50 rounded-lg p-3">
-                    <div className="font-semibold text-slate-900">Traditional Methods</div>
-                    <div className="text-slate-600">47% accuracy</div>
-                  </div>
-                  <div className="bg-blue-50 rounded-lg p-3">
-                    <div className="font-semibold text-blue-900">Hero AI</div>
-                    <div className="text-blue-600">98.3% accuracy</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Feature Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { 
-                icon: Globe, 
-                title: "Global Talent Pool", 
-                description: "Access to pre-vetted professionals across 40+ countries and time zones"
-              },
-              { 
-                icon: Shield, 
-                title: "Background Verified", 
-                description: "Complete reference checks, education verification, and work history validation"
-              },
-              { 
-                icon: TrendingUp, 
-                title: "Performance Tracking", 
-                description: "Monitor hire success rates and long-term performance metrics"
-              },
-              { 
-                icon: Award, 
-                title: "Quality Guarantee", 
-                description: "If your hire doesn't work out in 90 days, we'll replace them for free"
-              },
-              { 
-                icon: Clock, 
-                title: "24/7 Support", 
-                description: "Dedicated success manager throughout the entire hiring and onboarding process"
-              },
-              { 
-                icon: CheckCircle, 
-                title: "Onboarding Included", 
-                description: "Complete 30-day onboarding program with tools, training, and integration"
-              }
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-slate-600" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3 text-slate-900">{feature.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who It's For Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12">
-            Designed for Growing Teams
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
-            {[
-              { icon: Building, label: "SaaS" },
-              { icon: Briefcase, label: "FinTech" },
-              { icon: Users, label: "Agencies" },
-              { icon: Scale, label: "Legal & Accounting" },
-              { icon: Hammer, label: "Construction & Sales" }
-            ].map((industry, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center gap-2"
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <industry.icon className="w-8 h-8 text-primary" />
-                </div>
-                <span className="font-medium">{industry.label}</span>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-lg text-muted-foreground">
-            Flat Fee. Predictable Results. Zero Guesswork.
-          </p>
-        </div>
-      </section>
-
-      {/* Guarantees Section */}
-      <section className="py-16 px-4 bg-muted/50">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Our Promise
-          </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "Hire in ≤ 4 Weeks", description: "Guaranteed timeline" },
-              { title: "Only 60 Minutes of Your Time", description: "Minimal founder involvement" },
-              { title: "Free Replacement Guarantee", description: "Risk-free hiring" },
-              { title: "12-Month Backfill Insurance", description: "Long-term protection" }
+              { title: "4-Week Guarantee", description: "Perfectly matched hire or we keep working" },
+              { title: "Free Replacement", description: "90-day replacement guarantee included" },
+              { title: "Minimal Time Investment", description: "Only 1 hour of your time required" },
+              { title: "Fixed Pricing", description: "No hidden fees or percentage costs" }
             ].map((guarantee, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-4 p-4 bg-background rounded-lg border"
+                className="flex items-center gap-4 p-6 bg-white rounded-xl shadow-sm border border-emerald-100"
               >
-                <CheckCircle className="w-8 h-8 text-green-500 flex-shrink-0" />
+                <CheckCircle className="w-8 h-8 text-emerald-500 flex-shrink-0" />
                 <div>
-                  <h3 className="font-semibold">{guarantee.title}</h3>
-                  <p className="text-muted-foreground text-sm">{guarantee.description}</p>
+                  <h3 className="font-semibold text-slate-900">{guarantee.title}</h3>
+                  <p className="text-slate-600 text-sm">{guarantee.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
 
 
       {/* CTA Footer */}
