@@ -14,6 +14,16 @@ const LogoCarousel = () => {
   return (
     <div className="w-full overflow-hidden glass py-16 mt-32 relative">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-primary/5" />
+      <div className="container mx-auto mb-8 text-center relative z-10">
+        <motion.h3
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-2xl font-bold text-muted-foreground mb-2"
+        >
+          Trusted by founders at
+        </motion.h3>
+      </div>
       <motion.div 
         className="flex space-x-16"
         initial={{ opacity: 0, x: "0%" }}
