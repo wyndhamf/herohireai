@@ -41,15 +41,14 @@ export default function BuybackBlueprint() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className="text-4xl md:text-5xl font-bold mb-6"
-                >
-                  <span className="font-normal">The</span> <span className="text-gradient font-medium">Buyback Blueprint™</span>
+                  className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
+                  <span className="font-normal">The</span> <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent font-medium">Buyback Blueprint™</span>
                 </motion.h1>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1, duration: 0.5 }}
-                  className="text-xl font-semibold mb-4"
+                  className="text-xl font-semibold mb-4 text-slate-900"
                 >
                   Hire a world-class Executive Assistant in 60 minutes!
                 </motion.p>
@@ -59,15 +58,15 @@ export default function BuybackBlueprint() {
                   transition={{ delay: 0.2, duration: 0.5 }}
                   className="flex items-center justify-center lg:justify-start gap-8 mb-6"
                 >
-                  <div className="flex items-center gap-2 text-primary">
+                  <div className="flex items-center gap-2 text-blue-600">
                     <UserPlus className="w-6 h-6" />
                     <span className="text-lg font-medium">Attract</span>
                   </div>
-                  <div className="flex items-center gap-2 text-primary">
+                  <div className="flex items-center gap-2 text-blue-600">
                     <TrendingUp className="w-6 h-6" />
                     <span className="text-lg font-medium">Develop</span>
                   </div>
-                  <div className="flex items-center gap-2 text-primary">
+                  <div className="flex items-center gap-2 text-blue-600">
                     <Heart className="w-6 h-6" />
                     <span className="text-lg font-medium">Retain</span>
                   </div>
@@ -76,7 +75,7 @@ export default function BuybackBlueprint() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
-                  className="text-base text-muted-foreground"
+                  className="text-base text-slate-600 leading-relaxed"
                 >
                   To win in business, you need the right people in the right seats. We'll help you attract, develop and retain a world-class Executive Assistant - the kind who protects your time, drives outcomes and acts as a true extension of you, so you can stay locked in on growth.
                 </motion.p>
@@ -87,10 +86,10 @@ export default function BuybackBlueprint() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
-                className="bg-secondary/80 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/10"
+                className="bg-gradient-to-br from-slate-900 to-blue-900 rounded-2xl p-8 text-center border border-slate-800"
               >
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                  Limited Time Offer: <span className="text-primary">$10,000 USD</span>
+                  Limited Time Offer: <span className="text-blue-400">$10,000 USD</span>
                 </h2>
                 <p className="text-white/80 mb-8 text-base">
                   (limited to the first 10 founders and CEOs)
@@ -99,7 +98,7 @@ export default function BuybackBlueprint() {
                 <div className="mb-6">
                   <Button 
                     size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-base px-6 py-3 w-full"
+                    className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 px-6 py-3 w-full"
                     onClick={handlePayment}
                   >
                     Secure Your Spot Now
@@ -212,21 +211,21 @@ export default function BuybackBlueprint() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Guarantees */}
               <div>
-                <h2 className="text-3xl font-semibold mb-8">Guarantees</h2>
+                <h2 className="text-3xl font-semibold mb-8 text-slate-900">Guarantees</h2>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Hire in ≤ 4 weeks.</p>
+                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600">Hire in ≤ 4 weeks.</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">
+                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600">
                       <strong>Performance Guarantee:</strong> If your EA departs or under-performs in the first 6 months, we replace them free.
                     </p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">
+                    <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600">
                       Total founder time investment for hire: 1 hour of interviewing top candidates
                     </p>
                   </div>
@@ -235,30 +234,30 @@ export default function BuybackBlueprint() {
 
               {/* EA Skill Stack */}
               <div>
-                <h2 className="text-3xl font-semibold mb-8">EA Skill Stack</h2>
-                <p className="text-muted-foreground mb-6">
+                <h2 className="text-3xl font-semibold mb-8 text-slate-900">EA Skill Stack</h2>
+                <p className="text-slate-600 mb-6 leading-relaxed">
                   Our Executive Assistant Hiring System is backed by real world results proven through Serv Recruitment Agency founder Jackie Serviss. It includes:
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Email & task prioritization</p>
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600">Email & task prioritization</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Schedule control & focus protection</p>
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600">Schedule control & focus protection</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">SOP creation playbook</p>
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600">SOP creation playbook</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">Delegation via Loom & AI documentation</p>
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600">Delegation via Loom & AI documentation</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-muted-foreground">CRM hygiene & customer follow-up</p>
+                    <CheckCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600">CRM hygiene & customer follow-up</p>
                   </div>
                 </div>
               </div>
@@ -267,7 +266,7 @@ export default function BuybackBlueprint() {
         </section>
 
         {/* Quote Section */}
-        <section className="bg-secondary/80 container px-4 py-16">
+        <section className="bg-gradient-to-br from-slate-900 to-blue-900 container px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <blockquote className="text-2xl md:text-3xl font-bold text-white italic">
               "IF YOU DON'T HAVE AN ASSISTANT, YOU ARE ONE."
