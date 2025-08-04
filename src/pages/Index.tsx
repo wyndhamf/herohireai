@@ -53,20 +53,6 @@ const Index = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-6xl mx-auto text-center"
           >
-            {/* Status Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="inline-flex items-center gap-3 mb-8 px-6 py-3 bg-white/5 backdrop-blur-xl rounded-full border border-white/10 text-sm font-medium"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-                <span className="text-emerald-400 font-medium">Live Platform</span>
-              </div>
-              <div className="w-px h-4 bg-white/20" />
-              <span className="text-white/70">Trusted by 200+ companies</span>
-            </motion.div>
             
             {/* Main Headline */}
             <motion.h1
