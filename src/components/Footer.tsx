@@ -3,9 +3,9 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <footer className="w-full py-12 mt-20">
+    <footer className="w-full py-6 mt-12">
       <div className="container px-4">
-        <div className="glass glass-hover rounded-xl p-8">
+        <div className="glass glass-hover rounded-xl p-6">
           <div className="flex justify-between items-start">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
