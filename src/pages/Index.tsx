@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import heroImage from "@/assets/hero-image.jpg";
 import Navigation from "@/components/Navigation";
-import LogoCarousel from "@/components/LogoCarousel";
+
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 
@@ -444,8 +444,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Logo Carousel */}
-      <LogoCarousel />
 
       {/* Testimonials */}
       <TestimonialsSection />
