@@ -6,8 +6,25 @@ import Footer from "@/components/Footer";
 import { QRCodeSVG } from "qrcode.react";
 
 export default function BuybackBlueprint() {
-  // Replace this with your actual Stripe payment link
-  const stripePaymentLink = "https://buy.stripe.com/your-payment-link-here";
+  const handlePayment = async () => {
+    try {
+      const response = await fetch('/functions/v1/create-payment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      
+      const data = await response.json();
+      
+      if (data.url) {
+        // Open Stripe checkout in a new tab
+        window.open(data.url, '_blank');
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -26,7 +43,7 @@ export default function BuybackBlueprint() {
                   transition={{ duration: 0.5 }}
                   className="text-4xl md:text-5xl font-bold mb-6"
                 >
-                  The <span className="text-gradient font-medium">Buyback Blueprint™</span>
+                  <span className="font-normal">The</span> <span className="text-gradient font-medium">Buyback Blueprint™</span>
                 </motion.h1>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
@@ -79,25 +96,11 @@ export default function BuybackBlueprint() {
                   (limited to the first 10 founders and CEOs)
                 </p>
                 
-                {/* QR Code */}
-                <div className="bg-white p-4 rounded-xl inline-block mb-6 w-full max-w-xs mx-auto">
-                  <QRCodeSVG 
-                    value={stripePaymentLink}
-                    size={240}
-                    level="H"
-                    includeMargin={false}
-                    className="w-full h-auto"
-                  />
-                  <p className="text-sm text-muted-foreground mt-3">
-                    Scan to complete your investment
-                  </p>
-                </div>
-
                 <div className="mb-6">
                   <Button 
                     size="lg" 
                     className="bg-primary hover:bg-primary/90 text-base px-6 py-3 w-full"
-                    onClick={() => window.open(stripePaymentLink, '_blank')}
+                    onClick={handlePayment}
                   >
                     Secure Your Spot Now
                   </Button>
