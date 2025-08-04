@@ -81,7 +81,7 @@ const Index = () => {
             >
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 px-12 py-6 text-lg font-medium rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 group"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 px-12 py-6 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
                 onClick={() => window.location.href = '/buyback-blueprint'}
               >
                 Start Hiring Today
@@ -90,7 +90,7 @@ const Index = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm"
+                className="border-white/30 text-white/90 hover:bg-white/10 hover:border-white/50 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300"
               >
                 See How It Works
               </Button>
@@ -121,37 +121,37 @@ const Index = () => {
       </section>
 
       {/* Problem Statement Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-32 px-6 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-24"
           >
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-red-50 rounded-full text-sm font-medium text-red-600">
+            <div className="inline-flex items-center gap-2 mb-8 px-6 py-3 bg-red-50 border border-red-100 rounded-full text-sm font-medium text-red-600">
               <div className="w-2 h-2 bg-red-500 rounded-full" />
               The Current Reality
             </div>
-            <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900">
+            <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900 leading-tight">
               Traditional hiring <span className="text-red-500 font-medium">wastes time</span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Companies spend months sorting through unqualified candidates, 
               paying hefty recruiter fees, and still end up with mismatched hires.
             </p>
           </motion.div>
 
           {/* Problem Stats */}
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
+          <div className="grid md:grid-cols-3 gap-8 mb-24">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-center p-8 bg-slate-50 rounded-2xl"
+              className="text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-100"
             >
-              <div className="text-4xl font-bold text-slate-900 mb-2">12 weeks</div>
+              <div className="text-4xl font-bold text-red-500 mb-3">12 weeks</div>
               <p className="text-slate-600">Average time to hire for senior roles</p>
             </motion.div>
             <motion.div
@@ -159,9 +159,9 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-center p-8 bg-slate-50 rounded-2xl"
+              className="text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-100"
             >
-              <div className="text-4xl font-bold text-slate-900 mb-2">30%</div>
+              <div className="text-4xl font-bold text-red-500 mb-3">30%</div>
               <p className="text-slate-600">Recruiter fees for executive placement</p>
             </motion.div>
             <motion.div
@@ -169,9 +169,9 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-center p-8 bg-slate-50 rounded-2xl"
+              className="text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-100"
             >
-              <div className="text-4xl font-bold text-slate-900 mb-2">89%</div>
+              <div className="text-4xl font-bold text-red-500 mb-3">89%</div>
               <p className="text-slate-600">Of job applications are unqualified</p>
             </motion.div>
           </div>
@@ -181,16 +181,16 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center bg-gradient-to-br from-emerald-50 to-blue-50 rounded-3xl p-12 border border-emerald-100"
           >
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-emerald-50 rounded-full text-sm font-medium text-emerald-600">
+            <div className="inline-flex items-center gap-2 mb-6 px-6 py-3 bg-emerald-100 border border-emerald-200 rounded-full text-sm font-medium text-emerald-700">
               <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
               Our Solution
             </div>
-            <h3 className="text-4xl md:text-5xl font-light mb-8 text-slate-900">
+            <h3 className="text-4xl md:text-5xl font-light mb-6 text-slate-900">
               Pre-vetted talent in <span className="text-emerald-600 font-medium">4 weeks</span>
             </h3>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               We handle the entire process—from sourcing to screening to onboarding—
               delivering only qualified candidates who match your exact requirements.
             </p>
@@ -199,7 +199,7 @@ const Index = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 px-6 bg-slate-50">
+      <section className="py-32 px-6 bg-gradient-to-b from-white to-slate-50">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -210,7 +210,7 @@ const Index = () => {
             <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900">
               How it <span className="text-blue-600 font-medium">works</span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Our streamlined process eliminates the traditional hiring headaches
             </p>
           </motion.div>
@@ -224,13 +224,13 @@ const Index = () => {
               transition={{ delay: 0.1 }}
               className="relative"
             >
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+              <div className="bg-white rounded-3xl p-10 shadow-sm border border-slate-100 h-full hover:shadow-md transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-8">
                   <FileText className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-sm font-medium text-blue-600 mb-2">STEP 1</div>
-                <h3 className="text-2xl font-semibold mb-4 text-slate-900">Define Requirements</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <div className="text-sm font-semibold text-blue-600 mb-3 tracking-wide">STEP 1</div>
+                <h3 className="text-2xl font-semibold mb-6 text-slate-900">Define Requirements</h3>
+                <p className="text-slate-600 leading-relaxed mb-8">
                   Tell us exactly what you need in a 30-minute consultation. We'll create a detailed role specification and candidate profile.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -250,13 +250,13 @@ const Index = () => {
               transition={{ delay: 0.2 }}
               className="relative"
             >
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+              <div className="bg-white rounded-3xl p-10 shadow-sm border border-slate-100 h-full hover:shadow-md transition-all duration-300">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-8">
                   <Users className="w-8 h-8 text-white" />
                 </div>
-                <div className="text-sm font-medium text-indigo-600 mb-2">STEP 2</div>
-                <h3 className="text-2xl font-semibold mb-4 text-slate-900">AI-Powered Sourcing</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
+                <div className="text-sm font-semibold text-indigo-600 mb-3 tracking-wide">STEP 2</div>
+                <h3 className="text-2xl font-semibold mb-6 text-slate-900">AI-Powered Sourcing</h3>
+                <p className="text-slate-600 leading-relaxed mb-8">
                   Our platform screens thousands of candidates using advanced AI, testing skills, cultural fit, and experience to find perfect matches.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -275,18 +275,18 @@ const Index = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-200 h-full">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-sm font-medium text-purple-600 mb-2">STEP 3</div>
-                <h3 className="text-2xl font-semibold mb-4 text-slate-900">Interview & Hire</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Meet 2-3 pre-vetted finalists. Each comes with detailed profiles, work samples, and reference checks already completed.
-                </p>
-                <div className="text-sm text-slate-500">
-                  🎯 1 week to final decision
-                </div>
+            <div className="bg-white rounded-3xl p-10 shadow-sm border border-slate-100 h-full hover:shadow-md transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-8">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <div className="text-sm font-semibold text-purple-600 mb-3 tracking-wide">STEP 3</div>
+              <h3 className="text-2xl font-semibold mb-6 text-slate-900">Interview & Hire</h3>
+              <p className="text-slate-600 leading-relaxed mb-8">
+                Meet 2-3 pre-vetted finalists. Each comes with detailed profiles, work samples, and reference checks already completed.
+              </p>
+              <div className="text-sm text-slate-500 font-medium">
+                🎯 1 week to final decision
+              </div>
               </div>
             </motion.div>
           </div>
@@ -296,24 +296,24 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-20 text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-12 text-white"
+            className="mt-24 text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-16 text-white shadow-xl"
           >
-            <h3 className="text-3xl font-semibold mb-6">The Result</h3>
-            <p className="text-xl mb-8 text-blue-100">
+            <h3 className="text-3xl md:text-4xl font-semibold mb-8">The Result</h3>
+            <p className="text-xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed">
               You get a perfectly matched hire in 4 weeks, not 4 months
             </p>
-            <div className="grid md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold mb-2">4 weeks</div>
-                <div className="text-blue-200">Total time to hire</div>
+            <div className="grid md:grid-cols-3 gap-12 text-center">
+              <div className="p-6">
+                <div className="text-4xl font-bold mb-3">4 weeks</div>
+                <div className="text-blue-200 text-lg">Total time to hire</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">98%</div>
-                <div className="text-blue-200">Success rate</div>
+              <div className="p-6">
+                <div className="text-4xl font-bold mb-3">98%</div>
+                <div className="text-blue-200 text-lg">Success rate</div>
               </div>
-              <div>
-                <div className="text-3xl font-bold mb-2">1 hour</div>
-                <div className="text-blue-200">Your time invested</div>
+              <div className="p-6">
+                <div className="text-4xl font-bold mb-3">1 hour</div>
+                <div className="text-blue-200 text-lg">Your time invested</div>
               </div>
             </div>
           </motion.div>
@@ -321,13 +321,13 @@ const Index = () => {
       </section>
 
       {/* Platform Features Section */}
-      <section className="py-24 px-6">
+      <section className="py-32 px-6 bg-gradient-to-b from-slate-50 to-white">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-24"
           >
             <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900">
               Complete <span className="text-blue-600 font-medium">hiring platform</span>
