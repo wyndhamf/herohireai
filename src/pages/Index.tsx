@@ -121,7 +121,7 @@ const Index = () => {
       </section>
 
       {/* Problem Statement Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-32 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -149,7 +149,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-100"
+              className="text-center p-8 bg-slate-50 rounded-2xl shadow-sm border border-slate-100"
             >
               <div className="text-4xl font-bold text-red-500 mb-3">12 weeks</div>
               <p className="text-slate-600">Average time to hire for senior roles</p>
@@ -159,7 +159,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-100"
+              className="text-center p-8 bg-slate-50 rounded-2xl shadow-sm border border-slate-100"
             >
               <div className="text-4xl font-bold text-red-500 mb-3">30%</div>
               <p className="text-slate-600">Recruiter fees for executive placement</p>
@@ -169,7 +169,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="text-center p-8 bg-white rounded-2xl shadow-sm border border-slate-100"
+              className="text-center p-8 bg-slate-50 rounded-2xl shadow-sm border border-slate-100"
             >
               <div className="text-4xl font-bold text-red-500 mb-3">89%</div>
               <p className="text-slate-600">Of job applications are unqualified</p>
@@ -181,7 +181,7 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center bg-gradient-to-br from-emerald-50 to-blue-50 rounded-3xl p-12 border border-emerald-100"
+            className="text-center bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50 rounded-3xl p-12 border border-emerald-100 shadow-sm"
           >
             <div className="inline-flex items-center gap-2 mb-6 px-6 py-3 bg-emerald-100 border border-emerald-200 rounded-full text-sm font-medium text-emerald-700">
               <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
@@ -199,7 +199,7 @@ const Index = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-white to-slate-50">
+      <section className="py-32 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -321,7 +321,7 @@ const Index = () => {
       </section>
 
       {/* Platform Features Section */}
-      <section className="py-32 px-6 bg-gradient-to-b from-slate-50 to-white">
+      <section className="py-32 px-6 bg-slate-50">
         <div className="container mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -345,11 +345,11 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-semibold mb-4 text-slate-900">AI-Powered Screening</h3>
-                <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                <h3 className="text-3xl font-semibold mb-6 text-slate-900">AI-Powered Screening</h3>
+                <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                   Our proprietary AI evaluates candidates across 47 different criteria, including technical skills, 
                   communication abilities, and cultural alignment with your company values.
                 </p>
