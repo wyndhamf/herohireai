@@ -108,14 +108,14 @@ const Index = () => {
       {/* Email Capture Modal */}
       {showEmailCapture && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-md w-full">
+          <div className="relative max-w-3xl w-full">
             <button 
               onClick={() => setShowEmailCapture(false)}
               className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-slate-600 hover:text-slate-900 shadow-lg z-10"
             >
               ✕
             </button>
-            <EmailCapture className="bg-white rounded-2xl shadow-2xl" />
+            <EmailCapture className="bg-white rounded-2xl shadow-2xl" onClose={() => setShowEmailCapture(false)} />
           </div>
         </div>
       )}

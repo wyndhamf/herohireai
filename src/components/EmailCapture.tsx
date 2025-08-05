@@ -6,9 +6,10 @@ import { Input } from "@/components/ui/input";
 
 interface EmailCaptureProps {
   className?: string;
+  onClose?: () => void;
 }
 
-export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) => {
+export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onClose }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -34,8 +35,8 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
   };
 
   return (
-    <section className={`flex items-center justify-center min-h-screen p-4 ${className}`}>
-      <div className="w-full max-w-md">
+    <section className={className}>
+      <div className="w-full max-w-2xl mx-auto">
         <AnimatePresence mode="wait">
           {isSubmitted ? (
             <motion.div
@@ -55,7 +56,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
-                onClick={handleReset}
+                onClick={onClose}
                 className="absolute -top-4 -left-4 z-30 p-3 bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 rounded-full border border-slate-200"
               >
                 <ArrowLeft className="w-5 h-5 text-slate-600" />
@@ -67,7 +68,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
               <div className="absolute bottom-4 left-4 w-12 h-12 bg-green-200/40 rounded-full blur-lg" />
               
               {/* Main content */}
-              <div className="relative z-10 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-emerald-100/50 text-center">
+              <div className="relative z-10 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-emerald-100/50 text-center">
                 {/* Success icon with animation */}
                 <motion.div
                   initial={{ scale: 0 }}
