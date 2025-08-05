@@ -34,8 +34,8 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
   };
 
   return (
-    <section className={`min-h-screen flex items-center justify-center px-6 py-16 ${className}`}>
-      <div className="container mx-auto max-w-4xl">
+    <section className={`min-h-screen flex items-center justify-center px-6 ${className}`}>
+      <div className="w-full max-w-2xl">
         <AnimatePresence mode="wait">
           {isSubmitted ? (
             <motion.div
@@ -48,7 +48,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
                 type: "spring",
                 bounce: 0.4
               }}
-              className="relative max-w-lg mx-auto text-center my-8"
+              className="relative max-w-lg mx-auto"
             >
               {/* Back arrow */}
               <motion.button
