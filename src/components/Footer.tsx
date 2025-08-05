@@ -8,23 +8,23 @@ const Footer = () => {
       <div className="container px-4">
         <div className="glass glass-hover rounded-xl p-6">
           <div className="flex justify-between items-start">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2">
-                <ProcessedLogo className="w-5 h-5" />
-                <h3 className="font-bold text-lg">Hero</h3>
+              <div className="space-y-4">
+                <div className="flex items-center gap-2">
+                  <ProcessedLogo className="w-5 h-5" />
+                  <h3 className="font-bold text-lg text-foreground">Hero</h3>
+                </div>
+                <p className="text-sm text-muted-foreground max-w-xs">
+                  Empowering founders with world-class talent through innovative hiring solutions.
+                </p>
+                <div className="flex space-x-2">
+                  <Button variant="glass" size="icon" className="bg-white/10 hover:bg-white/20">
+                    <Twitter className="w-4 h-4" />
+                  </Button>
+                  <Button variant="glass" size="icon" className="bg-white/10 hover:bg-white/20">
+                    <Linkedin className="w-4 h-4" />
+                  </Button>
+                </div>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Empowering founders with world-class talent.
-              </p>
-              <div className="flex space-x-4">
-                <Button variant="ghost" size="icon">
-                  <Twitter className="w-4 h-4" />
-                </Button>
-                <Button variant="ghost" size="icon">
-                  <Linkedin className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
 
             <div className="flex space-x-8">
               <a href="/#top" className="text-sm text-muted-foreground hover:text-primary transition-colors">

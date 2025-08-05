@@ -93,8 +93,9 @@ const Index = () => {
               className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
             >
               <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 px-12 py-6 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                size="xl" 
+                variant="gradient"
+                className="group px-12 py-6"
                 onClick={() => setShowEmailCapture(true)}
               >
                 Start Hiring Today
@@ -280,7 +281,7 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-4 p-6 bg-white rounded-xl shadow-sm border border-emerald-100"
+                className="glass glass-hover flex items-center gap-4 p-6 rounded-xl"
               >
                 <CheckCircle className="w-8 h-8 text-emerald-500 flex-shrink-0" />
                 <div>
@@ -314,9 +315,9 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button 
-                size="lg" 
-                variant="secondary" 
-                className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 shadow-2xl hover:scale-105 transition-all duration-300"
+                size="xl" 
+                variant="glass" 
+                className="bg-white/95 text-primary hover:bg-white px-12 py-6 hover:scale-105"
                 onClick={() => setShowEmailCapture(true)}
               >
                 Get Started Today <ArrowRight className="ml-2 w-5 h-5" />

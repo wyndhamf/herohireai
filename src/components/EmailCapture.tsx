@@ -282,7 +282,9 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                     <Button 
                       type="submit" 
                       disabled={isLoading}
-                      className="w-full px-8 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                      variant="gradient"
+                      size="xl"
+                      className="w-full"
                     >
                       {isLoading ? (
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

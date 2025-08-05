@@ -73,7 +73,7 @@ const Navigation = () => {
             
             {/* CTAs */}
             <div className="flex items-center gap-3 ml-4">
-              <Button size="sm" className="bg-primary hover:bg-primary/90">
+            <Button size="sm" variant="glass" className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-md">
                 Get Started
               </Button>
             </div>
@@ -83,7 +83,7 @@ const Navigation = () => {
           <div className="lg:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="glass">
+                <Button variant="glass" size="icon" className="bg-white/20 text-white hover:bg-white/30">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
@@ -99,7 +99,11 @@ const Navigation = () => {
 
                   {/* Mobile CTAs */}
                   <div className="flex flex-col gap-3 mt-6">
-                    <Button onClick={() => setIsMobileMenuOpen(false)} className="bg-primary hover:bg-primary/90">
+                    <Button 
+                      onClick={() => setIsMobileMenuOpen(false)} 
+                      variant="gradient"
+                      className="w-full"
+                    >
                       Get Started
                     </Button>
                   </div>
