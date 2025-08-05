@@ -34,7 +34,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
   };
 
   return (
-    <section className={`fixed inset-0 flex items-center justify-center p-6 ${className}`}>
+    <section className={`min-h-screen flex items-center justify-center px-6 py-16 ${className}`}>
       <AnimatePresence mode="wait">
         {isSubmitted ? (
           <motion.div
