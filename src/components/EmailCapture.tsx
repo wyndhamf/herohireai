@@ -34,40 +34,39 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
   };
 
   return (
-    <section className={`min-h-screen flex items-center justify-center px-6 ${className}`}>
-      <div className="w-full max-w-2xl">
-        <AnimatePresence mode="wait">
-          {isSubmitted ? (
-            <motion.div
-              key="success"
-              initial={{ opacity: 0, scale: 0.8, y: 50 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: -30 }}
-              transition={{ 
-                duration: 0.8,
-                type: "spring",
-                bounce: 0.4
-              }}
-              className="relative max-w-lg mx-auto"
+    <section className={`fixed inset-0 flex items-center justify-center p-6 ${className}`}>
+      <AnimatePresence mode="wait">
+        {isSubmitted ? (
+          <motion.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: -30 }}
+            transition={{ 
+              duration: 0.8,
+              type: "spring",
+              bounce: 0.4
+            }}
+            className="relative w-full max-w-lg mx-auto"
+          >
+            {/* Back arrow */}
+            <motion.button
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.5 }}
+              onClick={handleReset}
+              className="absolute -top-2 -left-2 z-30 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-slate-200/50"
             >
-              {/* Back arrow */}
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-                onClick={handleReset}
-                className="absolute top-4 left-4 z-20 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-slate-200/50"
-              >
-                <ArrowLeft className="w-5 h-5 text-slate-600" />
-              </motion.button>
+              <ArrowLeft className="w-5 h-5 text-slate-600" />
+            </motion.button>
 
-              {/* Background with gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 rounded-3xl" />
-              <div className="absolute top-4 right-4 w-20 h-20 bg-emerald-200/40 rounded-full blur-xl" />
-              <div className="absolute bottom-4 left-4 w-16 h-16 bg-green-200/40 rounded-full blur-lg" />
-              
-              {/* Main content */}
-              <div className="relative z-10 bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-emerald-100/50">
+            {/* Background with gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 rounded-3xl" />
+            <div className="absolute top-4 right-4 w-20 h-20 bg-emerald-200/40 rounded-full blur-xl" />
+            <div className="absolute bottom-4 left-4 w-16 h-16 bg-green-200/40 rounded-full blur-lg" />
+            
+            {/* Main content */}
+            <div className="relative z-10 bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-emerald-100/50">
                 {/* Success icon with animation */}
                 <motion.div
                   initial={{ scale: 0 }}
@@ -273,7 +272,6 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
     </section>
   );
 };
