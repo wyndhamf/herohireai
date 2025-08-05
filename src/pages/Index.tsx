@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [showEmailCapture, setShowEmailCapture] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -95,7 +96,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 px-12 py-6 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
-                onClick={() => window.location.href = '/buyback-blueprint'}
+                onClick={() => setShowEmailCapture(true)}
               >
                 Start Hiring Today
                 <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -105,6 +106,21 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Email Capture Modal */}
+      {showEmailCapture && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="relative max-w-md w-full">
+            <button 
+              onClick={() => setShowEmailCapture(false)}
+              className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-slate-600 hover:text-slate-900 shadow-lg z-10"
+            >
+              ✕
+            </button>
+            <EmailCapture className="bg-white rounded-2xl shadow-2xl" />
+          </div>
+        </div>
+      )}
 
       {/* Email Capture Section */}
       <EmailCapture />
@@ -339,7 +355,7 @@ const Index = () => {
                 size="lg" 
                 variant="secondary" 
                 className="bg-white text-primary hover:bg-white/90 text-lg px-12 py-6 shadow-2xl hover:scale-105 transition-all duration-300"
-                onClick={() => window.location.href = '/buyback-blueprint'}
+                onClick={() => setShowEmailCapture(true)}
               >
                 Get Started Today <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
