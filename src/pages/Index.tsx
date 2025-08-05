@@ -149,9 +149,6 @@ const Index = () => {
         </motion.div>
       )}
 
-      {/* Email Capture Section */}
-      <EmailCapture />
-
       {/* Problem Statement Section */}
       <section className="py-32 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
@@ -196,6 +193,9 @@ const Index = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Email Capture Section */}
+      <EmailCapture />
 
       {/* Simple Value Props */}
       <section className="py-16 px-6 bg-white">
