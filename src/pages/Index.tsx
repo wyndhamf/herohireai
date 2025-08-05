@@ -42,8 +42,8 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Sophisticated Background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950/80 to-white" />
+        {/* Sophisticated Background with smooth fade to white */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950/60 via-slate-900/30 to-white" />
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl" />
@@ -150,8 +150,8 @@ const Index = () => {
         </motion.div>
       )}
 
-      {/* Problem Statement Section */}
-      <section className="py-32 px-6 bg-white">
+      {/* Problem Statement Section - Seamless transition from hero */}
+      <section className="py-32 px-6 bg-gradient-to-b from-white/95 via-white to-gray-50/50">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -198,8 +198,8 @@ const Index = () => {
       {/* Email Capture Section */}
       <EmailCapture />
 
-      {/* Simple Value Props */}
-      <section className="py-16 px-6 bg-white">
+      {/* Simple Value Props - Smooth transition */}
+      <section className="py-16 px-6 bg-gradient-to-b from-gray-50/50 via-white to-emerald-50/30">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -255,8 +255,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Simplified Guarantees Section */}
-      <section className="py-16 px-6 bg-gradient-to-br from-emerald-50 via-blue-50 to-indigo-50">
+      {/* Simplified Guarantees Section - Enhanced gradient transition */}
+      <section className="py-16 px-6 bg-gradient-to-br from-emerald-50/60 via-blue-50/70 via-indigo-50/60 to-primary/5">
         <div className="container mx-auto max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -296,10 +296,10 @@ const Index = () => {
 
 
 
-      {/* CTA Footer */}
+      {/* CTA Footer - Smooth transition into primary gradient */}
       <section className="relative py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary-glow to-primary opacity-95" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary via-primary-glow to-primary opacity-95" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-primary/20" />
         <div className="container mx-auto max-w-4xl text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
