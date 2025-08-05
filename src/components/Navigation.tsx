@@ -63,8 +63,12 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
-            <a href="/buyback-blueprint" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Buyback Blueprint
+            <a 
+              href="/buyback-blueprint" 
+              className="relative group px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm border border-white/10"
+            >
+              <span className="relative z-10">Buyback Blueprint</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             </a>
             
             {/* CTAs */}
@@ -85,8 +89,12 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent className="bg-background">
                 <div className="flex flex-col gap-6 mt-8">
-                  <a href="/buyback-blueprint" className="text-muted-foreground hover:text-foreground">
-                    Buyback Blueprint
+                  <a 
+                    href="/buyback-blueprint" 
+                    className="relative group px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm border border-white/10 text-center"
+                  >
+                    <span className="relative z-10">Buyback Blueprint</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   </a>
 
                   {/* Mobile CTAs */}
