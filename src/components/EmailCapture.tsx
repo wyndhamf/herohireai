@@ -114,9 +114,9 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-3xl font-semibold mb-4 text-slate-900"
+                  className="text-3xl font-bold mb-3 text-slate-900"
                 >
-                  🎊 You're All Set!
+                  Thank You! 🎉
                 </motion.h3>
                 
                 <motion.p
@@ -125,13 +125,33 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                   transition={{ delay: 0.5 }}
                   className="text-slate-600 text-lg leading-relaxed mb-6"
                 >
-                  Thanks for joining! We'll reach out soon to discuss how we can help accelerate your hiring.
+                  We've received your information and will reach out to you shortly to discuss how we can help accelerate your hiring process.
                 </motion.p>
                 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
+                  className="space-y-4 mb-6"
+                >
+                  <div className="flex items-center gap-3 text-slate-600">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                    <span>Our team will review your requirements</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-600">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                    <span>We'll schedule a brief consultation call</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-600">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                    <span>Receive your first candidate recommendations</span>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium"
                 >
                   <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
