@@ -31,18 +31,91 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
       <section className={`py-16 px-6 ${className}`}>
         <div className="container mx-auto max-w-lg text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl p-12 shadow-2xl border border-slate-100"
+            initial={{ opacity: 0, scale: 0.8, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ 
+              duration: 0.8,
+              type: "spring",
+              bounce: 0.4
+            }}
+            className="relative"
           >
-            <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-8 h-8 text-emerald-600" />
+            {/* Background with gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 rounded-3xl" />
+            <div className="absolute top-4 right-4 w-20 h-20 bg-emerald-200/40 rounded-full blur-xl" />
+            <div className="absolute bottom-4 left-4 w-16 h-16 bg-green-200/40 rounded-full blur-lg" />
+            
+            {/* Main content */}
+            <div className="relative z-10 bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-emerald-100/50">
+              {/* Success icon with animation */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ 
+                  delay: 0.3,
+                  duration: 0.5,
+                  type: "spring",
+                  bounce: 0.6
+                }}
+                className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg"
+              >
+                <CheckCircle className="w-10 h-10 text-white" />
+              </motion.div>
+              
+              {/* Confetti effect */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="absolute top-8 left-8 text-yellow-400 text-2xl"
+              >
+                ✨
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7 }}
+                className="absolute top-6 right-12 text-blue-400 text-xl"
+              >
+                🎉
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.9 }}
+                className="absolute bottom-8 left-16 text-pink-400 text-lg"
+              >
+                ⭐
+              </motion.div>
+              
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-3xl font-semibold mb-4 text-slate-900"
+              >
+                🎊 You're All Set!
+              </motion.h3>
+              
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="text-slate-600 text-lg leading-relaxed mb-6"
+              >
+                Thanks for joining! We'll reach out soon to discuss how we can help accelerate your hiring.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium"
+              >
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                Response within 24 hours
+              </motion.div>
             </div>
-            <h3 className="text-2xl font-semibold mb-4 text-slate-900">You're In!</h3>
-            <p className="text-slate-600">
-              We'll be in touch within 24 hours to discuss your hiring needs.
-            </p>
           </motion.div>
         </div>
       </section>
