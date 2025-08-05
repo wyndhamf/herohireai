@@ -91,21 +91,30 @@ const Navigation = () => {
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="bg-background">
-                <div className="flex flex-col gap-6 mt-8">
-                  <a 
-                    href="/buyback-blueprint" 
-                    className="relative group px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm border border-white/10 text-center"
-                  >
-                    <span className="relative z-10">Buyback Blueprint</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-                  </a>
+              <SheetContent className="bg-background/95 backdrop-blur-xl border-l border-white/10">
+                <div className="flex flex-col h-full pt-12">
+                  {/* Logo Section */}
+                  <div className="flex items-center gap-2 mb-8 px-2">
+                    <ProcessedLogo className="w-6 h-6" />
+                    <span className="font-bold text-lg text-foreground">Hero</span>
+                  </div>
+                  
+                  {/* Navigation Links */}
+                  <div className="flex flex-col gap-4 flex-1">
+                    <a 
+                      href="/buyback-blueprint" 
+                      className="px-4 py-3 text-sm font-medium text-foreground bg-primary/10 hover:bg-primary/20 rounded-xl transition-colors border border-primary/20"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Buyback Blueprint
+                    </a>
+                  </div>
 
-                  {/* Mobile CTAs */}
-                  <div className="flex flex-col gap-3 mt-6">
+                  {/* Bottom CTA */}
+                  <div className="mt-auto pb-8">
                     <Button 
                       onClick={() => setIsMobileMenuOpen(false)} 
-                      variant="gradient"
+                      variant="default"
                       className="w-full"
                     >
                       Get Started
