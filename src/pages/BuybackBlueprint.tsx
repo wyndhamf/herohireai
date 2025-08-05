@@ -168,7 +168,7 @@ export default function BuybackBlueprint() {
               <h2 className="text-5xl md:text-6xl font-light mb-8 text-white">
                 Founder Impact <span className="font-medium">Highlights</span>
               </h2>
-              <p className="text-xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
                 Transform how you work and reclaim your time
               </p>
             </motion.div>
@@ -188,13 +188,13 @@ export default function BuybackBlueprint() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+                  className="text-center bg-white/15 backdrop-blur-sm rounded-2xl p-8 border border-white/30 hover:bg-white/20 transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-white/25 rounded-2xl flex items-center justify-center mx-auto mb-6">
                     <item.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
-                  <p className="text-blue-100 leading-relaxed">{item.description}</p>
+                  <p className="text-white/90 leading-relaxed">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -292,9 +292,9 @@ export default function BuybackBlueprint() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <blockquote className="text-3xl md:text-4xl lg:text-5xl font-light text-white italic leading-tight">
+              <blockquote className="text-3xl md:text-4xl lg:text-5xl font-light text-white italic leading-tight drop-shadow-lg">
                 "IF YOU DON'T HAVE AN ASSISTANT, <br />
-                <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent font-medium">YOU ARE ONE."</span>
+                <span className="bg-gradient-to-r from-blue-300 to-indigo-300 bg-clip-text text-transparent font-medium drop-shadow-none">YOU ARE ONE."</span>
               </blockquote>
             </motion.div>
           </div>
