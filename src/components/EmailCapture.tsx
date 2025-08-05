@@ -292,7 +292,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                   transition={{ delay: 0.5 }}
                   className="text-xs text-slate-500 mt-4"
                 >
-                  Start streamlining your hiring process today
+                  Get started with your hiring process
                 </motion.p>
               </div>
             </motion.div>
