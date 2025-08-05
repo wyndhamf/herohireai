@@ -1,5 +1,3 @@
-import { Twitter, Linkedin } from "lucide-react";
-import { Button } from "./ui/button";
 import { ProcessedLogo } from "./ProcessedLogo";
 
 const Footer = () => {
@@ -16,14 +14,6 @@ const Footer = () => {
                 <p className="text-sm text-muted-foreground max-w-xs">
                   Empowering founders with world-class talent through innovative hiring solutions.
                 </p>
-                <div className="flex space-x-2">
-                  <Button variant="glass" size="icon" className="bg-white/10 hover:bg-white/20">
-                    <Twitter className="w-4 h-4" />
-                  </Button>
-                  <Button variant="glass" size="icon" className="bg-white/10 hover:bg-white/20">
-                    <Linkedin className="w-4 h-4" />
-                  </Button>
-                </div>
               </div>
 
             <div className="flex space-x-8">
