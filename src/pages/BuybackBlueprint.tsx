@@ -129,8 +129,23 @@ export default function BuybackBlueprint() {
                       Secure Your Spot Now
                       <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </Button>
+
+                    <div className="flex items-center justify-center gap-4 mb-6">
+                      <div className="w-px h-8 bg-white/30"></div>
+                      <span className="text-sm text-white/60">OR</span>
+                      <div className="w-px h-8 bg-white/30"></div>
+                    </div>
+
+                    <div className="flex flex-col items-center gap-3">
+                      <img 
+                        src="/lovable-uploads/d7f5f2fa-a1a3-4c2c-a8d5-dc2390893238.png" 
+                        alt="Stripe Payment QR Code" 
+                        className="w-32 h-32 rounded-lg bg-white p-2"
+                      />
+                      <span className="text-sm text-white/60">Scan to pay with Stripe</span>
+                    </div>
                     
-                    <div className="text-sm text-white/60">
+                    <div className="text-sm text-white/60 mt-6">
                       Start transforming your business today
                     </div>
                   </div>
