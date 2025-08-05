@@ -34,7 +34,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
   };
 
   return (
-    <section className={`py-20 px-6 bg-white ${className}`}>
+    <section className={`min-h-screen flex items-center justify-center px-6 py-16 ${className}`}>
       <div className="container mx-auto max-w-4xl">
         <AnimatePresence mode="wait">
           {isSubmitted ? (
@@ -48,7 +48,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
                 type: "spring",
                 bounce: 0.4
               }}
-              className="relative max-w-lg mx-auto text-center"
+              className="relative max-w-lg mx-auto text-center my-8"
             >
               {/* Back arrow */}
               <motion.button
@@ -147,7 +147,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
               transition={{ duration: 0.6 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative my-8"
             >
               {/* Background Elements */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl" />
