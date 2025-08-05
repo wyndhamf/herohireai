@@ -62,52 +62,46 @@ const Navigation = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-6">
             <a 
               href="/buyback-blueprint" 
-              className="relative group px-5 py-2.5 text-sm font-medium text-white/90 hover:text-white transition-all duration-300 rounded-lg hover:bg-white/10"
+              className="relative group px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm border border-white/10"
             >
               <span className="relative z-10">Buyback Blueprint</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             </a>
             
-            {/* CTA Button */}
-            <Button 
-              size="sm" 
-              variant="glass" 
-              className="bg-white/15 text-white hover:bg-white/25 backdrop-blur-md border-white/20 ml-2"
-            >
-              Get Started
-            </Button>
+            {/* CTAs */}
+            <div className="flex items-center gap-3 ml-4">
+            <Button size="sm" variant="glass" className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-md">
+                Get Started
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
           <div className="lg:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button 
-                  variant="glass" 
-                  size="icon" 
-                  className="bg-white/15 text-white hover:bg-white/25 backdrop-blur-md border-white/20"
-                >
-                  <Menu className="h-4 w-4" />
+                <Button variant="glass" size="icon" className="bg-white/20 text-white hover:bg-white/30">
+                  <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent className="bg-background/95 backdrop-blur-xl border-l border-white/10">
+              <SheetContent className="bg-background">
                 <div className="flex flex-col gap-6 mt-8">
                   <a 
                     href="/buyback-blueprint" 
-                    className="text-foreground hover:text-primary transition-colors duration-300 text-lg font-medium py-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="relative group px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm border border-white/10 text-center"
                   >
-                    Buyback Blueprint
+                    <span className="relative z-10">Buyback Blueprint</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   </a>
 
-                  {/* Mobile CTA */}
-                  <div className="pt-4 border-t border-border/20">
+                  {/* Mobile CTAs */}
+                  <div className="flex flex-col gap-3 mt-6">
                     <Button 
                       onClick={() => setIsMobileMenuOpen(false)} 
                       variant="gradient"
-                      size="lg"
                       className="w-full"
                     >
                       Get Started
