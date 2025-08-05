@@ -132,7 +132,7 @@ export default function BuybackBlueprint() {
 
                     <div className="flex items-center justify-center gap-4 mb-6">
                       <div className="w-px h-8 bg-white/30"></div>
-                      <span className="text-sm text-white/60">OR</span>
+                      <span className="text-sm text-white/90 font-medium">OR</span>
                       <div className="w-px h-8 bg-white/30"></div>
                     </div>
 
@@ -142,10 +142,10 @@ export default function BuybackBlueprint() {
                         alt="Stripe Payment QR Code" 
                         className="w-32 h-32 rounded-lg bg-white p-2"
                       />
-                      <span className="text-sm text-white/60">Scan to pay with Stripe</span>
+                      <span className="text-sm text-white font-medium">Scan to pay with Stripe</span>
                     </div>
                     
-                    <div className="text-sm text-white/60 mt-6">
+                    <div className="text-sm text-white/90 mt-6 font-medium">
                       Start transforming your business today
                     </div>
                   </div>
