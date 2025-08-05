@@ -67,8 +67,6 @@ const Index = () => {
               <span>Hire</span>
               <br />
               <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium">Elite Talent</span>
-              <br />
-              <span className={`text-5xl md:text-6xl lg:text-7xl transition-colors duration-500 ${getHeroSmallTextColor()}`}>in 4 weeks</span>
             </motion.h1>
             
             {/* Subheading */}
@@ -160,7 +158,7 @@ const Index = () => {
               Our Solution
             </div>
             <h3 className="text-4xl md:text-5xl font-light mb-6 text-slate-900">
-              Pre-vetted talent in <span className="text-emerald-600 font-medium">4 weeks</span>
+              <span className="text-emerald-600 font-medium">Pre-vetted talent</span> ready to work
             </h3>
             <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
               We handle the entire process—from sourcing to screening to onboarding—
@@ -192,8 +190,8 @@ const Index = () => {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-slate-900">4 Week Guarantee</h3>
-              <p className="text-slate-600">Hire elite talent in 4 weeks or we keep working</p>
+              <h3 className="text-xl font-semibold mb-2 text-slate-900">Quality Guarantee</h3>
+              <p className="text-slate-600">Hire elite talent or we keep working</p>
             </motion.div>
             
             <motion.div
@@ -221,7 +219,7 @@ const Index = () => {
                 <Target className="w-8 h-8 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2 text-slate-900">Perfect Match</h3>
-              <p className="text-slate-600">Only 1 hour of your time for the perfect hire</p>
+              <p className="text-slate-600">Minimal time investment for the perfect hire</p>
             </motion.div>
           </div>
         </div>
@@ -242,9 +240,9 @@ const Index = () => {
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { title: "4-Week Guarantee", description: "Perfectly matched hire or we keep working" },
-              { title: "Free Replacement", description: "90-day replacement guarantee included" },
-              { title: "Minimal Time Investment", description: "Only 1 hour of your time required" },
+              { title: "Quality Guarantee", description: "Perfectly matched hire or we keep working" },
+              { title: "Free Replacement", description: "Replacement guarantee included" },
+              { title: "Minimal Time Investment", description: "Streamlined process saves your time" },
               { title: "Fixed Pricing", description: "No hidden fees or percentage costs" }
             ].map((guarantee, index) => (
               <motion.div
@@ -301,7 +299,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center gap-2 text-white/80">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm">4-6 week placement guarantee</span>
+                  <span className="text-sm">Quality placement guarantee</span>
                 </div>
               </div>
             </div>

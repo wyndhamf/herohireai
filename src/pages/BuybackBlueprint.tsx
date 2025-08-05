@@ -68,7 +68,7 @@ export default function BuybackBlueprint() {
                     transition={{ delay: 0.5, duration: 0.6 }}
                     className="text-2xl md:text-3xl font-light mb-8 text-white/90 leading-relaxed"
                   >
-                    Hire a world-class Executive Assistant in 60 minutes
+                    Hire a world-class Executive Assistant
                   </motion.p>
                   
                   <motion.div
@@ -175,8 +175,8 @@ export default function BuybackBlueprint() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { icon: Clock, title: "Gain 20+ hrs/week", description: "for high-value work" },
-                { icon: Target, title: "Clear inbox & calendar", description: "by Day 7" },
+                { icon: Clock, title: "Reclaim Your Time", description: "for high-value work" },
+                { icon: Target, title: "Clear inbox & calendar", description: "organized operations" },
                 { icon: Users, title: "Delight clients & investors", description: "automatically—no follow-ups missed" },
                 { icon: Zap, title: "Delegate once", description: "tasks become living, self-updating SOPs" },
                 { icon: Shield, title: "Shield deep work", description: "EA gatekeeps all distractions" },
@@ -226,9 +226,9 @@ export default function BuybackBlueprint() {
                 <h3 className="text-3xl font-semibold mb-8 text-slate-900">What we promise</h3>
                 <div className="space-y-6">
                   {[
-                    "Hire in ≤ 4 weeks.",
-                    "Performance Guarantee: If your EA departs or under-performs in the first 6 months, we replace them free.",
-                    "Total founder time investment for hire: 1 hour of interviewing top candidates"
+                    "Fast hiring process.",
+                    "Performance Guarantee: If your EA departs or under-performs, we replace them free.",
+                    "Minimal founder time investment for hire"
                   ].map((guarantee, index) => (
                     <motion.div
                       key={index}

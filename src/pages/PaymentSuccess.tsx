@@ -23,7 +23,7 @@ export default function PaymentSuccess() {
               </div>
               <h1 className="text-4xl font-bold mb-4">Payment Successful!</h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Thank you for purchasing The Buyback Blueprint™. We'll contact you within 24 hours to get started.
+                Thank you for purchasing The Buyback Blueprint™. We'll contact you soon to get started.
               </p>
             </motion.div>
 
@@ -41,7 +41,7 @@ export default function PaymentSuccess() {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                  <p>Our team will schedule a strategy call within 24 hours</p>
+                  <p>Our team will schedule a strategy call soon</p>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
