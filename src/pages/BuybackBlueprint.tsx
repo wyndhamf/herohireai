@@ -32,8 +32,8 @@ export default function BuybackBlueprint() {
       <main>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Sophisticated Background with proper fade to next section */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950/60 via-slate-900/40 via-blue-600/20 to-blue-600" />
+          {/* Sophisticated Background with seamless blend */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-blue-950/80 via-blue-800/60 to-blue-600" />
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
             <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl" />
@@ -157,7 +157,7 @@ export default function BuybackBlueprint() {
         </section>
 
         {/* Founder Impact Highlights - Seamless transition from hero */}
-        <section className="py-32 px-6 bg-gradient-to-b from-blue-600 via-indigo-600 via-indigo-500/80 to-white/20">
+        <section className="py-32 px-6 bg-gradient-to-b from-blue-600 via-indigo-600 to-slate-100">
           <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -202,7 +202,7 @@ export default function BuybackBlueprint() {
         </section>
 
         {/* Guarantees & EA Skill Stack - Smooth transition */}
-        <section className="py-32 px-6 bg-gradient-to-b from-white/20 via-white to-slate-50/50">
+        <section className="py-32 px-6 bg-gradient-to-b from-slate-100 via-white to-slate-50">
           <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -283,7 +283,7 @@ export default function BuybackBlueprint() {
 
         {/* Quote Section - Smooth transition from white to dark */}
         <section className="relative py-24 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 via-slate-800/90 via-slate-950 to-slate-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-slate-700 to-slate-950" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]" />
           <div className="container mx-auto max-w-4xl text-center relative z-10">
             <motion.div
