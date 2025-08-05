@@ -115,7 +115,7 @@ export default function BuybackBlueprint() {
                     </div>
                     
                     <h2 className="text-4xl md:text-5xl font-light mb-4 text-white">
-                      <span className="text-white font-medium">$10,000 USD</span>
+                      <span className="text-white font-medium">Premium Access</span>
                     </h2>
                     <p className="text-white/70 mb-12 text-lg">
                       Limited to the first 10 founders and CEOs

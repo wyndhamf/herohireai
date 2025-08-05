@@ -9,7 +9,9 @@ interface EmailCaptureProps {
 }
 
 export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -82,7 +84,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-light mb-4 text-slate-900 leading-tight"
             >
-              Skip the line. <span className="text-blue-600 font-medium">Hire in 2 weeks.</span>
+              Skip the line. <span className="text-blue-600 font-medium">Hire fast.</span>
             </motion.h2>
 
             <motion.p
@@ -103,19 +105,35 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
               transition={{ delay: 0.3 }}
               className="max-w-md mx-auto mb-8"
             >
-              <form onSubmit={handleSubmit} className="flex gap-3">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <Input
+                  type="text"
+                  placeholder="Your full name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className="w-full py-6 text-lg border-2 border-slate-200 focus:border-blue-500 bg-white/80 backdrop-blur-sm"
+                />
                 <Input
                   type="email"
                   placeholder="Your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="flex-1 py-6 text-lg border-2 border-slate-200 focus:border-blue-500 bg-white/80 backdrop-blur-sm"
+                  className="w-full py-6 text-lg border-2 border-slate-200 focus:border-blue-500 bg-white/80 backdrop-blur-sm"
+                />
+                <Input
+                  type="tel"
+                  placeholder="Your phone number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                  className="w-full py-6 text-lg border-2 border-slate-200 focus:border-blue-500 bg-white/80 backdrop-blur-sm"
                 />
                 <Button 
                   type="submit" 
                   disabled={isLoading}
-                  className="px-8 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="w-full px-8 py-6 bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   {isLoading ? (
                     <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -139,7 +157,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "" }) =>
             >
               <div className="flex items-center gap-2">
                 <Timer className="w-4 h-4 text-blue-600" />
-                <span>2-week guarantee</span>
+                <span>Quick delivery</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-4 h-4 text-blue-600" />
