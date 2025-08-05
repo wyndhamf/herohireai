@@ -14,7 +14,7 @@ const Footer = () => {
                 <h3 className="font-bold text-lg">Hero</h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                Empowering founders with world-class talent in 60 minutes or less.
+                Empowering founders with world-class talent.
               </p>
               <div className="flex space-x-4">
                 <Button variant="ghost" size="icon">
