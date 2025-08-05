@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
   const [showEmailCapture, setShowEmailCapture] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -115,9 +116,37 @@ const Index = () => {
             >
               ✕
             </button>
-            <EmailCapture className="bg-white rounded-2xl shadow-2xl" onClose={() => setShowEmailCapture(false)} />
+            <EmailCapture 
+              className="bg-white rounded-2xl shadow-2xl" 
+              onClose={() => setShowEmailCapture(false)} 
+              onSubmit={() => {
+                setShowEmailCapture(false);
+                setShowThankYou(true);
+                setTimeout(() => setShowThankYou(false), 5000);
+              }}
+            />
           </div>
         </div>
+      )}
+
+      {/* Thank You Message */}
+      {showThankYou && (
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-emerald-50 border border-emerald-200 rounded-lg shadow-lg p-6 max-w-md w-full mx-4"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-5 h-5 text-emerald-600" />
+            </div>
+            <div>
+              <h3 className="font-semibold text-emerald-900">Thank You!</h3>
+              <p className="text-sm text-emerald-700">We'll contact you shortly to discuss your hiring needs.</p>
+            </div>
+          </div>
+        </motion.div>
       )}
 
       {/* Email Capture Section */}

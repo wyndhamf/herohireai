@@ -7,9 +7,10 @@ import { Input } from "@/components/ui/input";
 interface EmailCaptureProps {
   className?: string;
   onClose?: () => void;
+  onSubmit?: () => void;
 }
 
-export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onClose }) => {
+export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onClose, onSubmit }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -24,7 +25,10 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     setIsLoading(false);
-    setIsSubmitted(true);
+    
+    // Close the modal and trigger parent's onSubmit callback
+    onSubmit?.();
+    onClose?.();
   };
 
   const handleReset = () => {
