@@ -170,125 +170,60 @@ const Index = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-32 px-6 bg-white">
-        <div className="container mx-auto max-w-7xl">
-          <motion.div
+      {/* Simple Value Props */}
+      <section className="py-16 px-6 bg-white">
+        <div className="container mx-auto max-w-4xl text-center">
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-4xl md:text-5xl font-light mb-12 text-slate-900"
           >
-            <h2 className="text-5xl md:text-6xl font-light mb-8 text-slate-900">
-              How it <span className="text-blue-600 font-medium">works</span>
-            </h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Our streamlined process eliminates the traditional hiring headaches
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Step 1 */}
+            Why <span className="text-blue-600 font-medium">Hero</span>?
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-slate-900">4 Week Guarantee</h3>
+              <p className="text-slate-600">Hire elite talent in 4 weeks or we keep working</p>
+            </motion.div>
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="relative"
+              className="text-center"
             >
-              <div className="bg-white rounded-3xl p-10 shadow-sm border border-slate-100 h-full hover:shadow-md transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-8">
-                  <FileText className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-sm font-semibold text-blue-600 mb-3 tracking-wide">STEP 1</div>
-                <h3 className="text-2xl font-semibold mb-6 text-slate-900">Define Requirements</h3>
-                <p className="text-slate-600 leading-relaxed mb-8">
-                  Tell us exactly what you need in a 30-minute consultation. We'll create a detailed role specification and candidate profile.
-                </p>
-                <div className="text-sm text-slate-500">
-                  ⏱️ 30 minutes of your time
-                </div>
+              <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-emerald-600" />
               </div>
-              <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
-                <ArrowRight className="w-6 h-6 text-slate-300" />
-              </div>
+              <h3 className="text-xl font-semibold mb-2 text-slate-900">Pre-Vetted</h3>
+              <p className="text-slate-600">All candidates are screened and reference-checked</p>
             </motion.div>
-
-            {/* Step 2 */}
+            
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative"
+              className="text-center"
             >
-              <div className="bg-white rounded-3xl p-10 shadow-sm border border-slate-100 h-full hover:shadow-md transition-all duration-300">
-                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-8">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-sm font-semibold text-indigo-600 mb-3 tracking-wide">STEP 2</div>
-                <h3 className="text-2xl font-semibold mb-6 text-slate-900">AI-Powered Sourcing</h3>
-                <p className="text-slate-600 leading-relaxed mb-8">
-                  Our platform screens thousands of candidates using advanced AI, testing skills, cultural fit, and experience to find perfect matches.
-                </p>
-                <div className="text-sm text-slate-500">
-                  ⚡ 2-3 weeks automated process
-                </div>
+              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Target className="w-8 h-8 text-purple-600" />
               </div>
-              <div className="absolute -right-6 top-1/2 transform -translate-y-1/2 hidden lg:block">
-                <ArrowRight className="w-6 h-6 text-slate-300" />
-              </div>
-            </motion.div>
-
-            {/* Step 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-            <div className="bg-white rounded-3xl p-10 shadow-sm border border-slate-100 h-full hover:shadow-md transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-8">
-                <Target className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-sm font-semibold text-purple-600 mb-3 tracking-wide">STEP 3</div>
-              <h3 className="text-2xl font-semibold mb-6 text-slate-900">Interview & Hire</h3>
-              <p className="text-slate-600 leading-relaxed mb-8">
-                Meet 2-3 pre-vetted finalists. Each comes with detailed profiles, work samples, and reference checks already completed.
-              </p>
-              <div className="text-sm text-slate-500 font-medium">
-                🎯 1 week to final decision
-              </div>
-              </div>
+              <h3 className="text-xl font-semibold mb-2 text-slate-900">Perfect Match</h3>
+              <p className="text-slate-600">Only 1 hour of your time for the perfect hire</p>
             </motion.div>
           </div>
-
-          {/* Results Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-24 text-center bg-gradient-to-r from-blue-600 to-indigo-600 rounded-3xl p-16 text-white shadow-xl"
-          >
-            <h3 className="text-3xl md:text-4xl font-semibold mb-8">The Result</h3>
-            <p className="text-xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed">
-              You get a perfectly matched hire in 4 weeks, not 4 months
-            </p>
-            <div className="grid md:grid-cols-3 gap-12 text-center">
-              <div className="p-6">
-                <div className="text-4xl font-bold mb-3">4 weeks</div>
-                <div className="text-blue-200 text-lg">Total time to hire</div>
-              </div>
-              <div className="p-6">
-                <div className="text-4xl font-bold mb-3">98%</div>
-                <div className="text-blue-200 text-lg">Success rate</div>
-              </div>
-              <div className="p-6">
-                <div className="text-4xl font-bold mb-3">1 hour</div>
-                <div className="text-blue-200 text-lg">Your time invested</div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

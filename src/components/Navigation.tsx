@@ -63,71 +63,14 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
-            {/* Product Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Product
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-               <DropdownMenuContent className="bg-background border-border">
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/eas" className="w-full">EAs</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/engineers" className="w-full">Engineers</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/sdrs" className="w-full">SDRs</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/ops" className="w-full">Ops</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/marketing" className="w-full">Marketing</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/success" className="w-full">Success</a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-
-            {/* Resources Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                Resources
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border-border">
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/hiring-playbooks" className="w-full">Hiring Playbooks</a>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/faq" className="w-full">FAQ</a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            {/* About Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
-                About
-                <ChevronDown className="h-3 w-3" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border-border">
-                <DropdownMenuItem className="cursor-pointer">
-                  <a href="/heros-mission" className="w-full">Hero's Mission</a>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-
+            <a href="/buyback-blueprint" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Buyback Blueprint
+            </a>
+            
             {/* CTAs */}
             <div className="flex items-center gap-3 ml-4">
-              <Button variant="ghost" size="sm" className="text-sm">
-                Login
-              </Button>
               <Button size="sm" className="bg-primary hover:bg-primary/90">
-                Book Demo
+                Get Started
               </Button>
             </div>
           </div>
@@ -142,46 +85,14 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent className="bg-background">
                 <div className="flex flex-col gap-6 mt-8">
-                  {/* Mobile Product Section */}
-                  <div>
-                    <h3 className="font-semibold mb-3">Product</h3>
-                    <div className="flex flex-col gap-2 ml-4">
-                      <a href="/eas" className="text-muted-foreground hover:text-foreground">EAs</a>
-                      <a href="/engineers" className="text-muted-foreground hover:text-foreground">Engineers</a>
-                      <a href="/sdrs" className="text-muted-foreground hover:text-foreground">SDRs</a>
-                      <a href="/ops" className="text-muted-foreground hover:text-foreground">Ops</a>
-                      <a href="/marketing" className="text-muted-foreground hover:text-foreground">Marketing</a>
-                      <a href="/success" className="text-muted-foreground hover:text-foreground">Success</a>
-                    </div>
-                  </div>
-
-
-                  {/* Mobile Resources Section */}
-                  <div>
-                    <h3 className="font-semibold mb-3">Resources</h3>
-                    <div className="flex flex-col gap-2 ml-4">
-                      
-                      <a href="/hiring-playbooks" className="text-muted-foreground hover:text-foreground">Hiring Playbooks</a>
-                      
-                      <a href="/faq" className="text-muted-foreground hover:text-foreground">FAQ</a>
-                    </div>
-                  </div>
-
-                  {/* Mobile About Section */}
-                  <div>
-                    <h3 className="font-semibold mb-3">About</h3>
-                    <div className="flex flex-col gap-2 ml-4">
-                      <a href="/heros-mission" className="text-muted-foreground hover:text-foreground">Hero's Mission</a>
-                    </div>
-                  </div>
+                  <a href="/buyback-blueprint" className="text-muted-foreground hover:text-foreground">
+                    Buyback Blueprint
+                  </a>
 
                   {/* Mobile CTAs */}
                   <div className="flex flex-col gap-3 mt-6">
-                    <Button variant="outline" onClick={() => setIsMobileMenuOpen(false)}>
-                      Login
-                    </Button>
                     <Button onClick={() => setIsMobileMenuOpen(false)} className="bg-primary hover:bg-primary/90">
-                      Book Demo
+                      Get Started
                     </Button>
                   </div>
                 </div>
