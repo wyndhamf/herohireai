@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle, Sparkles, Timer, Zap, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 interface EmailCaptureProps {
   className?: string;
@@ -16,19 +18,50 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
   const [phone, setPhone] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsLoading(false);
-    
-    // Close the modal and trigger parent's onSubmit callback
-    onSubmit?.();
-    onClose?.();
+    try {
+      // Save to Supabase
+      const { error } = await supabase
+        .from('lead_captures')
+        .insert({
+          name,
+          email,
+          phone,
+          source: 'email_capture'
+        });
+
+      if (error) {
+        throw error;
+      }
+
+      setIsSubmitted(true);
+      
+      toast({
+        title: "Thank you!",
+        description: "We've received your information and will be in touch soon.",
+      });
+
+      // Trigger parent callbacks after a short delay to show success message
+      setTimeout(() => {
+        onSubmit?.();
+        onClose?.();
+      }, 3000);
+
+    } catch (error) {
+      console.error('Error saving lead:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleReset = () => {
