@@ -81,15 +81,16 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="lg:hidden">
+          <div className="lg:hidden flex items-center">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button 
                   variant="ghost" 
                   size="icon" 
-                  className="h-9 w-9 text-white hover:bg-white/10 rounded-full transition-colors"
+                  className="h-10 w-10 text-white hover:bg-white/10 rounded-full transition-colors border border-white/20"
                 >
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Toggle menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent className="bg-background/95 backdrop-blur-xl border-l border-white/10">
