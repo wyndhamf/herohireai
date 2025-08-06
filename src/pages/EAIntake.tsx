@@ -18,9 +18,9 @@ import { cn } from '@/lib/utils';
 // Form validation schema
 const formSchema = z.object({
   // Section 1: Goals & Needs
-  outcomes: z.string().min(10, "Please provide at least 10 characters"),
-  timeWasters: z.string().min(10, "Please provide at least 10 characters"),
-  hoursAndTimezone: z.string().min(10, "Please provide at least 10 characters"),
+  outcomes: z.string().min(1, "This field is required"),
+  timeWasters: z.string().min(1, "This field is required"),
+  hoursAndTimezone: z.string().min(1, "This field is required"),
   
   // Section 2: Role & Fit
   remoteEA: z.enum(['yes', 'no']).refine((val) => val !== undefined, {
@@ -33,9 +33,9 @@ const formSchema = z.object({
   tools: z.array(z.string()).min(1, "Please select at least one tool"),
   
   // Section 3: Working Style
-  previousExperience: z.string().min(10, "Please provide at least 10 characters"),
+  previousExperience: z.string().min(1, "This field is required"),
   communication: z.array(z.string()).min(1, "Please select at least one communication method"),
-  leadershipStyle: z.string().min(10, "Please provide at least 10 characters"),
+  leadershipStyle: z.string().min(1, "This field is required"),
 });
 
 type FormData = z.infer<typeof formSchema>;
