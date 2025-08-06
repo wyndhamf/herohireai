@@ -67,7 +67,7 @@ const Index = () => {
             >
               <span>Hire</span>
               <br />
-              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium">Elite Talent</span>
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium [text-shadow:_0_1px_2px_rgba(0,0,0,0.3),_0_0_10px_rgba(255,255,255,0.2)]">Elite Talent</span>
             </motion.h1>
             
             {/* Subheading */}
