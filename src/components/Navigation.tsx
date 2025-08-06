@@ -107,16 +107,24 @@ const Navigation = () => {
                     <span className="font-bold text-lg text-foreground">Hero</span>
                   </Link>
                   
-                  {/* Navigation Links */}
-                  <div className="flex flex-col gap-4 flex-1">
-                    <Link 
-                      to="/buyback-blueprint" 
-                      className="px-4 py-3 text-sm font-medium text-foreground bg-primary/10 hover:bg-primary/20 rounded-xl transition-colors border border-primary/20"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Buyback Blueprint
-                    </Link>
-                  </div>
+                   {/* Navigation Links */}
+                   <div className="flex flex-col gap-4 flex-1">
+                     <Link 
+                       to="/buyback-blueprint" 
+                       className="px-4 py-3 text-sm font-medium text-foreground bg-primary/10 hover:bg-primary/20 rounded-xl transition-colors border border-primary/20"
+                       onClick={() => setIsMobileMenuOpen(false)}
+                     >
+                       Buyback Blueprint
+                     </Link>
+                     
+                     <Link 
+                       to="/ea-intake" 
+                       className="px-4 py-3 text-sm font-medium text-foreground bg-primary/10 hover:bg-primary/20 rounded-xl transition-colors border border-primary/20"
+                       onClick={() => setIsMobileMenuOpen(false)}
+                     >
+                       EA Intake Form
+                     </Link>
+                   </div>
 
                   {/* Bottom CTA */}
                   <div className="mt-auto pb-8">
