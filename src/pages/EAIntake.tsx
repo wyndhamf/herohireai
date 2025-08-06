@@ -163,25 +163,25 @@ const EAIntake = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md p-8 text-center">
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-semibold text-gray-900 mb-2">Thanks for sharing</h2>
-          <p className="text-gray-600 mb-4">We'll email you within 72 hours with the next steps.</p>
-          <p className="text-sm text-gray-500">Redirecting to home page in a few seconds...</p>
+          <h2 className="text-2xl font-semibold text-foreground mb-2">Thanks for sharing</h2>
+          <p className="text-muted-foreground mb-4">We'll email you within 72 hours with the next steps.</p>
+          <p className="text-sm text-muted-foreground">Redirecting to home page in a few seconds...</p>
         </Card>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Fixed Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 bg-white border-b border-gray-200 z-50">
+      <div className="fixed top-0 left-0 right-0 bg-card border-b border-border z-50">
         <div className="max-w-2xl mx-auto px-4 py-4">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium text-gray-700">Section {currentSection} of 3</span>
-            <span className="text-sm font-medium text-gray-700">{getTotalProgress()}% complete</span>
+            <span className="text-sm font-medium text-foreground">Section {currentSection} of 3</span>
+            <span className="text-sm font-medium text-foreground">{getTotalProgress()}% complete</span>
           </div>
           <Progress value={getTotalProgress()} className="h-2" />
         </div>
@@ -191,18 +191,18 @@ const EAIntake = () => {
       <div className="pt-24 pb-32 px-4">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">EA Intake Form</h1>
-            <p className="text-gray-600">Help us understand your needs to find the perfect Executive Assistant</p>
+            <h1 className="text-3xl font-bold text-foreground mb-2">EA Intake Form</h1>
+            <p className="text-muted-foreground">Help us understand your needs to find the perfect Executive Assistant</p>
           </div>
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               {/* Section 1: Goals & Needs */}
               {currentSection === 1 && (
-                <Card className="p-6 animate-fade-in">
+                <Card className="p-6">
                   <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-2">Goals & Needs</h2>
-                    <p className="text-gray-600">Tell us about your objectives and current challenges</p>
+                    <h2 className="text-xl font-semibold text-foreground mb-2">Goals & Needs</h2>
+                    <p className="text-muted-foreground">Tell us about your objectives and current challenges</p>
                   </div>
                   
                   <div className="space-y-6">
@@ -211,7 +211,7 @@ const EAIntake = () => {
                       name="outcomes"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
+                          <FormLabel>
                             What are the top 3 outcomes you want your EA to drive in the next 90 days?
                           </FormLabel>
                           <FormControl>
@@ -231,7 +231,7 @@ const EAIntake = () => {
                       name="timeWasters"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
+                          <FormLabel>
                             What's currently stealing the most time and energy from your week?
                           </FormLabel>
                           <FormControl>
@@ -251,7 +251,7 @@ const EAIntake = () => {
                       name="hoursAndTimezone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
+                          <FormLabel>
                             How many hours per week do you expect your EA to work—and during what time zone/hours?
                           </FormLabel>
                           <FormControl>
@@ -271,10 +271,10 @@ const EAIntake = () => {
 
               {/* Section 2: Role & Fit */}
               {currentSection === 2 && (
-                <Card className="p-6 animate-fade-in">
+                <Card className="p-6">
                   <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-2">Role & Fit</h2>
-                    <p className="text-gray-600">Help us understand the role requirements and budget</p>
+                    <h2 className="text-xl font-semibold text-foreground mb-2">Role & Fit</h2>
+                    <p className="text-muted-foreground">Help us understand the role requirements and budget</p>
                   </div>
                   
                   <div className="space-y-6">
@@ -283,7 +283,7 @@ const EAIntake = () => {
                       name="remoteEA"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
+                          <FormLabel>
                             Are you open to working with a remote Executive Assistant based in North America?
                           </FormLabel>
                           <FormControl>
@@ -312,7 +312,7 @@ const EAIntake = () => {
                       name="budget"
                       render={({ field }) => (
                         <FormItem>
-                           <FormLabel className="text-sm font-medium text-gray-700">
+                           <FormLabel>
                              What's your yearly salary budget for this role (in USD)?
                            </FormLabel>
                           <FormControl>
@@ -331,7 +331,7 @@ const EAIntake = () => {
                       name="focus"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
+                          <FormLabel>
                             Do you want this EA focused only on business tasks, or also on personal/family life?
                           </FormLabel>
                           <FormControl>
@@ -364,7 +364,7 @@ const EAIntake = () => {
                       name="tools"
                       render={() => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
+                          <FormLabel>
                             What tools and systems do you already use that the EA needs to plug into?
                           </FormLabel>
                           <div className="grid grid-cols-2 gap-3 mt-2">
@@ -412,10 +412,10 @@ const EAIntake = () => {
 
               {/* Section 3: Working Style */}
               {currentSection === 3 && (
-                <Card className="p-6 animate-fade-in">
+                <Card className="p-6">
                   <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-2">Working Style</h2>
-                    <p className="text-gray-600">Tell us about your preferences and communication style</p>
+                    <h2 className="text-xl font-semibold text-foreground mb-2">Working Style</h2>
+                    <p className="text-muted-foreground">Tell us about your work preferences and experience</p>
                   </div>
                   
                   <div className="space-y-6">
@@ -424,12 +424,12 @@ const EAIntake = () => {
                       name="previousExperience"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
-                            What was your experience with previous EAs (good or bad)? What worked or didn't?
+                          <FormLabel>
+                            Have you worked with an EA before? If so, what worked well and what didn't?
                           </FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Share your past experiences with Executive Assistants..."
+                              placeholder="Share your previous experience with Executive Assistants..."
                               className="min-h-[100px]"
                               {...field} 
                             />
@@ -444,8 +444,8 @@ const EAIntake = () => {
                       name="communication"
                       render={() => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
-                            How do you prefer to communicate and review work—daily huddles, async Looms, Slack, etc.?
+                          <FormLabel>
+                            How do you prefer to stay in sync with your EA?
                           </FormLabel>
                           <div className="grid grid-cols-1 gap-3 mt-2">
                             {communicationOptions.map((option) => (
@@ -492,12 +492,12 @@ const EAIntake = () => {
                       name="leadershipStyle"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
-                            What's your leadership style, and how do you want your EA to interface with the rest of your team?
+                          <FormLabel>
+                            How would you describe your leadership and communication style?
                           </FormLabel>
                           <FormControl>
                             <Textarea 
-                              placeholder="Describe your leadership approach and team dynamics..."
+                              placeholder="Describe how you like to work with your team members..."
                               className="min-h-[100px]"
                               {...field} 
                             />
@@ -515,8 +515,8 @@ const EAIntake = () => {
       </div>
 
       {/* Fixed Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4">
-        <div className="max-w-2xl mx-auto flex justify-between">
+      <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border p-4">
+        <div className="max-w-2xl mx-auto flex justify-between items-center">
           <Button
             type="button"
             variant="outline"
@@ -528,11 +528,23 @@ const EAIntake = () => {
             Back
           </Button>
 
+          <div className="flex gap-2">
+            {[1, 2, 3].map((section) => (
+              <div
+                key={section}
+                className={cn(
+                  "w-2 h-2 rounded-full",
+                  section === currentSection ? "bg-primary" : section < currentSection ? "bg-primary/50" : "bg-muted"
+                )}
+              />
+            ))}
+          </div>
+
           {currentSection < 3 ? (
             <Button
               type="button"
               onClick={handleNext}
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700"
+              className="flex items-center gap-2"
             >
               Continue
               <ChevronRight className="w-4 h-4" />
@@ -541,9 +553,9 @@ const EAIntake = () => {
             <Button
               type="submit"
               onClick={form.handleSubmit(onSubmit)}
-              className="bg-blue-600 hover:bg-blue-700"
+              className="bg-primary hover:bg-primary/90"
             >
-              Submit My EA Profile
+              Submit
             </Button>
           )}
         </div>
