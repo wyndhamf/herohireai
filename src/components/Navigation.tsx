@@ -3,7 +3,7 @@ import { Menu, ChevronDown, Command } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ProcessedLogo } from "./ProcessedLogo";
 import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "./ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -94,11 +94,9 @@ const Navigation = () => {
                 </Button>
               </SheetTrigger>
               <SheetContent className="bg-background/95 backdrop-blur-xl border-l border-white/10">
+                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                <SheetDescription className="sr-only">Mobile navigation menu</SheetDescription>
                 <div className="flex flex-col h-full pt-12">
-                  <div className="sr-only">
-                    <h2>Navigation Menu</h2>
-                    <p>Mobile navigation menu</p>
-                  </div>
                   {/* Logo Section */}
                   <Link 
                     to="/" 
