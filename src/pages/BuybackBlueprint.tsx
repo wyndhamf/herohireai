@@ -283,7 +283,7 @@ export default function BuybackBlueprint() {
 
         {/* Quote Section - Smooth transition from white to dark */}
         <section className="relative py-24 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-slate-700 to-slate-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-slate-600 to-slate-800" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1),transparent_50%)]" />
           <div className="container mx-auto max-w-4xl text-center relative z-10">
             <motion.div
