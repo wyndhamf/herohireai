@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import BuybackBlueprint from "./pages/BuybackBlueprint";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import EAIntake from "./pages/EAIntake";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,6 +29,7 @@ const App = () => {
               <Route path="/" element={<Index />} />
               <Route path="/buyback-blueprint" element={<BuybackBlueprint />} />
               <Route path="/payment-success" element={<PaymentSuccess />} />
+              <Route path="/ea-intake" element={<EAIntake />} />
             </Routes>
           </BrowserRouter>
         </div>
