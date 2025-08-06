@@ -95,10 +95,14 @@ const Navigation = () => {
               <SheetContent className="bg-background/95 backdrop-blur-xl border-l border-white/10">
                 <div className="flex flex-col h-full pt-12">
                   {/* Logo Section */}
-                  <div className="flex items-center gap-2 mb-8 px-2">
+                  <Link 
+                    to="/" 
+                    className="flex items-center gap-2 mb-8 px-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
                     <ProcessedLogo className="w-6 h-6" />
                     <span className="font-bold text-lg text-foreground">Hero</span>
-                  </div>
+                  </Link>
                   
                   {/* Navigation Links */}
                   <div className="flex flex-col gap-4 flex-1">
