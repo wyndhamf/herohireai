@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, ChevronDown, Command } from "lucide-react";
+import { Link } from "react-router-dom";
 import { ProcessedLogo } from "./ProcessedLogo";
 import { Button } from "./ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
@@ -56,10 +57,10 @@ const Navigation = () => {
     >
       <div className="mx-auto h-full px-6">
         <nav className="flex items-center justify-between h-full">
-          <a href="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <ProcessedLogo className="w-5 h-5" />
             <span className="font-bold text-base text-white">Hero</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
