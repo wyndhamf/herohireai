@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { ChevronRight, ChevronLeft, CheckCircle } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -107,8 +109,35 @@ const EAIntake = () => {
   };
 
   const onSubmit = async (data: FormData) => {
-    console.log('Form submitted:', data);
-    setIsSubmitted(true);
+    try {
+      const { error } = await supabase
+        .from('ea_intake_submissions')
+        .insert({
+          outcomes: data.outcomes,
+          time_wasters: data.timeWasters,
+          hours_and_timezone: data.hoursAndTimezone,
+          remote_ea: data.remoteEA,
+          budget: data.budget,
+          focus: data.focus,
+          tools: data.tools,
+          previous_experience: data.previousExperience,
+          communication_preferences: data.communication,
+          leadership_style: data.leadershipStyle,
+        });
+
+      if (error) {
+        console.error('Error submitting form:', error);
+        toast.error('Failed to submit form. Please try again.');
+        return;
+      }
+
+      console.log('Form submitted successfully');
+      toast.success('Form submitted successfully!');
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Failed to submit form. Please try again.');
+    }
   };
 
   if (isSubmitted) {

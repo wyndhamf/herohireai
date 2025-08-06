@@ -14,6 +14,54 @@ export type Database = {
   }
   public: {
     Tables: {
+      ea_intake_submissions: {
+        Row: {
+          budget: string
+          communication_preferences: string[]
+          created_at: string
+          focus: string
+          hours_and_timezone: string
+          id: string
+          leadership_style: string
+          outcomes: string
+          previous_experience: string
+          remote_ea: string
+          time_wasters: string
+          tools: string[]
+          updated_at: string
+        }
+        Insert: {
+          budget: string
+          communication_preferences: string[]
+          created_at?: string
+          focus: string
+          hours_and_timezone: string
+          id?: string
+          leadership_style: string
+          outcomes: string
+          previous_experience: string
+          remote_ea: string
+          time_wasters: string
+          tools: string[]
+          updated_at?: string
+        }
+        Update: {
+          budget?: string
+          communication_preferences?: string[]
+          created_at?: string
+          focus?: string
+          hours_and_timezone?: string
+          id?: string
+          leadership_style?: string
+          outcomes?: string
+          previous_experience?: string
+          remote_ea?: string
+          time_wasters?: string
+          tools?: string[]
+          updated_at?: string
+        }
+        Relationships: []
+      }
       lead_captures: {
         Row: {
           created_at: string
