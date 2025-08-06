@@ -316,8 +316,8 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Button 
                 size="xl" 
-                variant="glass" 
-                className="bg-white/95 text-primary hover:bg-white px-12 py-6 hover:scale-105"
+                variant="secondary"
+                className="bg-white text-primary hover:bg-white/95 px-12 py-6 hover:scale-105 shadow-lg hover:shadow-xl border-0"
                 onClick={() => setShowEmailCapture(true)}
               >
                 Get Started Today <ArrowRight className="ml-2 w-5 h-5" />
