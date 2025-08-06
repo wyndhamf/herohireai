@@ -290,12 +290,12 @@ const EAIntake = () => {
                       name="budget"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel className="text-sm font-medium text-gray-700">
-                            What's your annual budget for this role (in USD)?
-                          </FormLabel>
+                           <FormLabel className="text-sm font-medium text-gray-700">
+                             What's your yearly salary budget for this role (in USD)?
+                           </FormLabel>
                           <FormControl>
-                            <Input 
-                              placeholder="e.g., $60,000/year"
+                             <Input 
+                               placeholder="e.g., $60,000 yearly salary"
                               {...field} 
                             />
                           </FormControl>
