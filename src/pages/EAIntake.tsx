@@ -175,34 +175,34 @@ const EAIntake = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/95">
       {/* Fixed Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 bg-card border-b border-border z-50">
-        <div className="max-w-2xl mx-auto px-4 py-4">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium text-foreground">Section {currentSection} of 3</span>
-            <span className="text-sm font-medium text-foreground">{getTotalProgress()}% complete</span>
+      <div className="fixed top-0 left-0 right-0 bg-card/95 backdrop-blur-sm border-b border-border/50 z-50">
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center mb-3">
+            <span className="text-sm font-semibold text-foreground">Section {currentSection} of 3</span>
+            <span className="text-sm font-semibold text-foreground">{getTotalProgress()}% complete</span>
           </div>
           <Progress value={getTotalProgress()} className="h-2" />
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="pt-24 pb-32 px-4">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-foreground mb-2">EA Intake Form</h1>
-            <p className="text-muted-foreground">Help us understand your needs to find the perfect Executive Assistant</p>
+      <div className="pt-28 pb-16 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">EA Intake Form</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Help us understand your needs to find the perfect Executive Assistant</p>
           </div>
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               {/* Section 1: Goals & Needs */}
               {currentSection === 1 && (
-                <Card className="p-6">
-                  <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-foreground mb-2">Goals & Needs</h2>
-                    <p className="text-muted-foreground">Tell us about your objectives and current challenges</p>
+                <Card className="p-8 shadow-lg border-0 bg-card/50 backdrop-blur-sm">
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-bold text-foreground mb-3">Goals & Needs</h2>
+                    <p className="text-muted-foreground text-lg">Tell us about your objectives and current challenges</p>
                   </div>
                   
                   <div className="space-y-6">
@@ -271,10 +271,10 @@ const EAIntake = () => {
 
               {/* Section 2: Role & Fit */}
               {currentSection === 2 && (
-                <Card className="p-6">
-                  <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-foreground mb-2">Role & Fit</h2>
-                    <p className="text-muted-foreground">Help us understand the role requirements and budget</p>
+                <Card className="p-8 shadow-lg border-0 bg-card/50 backdrop-blur-sm">
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-bold text-foreground mb-3">Role & Fit</h2>
+                    <p className="text-muted-foreground text-lg">Help us understand the role requirements and budget</p>
                   </div>
                   
                   <div className="space-y-6">
@@ -412,10 +412,10 @@ const EAIntake = () => {
 
               {/* Section 3: Working Style */}
               {currentSection === 3 && (
-                <Card className="p-6">
-                  <div className="mb-6">
-                    <h2 className="text-xl font-semibold text-foreground mb-2">Working Style</h2>
-                    <p className="text-muted-foreground">Tell us about your work preferences and experience</p>
+                <Card className="p-8 shadow-lg border-0 bg-card/50 backdrop-blur-sm">
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-bold text-foreground mb-3">Working Style</h2>
+                    <p className="text-muted-foreground text-lg">Tell us about your work preferences and experience</p>
                   </div>
                   
                   <div className="space-y-6">
