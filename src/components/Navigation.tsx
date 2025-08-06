@@ -94,6 +94,10 @@ const Navigation = () => {
               </SheetTrigger>
               <SheetContent className="bg-background/95 backdrop-blur-xl border-l border-white/10">
                 <div className="flex flex-col h-full pt-12">
+                  <div className="sr-only">
+                    <h2>Navigation Menu</h2>
+                    <p>Mobile navigation menu</p>
+                  </div>
                   {/* Logo Section */}
                   <Link 
                     to="/" 
