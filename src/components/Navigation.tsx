@@ -81,7 +81,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="lg:hidden flex items-center">
+          <div className="flex items-center">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button 
