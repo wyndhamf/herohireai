@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { ChevronRight, ChevronLeft, CheckCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
@@ -55,6 +56,7 @@ const communicationOptions = [
 const EAIntake = () => {
   const [currentSection, setCurrentSection] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -140,13 +142,25 @@ const EAIntake = () => {
     }
   };
 
+  // Redirect to home page after 5 seconds when form is submitted
+  useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        navigate('/');
+      }, 5000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isSubmitted, navigate]);
+
   if (isSubmitted) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         <Card className="w-full max-w-md p-8 text-center">
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">Thanks for sharing</h2>
-          <p className="text-gray-600">We'll follow up with the next steps shortly.</p>
+          <p className="text-gray-600 mb-4">We'll email you within 72 hours with the next steps.</p>
+          <p className="text-sm text-gray-500">Redirecting to home page in a few seconds...</p>
         </Card>
       </div>
     );
