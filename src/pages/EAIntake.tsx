@@ -61,8 +61,16 @@ const EAIntake = () => {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      outcomes: "",
+      timeWasters: "",
+      hoursAndTimezone: "",
+      remoteEA: undefined,
+      budget: "",
+      focus: undefined,
       tools: [],
+      previousExperience: "",
       communication: [],
+      leadershipStyle: "",
     },
   });
 
