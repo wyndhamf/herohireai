@@ -18,6 +18,11 @@ import { cn } from '@/lib/utils';
 
 // Form validation schema
 const formSchema = z.object({
+  // Contact Information
+  name: z.string().min(1, "Please enter your full name"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(1, "Please enter your phone number"),
+  
   // Section 1: Goals & Needs
   outcomes: z.string().min(1, "This field is required"),
   timeWasters: z.string().min(1, "This field is required"),
@@ -61,6 +66,9 @@ const EAIntake = () => {
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
       outcomes: "",
       timeWasters: "",
       hoursAndTimezone: "",
@@ -77,9 +85,12 @@ const EAIntake = () => {
   const watchedFields = form.watch();
   
   const getTotalProgress = () => {
-    const totalFields = 10;
+    const totalFields = 13;
     let completedFields = 0;
     
+    if (watchedFields.name) completedFields++;
+    if (watchedFields.email) completedFields++;
+    if (watchedFields.phone) completedFields++;
     if (watchedFields.outcomes) completedFields++;
     if (watchedFields.timeWasters) completedFields++;
     if (watchedFields.hoursAndTimezone) completedFields++;
@@ -96,7 +107,7 @@ const EAIntake = () => {
 
   const validateCurrentSection = async () => {
     const fields = {
-      1: ['outcomes', 'timeWasters', 'hoursAndTimezone'],
+      1: ['name', 'email', 'phone', 'outcomes', 'timeWasters', 'hoursAndTimezone'],
       2: ['remoteEA', 'budget', 'focus', 'tools'],
       3: ['previousExperience', 'communication', 'leadershipStyle']
     };
@@ -123,6 +134,9 @@ const EAIntake = () => {
       const { error } = await supabase
         .from('ea_intake_submissions')
         .insert({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
           outcomes: data.outcomes,
           time_wasters: data.timeWasters,
           hours_and_timezone: data.hoursAndTimezone,
@@ -197,15 +211,56 @@ const EAIntake = () => {
 
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              {/* Section 1: Goals & Needs */}
+              {/* Section 1: Contact & Goals */}
               {currentSection === 1 && (
                 <Card className="p-8 shadow-lg border-0 bg-card/50 backdrop-blur-sm">
                   <div className="mb-8">
-                    <h2 className="text-2xl font-bold text-foreground mb-3">Goals & Needs</h2>
-                    <p className="text-muted-foreground text-lg">Tell us about your objectives and current challenges</p>
+                    <h2 className="text-2xl font-bold text-foreground mb-3">Contact & Goals</h2>
+                    <p className="text-muted-foreground text-lg">Your contact information and objectives</p>
                   </div>
                   
                   <div className="space-y-6">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Full Name</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Enter your full name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email Address</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Enter your email address" type="email" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Phone Number</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Enter your phone number" type="tel" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                     <FormField
                       control={form.control}
                       name="outcomes"

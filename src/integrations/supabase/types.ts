@@ -19,11 +19,14 @@ export type Database = {
           budget: string
           communication_preferences: string[]
           created_at: string
+          email: string
           focus: string
           hours_and_timezone: string
           id: string
           leadership_style: string
+          name: string
           outcomes: string
+          phone: string | null
           previous_experience: string
           remote_ea: string
           time_wasters: string
@@ -34,11 +37,14 @@ export type Database = {
           budget: string
           communication_preferences: string[]
           created_at?: string
+          email?: string
           focus: string
           hours_and_timezone: string
           id?: string
           leadership_style: string
+          name?: string
           outcomes: string
+          phone?: string | null
           previous_experience: string
           remote_ea: string
           time_wasters: string
@@ -49,11 +55,14 @@ export type Database = {
           budget?: string
           communication_preferences?: string[]
           created_at?: string
+          email?: string
           focus?: string
           hours_and_timezone?: string
           id?: string
           leadership_style?: string
+          name?: string
           outcomes?: string
+          phone?: string | null
           previous_experience?: string
           remote_ea?: string
           time_wasters?: string
