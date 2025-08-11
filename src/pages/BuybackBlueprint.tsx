@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
 import { CheckCircle, Clock, Shield, Users, Target, Zap, UserPlus, TrendingUp, Heart, ArrowRight } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { EmailCapture } from "@/components/EmailCapture";
 
 export default function BuybackBlueprint() {
+  const [showCapture, setShowCapture] = useState(false);
+
   const handlePayment = async () => {
     try {
       const response = await fetch('/functions/v1/create-payment', {
@@ -124,7 +128,7 @@ export default function BuybackBlueprint() {
                     <Button 
                       size="lg" 
                       className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 px-12 py-6 text-lg font-medium rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group w-full mb-8"
-                      onClick={handlePayment}
+                      onClick={() => setShowCapture(true)}
                     >
                       Secure Your Spot Now
                       <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -300,6 +304,14 @@ export default function BuybackBlueprint() {
           </div>
         </section>
       </main>
+
+      {showCapture && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+          <div className="max-w-2xl w-full">
+            <EmailCapture onClose={() => setShowCapture(false)} onSubmit={() => setShowCapture(false)} />
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
