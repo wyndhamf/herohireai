@@ -17,6 +17,9 @@ export type Database = {
       ea_intake_submissions: {
         Row: {
           budget: string
+          business_description: string
+          business_location: string
+          business_name: string
           communication_preferences: string[]
           created_at: string
           email: string
@@ -28,13 +31,19 @@ export type Database = {
           outcomes: string
           phone: string | null
           previous_experience: string
+          referral_source: string
           remote_ea: string
+          team_modality: string
+          team_size: string
           time_wasters: string
           tools: string[]
           updated_at: string
         }
         Insert: {
           budget: string
+          business_description?: string
+          business_location?: string
+          business_name?: string
           communication_preferences: string[]
           created_at?: string
           email?: string
@@ -46,13 +55,19 @@ export type Database = {
           outcomes: string
           phone?: string | null
           previous_experience: string
+          referral_source?: string
           remote_ea: string
+          team_modality?: string
+          team_size?: string
           time_wasters: string
           tools: string[]
           updated_at?: string
         }
         Update: {
           budget?: string
+          business_description?: string
+          business_location?: string
+          business_name?: string
           communication_preferences?: string[]
           created_at?: string
           email?: string
@@ -64,7 +79,10 @@ export type Database = {
           outcomes?: string
           phone?: string | null
           previous_experience?: string
+          referral_source?: string
           remote_ea?: string
+          team_modality?: string
+          team_size?: string
           time_wasters?: string
           tools?: string[]
           updated_at?: string
