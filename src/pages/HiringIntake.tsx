@@ -99,6 +99,8 @@ const HiringIntake = () => {
           email: data.email,
           phone: data.phone,
           company_name: data.companyName,
+          company_size: data.companySize,
+          current_revenue: data.currentRevenue,
           location_country: data.location,
           looking_for_ea: data.lookingForEA,
           lead_status: leadStatus,
