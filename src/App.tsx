@@ -9,6 +9,7 @@ import BuybackBlueprint from "./pages/BuybackBlueprint";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import EAIntake from "./pages/EAIntake";
 import HiringIntake from "./pages/HiringIntake";
+import BookCallRedirect from "./pages/BookCallRedirect";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,6 +33,7 @@ const App = () => {
               <Route path="/payment-success" element={<PaymentSuccess />} />
               <Route path="/ea-intake" element={<EAIntake />} />
               <Route path="/hiring-intake" element={<HiringIntake />} />
+              <Route path="/book-call" element={<BookCallRedirect />} />
             </Routes>
           </BrowserRouter>
         </div>

@@ -238,8 +238,8 @@ const EAIntake = () => {
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
             <a
-              href="https://calendar.app.google/Jw4zcfa5fovfv9io6"
-              target="_blank"
+              href="/book-call"
+              target="_top"
               rel="noopener noreferrer"
               className="w-full"
             >

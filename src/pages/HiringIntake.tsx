@@ -198,8 +198,8 @@ const HiringIntake = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://calendar.app.google/Jw4zcfa5fovfv9io6"
-                target="_blank"
+                href="/book-call"
+                target="_top"
                 rel="noopener noreferrer"
               >
                 <Button className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg">
@@ -238,8 +238,8 @@ const HiringIntake = () => {
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
             <a
-              href="https://calendar.app.google/Jw4zcfa5fovfv9io6"
-              target="_blank"
+              href="/book-call"
+              target="_top"
               rel="noopener noreferrer"
               className="w-full"
             >
