@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { QRCodeCanvas } from "qrcode.react";
 import { useToast } from "@/hooks/use-toast";
 
-const BOOK_URL = "https://calendar.app.google/Jw4zcfa5fovfv9io6";
+const BOOK_URL = "https://calendly.com/jackie-herohire";
 
 const BookCallRedirect: React.FC = () => {
   const { toast } = useToast();

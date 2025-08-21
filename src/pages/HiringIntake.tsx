@@ -235,7 +235,7 @@ const HiringIntake = () => {
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
             <a
-              href="https://calendar.app.google/Jw4zcfa5fovfv9io6"
+              href="https://calendly.com/jackie-herohire"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full"
@@ -249,12 +249,12 @@ const HiringIntake = () => {
               <Button 
                 variant="outline" 
                 className="flex-1"
-                onClick={() => { navigator.clipboard.writeText('https://calendar.app.google/Jw4zcfa5fovfv9io6'); toast.success('Link copied to clipboard'); }}
+                onClick={() => { navigator.clipboard.writeText('https://calendly.com/jackie-herohire'); toast.success('Link copied to clipboard'); }}
               >
                 Copy Link
               </Button>
               <div className="p-2 border rounded-md bg-white">
-                <QRCodeCanvas value="https://calendar.app.google/Jw4zcfa5fovfv9io6" size={96} includeMargin />
+                <QRCodeCanvas value="https://calendly.com/jackie-herohire" size={96} includeMargin />
               </div>
             </div>
             <Button 
