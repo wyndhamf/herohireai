@@ -112,48 +112,54 @@ const HiringIntake = () => {
 
   if (isCompleted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 flex items-center justify-center p-4">
-        <Card className="max-w-2xl w-full p-8 text-center">
-          <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-10 h-10 text-white" />
-          </div>
-          
-          <h2 className="text-3xl font-bold mb-4 text-slate-900">Thank You!</h2>
-          <p className="text-slate-600 text-lg mb-8">
-            We've received your hiring requirements and our team will reach out within 24 hours to discuss how we can help you find the perfect candidate.
-          </p>
-          
-          <div className="space-y-4 mb-8">
-            <div className="flex items-center gap-3 text-slate-600">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-              <span>Our team will review your requirements</span>
+      <div className="min-h-screen bg-slate-50">
+        <Navigation />
+        
+        <div className="flex items-center justify-center min-h-screen p-4">
+          <Card className="max-w-2xl w-full p-8 text-center bg-white shadow-lg">
+            <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-10 h-10 text-white" />
             </div>
-            <div className="flex items-center gap-3 text-slate-600">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-              <span>We'll schedule a brief consultation call</span>
-            </div>
-            <div className="flex items-center gap-3 text-slate-600">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full" />
-              <span>Receive your first candidate recommendations</span>
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={() => window.open('https://calendly.com/jackie-atlas', '_blank')}
-              variant="gradient" 
-              size="lg"
-              className="flex items-center gap-2"
-            >
-              <Calendar className="w-5 h-5" />
-              Book Discovery Call
-            </Button>
             
-            <Button onClick={() => navigate('/')} variant="outline" size="lg">
-              Return to Home
-            </Button>
-          </div>
-        </Card>
+            <h2 className="text-3xl font-bold mb-4 text-slate-900">Thank You!</h2>
+            <p className="text-slate-600 text-lg mb-8">
+              We've received your hiring requirements and our team will reach out within 24 hours to discuss how we can help you find the perfect candidate.
+            </p>
+            
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-3 text-slate-600">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                <span>Our team will review your requirements</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-600">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                <span>We'll schedule a brief consultation call</span>
+              </div>
+              <div className="flex items-center gap-3 text-slate-600">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full" />
+                <span>Receive your first candidate recommendations</span>
+              </div>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => window.open('https://calendly.com/jackie-atlas', '_blank')}
+                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg"
+              >
+                <Calendar className="w-5 h-5" />
+                Book Discovery Call
+              </Button>
+              
+              <Button 
+                onClick={() => navigate('/')} 
+                variant="outline" 
+                className="px-6 py-3 rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
+              >
+                Return to Home
+              </Button>
+            </div>
+          </Card>
+        </div>
       </div>
     );
   }
