@@ -11,6 +11,14 @@ const Index = () => {
   const [showEmailCapture, setShowEmailCapture] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowEmailCapture(true);
+    }, 3000); // Show popup after 3 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
