@@ -23,6 +23,13 @@ const formSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().min(1, "Please enter your phone number"),
   
+  // Company Information
+  first_name: z.string().min(1, "Please enter your first name"),
+  last_name: z.string().min(1, "Please enter your last name"),
+  company_name: z.string().min(1, "Please enter your company name"),
+  location_country: z.string().min(1, "Please select your country"),
+  looking_for_ea: z.string().min(1, "Please select an option"),
+  
   // Section 1: Goals & Needs
   outcomes: z.string().min(1, "This field is required"),
   timeWasters: z.string().min(1, "This field is required"),
@@ -61,6 +68,7 @@ const communicationOptions = [
 const EAIntake = () => {
   const [currentSection, setCurrentSection] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showNurtureScreen, setShowNurtureScreen] = useState(false);
   const navigate = useNavigate();
 
   const form = useForm<FormData>({
@@ -69,6 +77,11 @@ const EAIntake = () => {
       name: "",
       email: "",
       phone: "",
+      first_name: "",
+      last_name: "",
+      company_name: "",
+      location_country: "",
+      looking_for_ea: "",
       outcomes: "",
       timeWasters: "",
       hoursAndTimezone: "",
@@ -85,12 +98,17 @@ const EAIntake = () => {
   const watchedFields = form.watch();
   
   const getTotalProgress = () => {
-    const totalFields = 13;
+    const totalFields = 17;
     let completedFields = 0;
     
     if (watchedFields.name) completedFields++;
     if (watchedFields.email) completedFields++;
     if (watchedFields.phone) completedFields++;
+    if (watchedFields.first_name) completedFields++;
+    if (watchedFields.last_name) completedFields++;
+    if (watchedFields.company_name) completedFields++;
+    if (watchedFields.location_country) completedFields++;
+    if (watchedFields.looking_for_ea) completedFields++;
     if (watchedFields.outcomes) completedFields++;
     if (watchedFields.timeWasters) completedFields++;
     if (watchedFields.hoursAndTimezone) completedFields++;
@@ -107,7 +125,7 @@ const EAIntake = () => {
 
   const validateCurrentSection = async () => {
     const fields = {
-      1: ['name', 'email', 'phone', 'outcomes', 'timeWasters', 'hoursAndTimezone'],
+      1: ['name', 'email', 'phone', 'first_name', 'last_name', 'company_name', 'location_country', 'looking_for_ea', 'outcomes', 'timeWasters', 'hoursAndTimezone'],
       2: ['remoteEA', 'budget', 'focus', 'tools'],
       3: ['previousExperience', 'communication', 'leadershipStyle']
     };
@@ -131,12 +149,26 @@ const EAIntake = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
+      // Determine lead status and market
+      const isQualified = (data.looking_for_ea === "Yes, immediately" || data.looking_for_ea === "Yes, within 3 months") &&
+                         (data.location_country === "United States" || data.location_country === "USA" || data.location_country === "US" || data.location_country === "Canada");
+      
+      const leadStatus = isQualified ? "qualified_to_book" : "nurture_no_link";
+      const market = (data.location_country === "United States" || data.location_country === "USA" || data.location_country === "US" || data.location_country === "Canada") ? "US_CA" : "INTL";
+
       const { error } = await supabase
         .from('ea_intake_submissions')
         .insert({
           name: data.name,
           email: data.email,
           phone: data.phone,
+          first_name: data.first_name,
+          last_name: data.last_name,
+          company_name: data.company_name,
+          location_country: data.location_country,
+          looking_for_ea: data.looking_for_ea,
+          lead_status: leadStatus,
+          market: market,
           outcomes: data.outcomes,
           time_wasters: data.timeWasters,
           hours_and_timezone: data.hoursAndTimezone,
@@ -157,32 +189,47 @@ const EAIntake = () => {
 
       console.log('Form submitted successfully');
       toast.success('Form submitted successfully!');
-      setIsSubmitted(true);
+      
+      // Determine next action based on routing logic
+      if (isQualified) {
+        // Redirect to Google Calendar booking
+        const bookingUrl = `https://calendly.com/your-calendar?name=${encodeURIComponent(data.first_name)}%20${encodeURIComponent(data.last_name)}&company=${encodeURIComponent(data.company_name)}&email=${encodeURIComponent(data.email)}`;
+        window.location.href = bookingUrl;
+      } else {
+        // Show nurture screen
+        setShowNurtureScreen(true);
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('Failed to submit form. Please try again.');
     }
   };
 
-  // Redirect to home page after 5 seconds when form is submitted
+  // Redirect to home page after 8 seconds when nurture screen is shown
   useEffect(() => {
-    if (isSubmitted) {
+    if (showNurtureScreen) {
       const timer = setTimeout(() => {
         navigate('/');
-      }, 5000);
+      }, 8000);
       
       return () => clearTimeout(timer);
     }
-  }, [isSubmitted, navigate]);
+  }, [showNurtureScreen, navigate]);
 
-  if (isSubmitted) {
+  if (showNurtureScreen) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md p-8 text-center">
-          <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-semibold text-foreground mb-2">Thanks for sharing</h2>
-          <p className="text-muted-foreground mb-4">We'll email you within 72 hours with the next steps.</p>
-          <p className="text-sm text-muted-foreground">Redirecting to home page in a few seconds...</p>
+          <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
+          <h2 className="text-2xl font-semibold text-foreground mb-2">Thanks—You're on our radar.</h2>
+          <p className="text-muted-foreground mb-6">We'll reach out with next steps. If timing changes, reply to our email and we'll fast-track your call.</p>
+          <Button 
+            onClick={() => window.open('/assets/ea-hiring-playbook.pdf', '_blank')}
+            className="w-full"
+          >
+            Get our EA Hiring Playbook (PDF)
+          </Button>
+          <p className="text-sm text-muted-foreground mt-4">Redirecting to home page in a few seconds...</p>
         </Card>
       </div>
     );
@@ -248,19 +295,124 @@ const EAIntake = () => {
                       )}
                     />
 
-                    <FormField
-                      control={form.control}
-                      name="phone"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Phone Number</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Enter your phone number" type="tel" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                     <FormField
+                       control={form.control}
+                       name="phone"
+                       render={({ field }) => (
+                         <FormItem>
+                           <FormLabel>Phone Number</FormLabel>
+                           <FormControl>
+                             <Input placeholder="Enter your phone number" type="tel" {...field} />
+                           </FormControl>
+                           <FormMessage />
+                         </FormItem>
+                       )}
+                     />
+
+                     <div className="grid grid-cols-2 gap-4">
+                       <FormField
+                         control={form.control}
+                         name="first_name"
+                         render={({ field }) => (
+                           <FormItem>
+                             <FormLabel>First Name</FormLabel>
+                             <FormControl>
+                               <Input placeholder="First name" {...field} />
+                             </FormControl>
+                             <FormMessage />
+                           </FormItem>
+                         )}
+                       />
+
+                       <FormField
+                         control={form.control}
+                         name="last_name"
+                         render={({ field }) => (
+                           <FormItem>
+                             <FormLabel>Last Name</FormLabel>
+                             <FormControl>
+                               <Input placeholder="Last name" {...field} />
+                             </FormControl>
+                             <FormMessage />
+                           </FormItem>
+                         )}
+                       />
+                     </div>
+
+                     <FormField
+                       control={form.control}
+                       name="company_name"
+                       render={({ field }) => (
+                         <FormItem>
+                           <FormLabel>Company Name</FormLabel>
+                           <FormControl>
+                             <Input placeholder="Your company name" {...field} />
+                           </FormControl>
+                           <FormMessage />
+                         </FormItem>
+                       )}
+                     />
+
+                     <FormField
+                       control={form.control}
+                       name="location_country"
+                       render={({ field }) => (
+                         <FormItem>
+                           <FormLabel>Country</FormLabel>
+                           <FormControl>
+                             <select 
+                               {...field} 
+                               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                             >
+                               <option value="">Select your country</option>
+                               <option value="United States">United States</option>
+                               <option value="Canada">Canada</option>
+                               <option value="United Kingdom">United Kingdom</option>
+                               <option value="Australia">Australia</option>
+                               <option value="Germany">Germany</option>
+                               <option value="France">France</option>
+                               <option value="Other">Other</option>
+                             </select>
+                           </FormControl>
+                           <FormMessage />
+                         </FormItem>
+                       )}
+                     />
+
+                     <FormField
+                       control={form.control}
+                       name="looking_for_ea"
+                       render={({ field }) => (
+                         <FormItem>
+                           <FormLabel>Are you currently looking for an EA?</FormLabel>
+                           <FormControl>
+                             <RadioGroup
+                               onValueChange={field.onChange}
+                               value={field.value}
+                               className="flex flex-col gap-3 mt-2"
+                             >
+                               <div className="flex items-center space-x-2">
+                                 <RadioGroupItem value="Yes, immediately" id="immediately" />
+                                 <label htmlFor="immediately" className="text-sm font-medium">Yes, immediately</label>
+                               </div>
+                               <div className="flex items-center space-x-2">
+                                 <RadioGroupItem value="Yes, within 3 months" id="within3months" />
+                                 <label htmlFor="within3months" className="text-sm font-medium">Yes, within 3 months</label>
+                               </div>
+                               <div className="flex items-center space-x-2">
+                                 <RadioGroupItem value="Maybe in the future" id="maybefuture" />
+                                 <label htmlFor="maybefuture" className="text-sm font-medium">Maybe in the future</label>
+                               </div>
+                               <div className="flex items-center space-x-2">
+                                 <RadioGroupItem value="No, just exploring" id="exploring" />
+                                 <label htmlFor="exploring" className="text-sm font-medium">No, just exploring</label>
+                               </div>
+                             </RadioGroup>
+                           </FormControl>
+                           <FormMessage />
+                         </FormItem>
+                       )}
+                     />
                     <FormField
                       control={form.control}
                       name="outcomes"

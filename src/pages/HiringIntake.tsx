@@ -26,6 +26,8 @@ const formSchema = z.object({
   phone: z.string().min(1, "Please enter your phone number"),
   
   // Company Information
+  first_name: z.string().min(1, "Please enter your first name"),
+  last_name: z.string().min(1, "Please enter your last name"),
   companyName: z.string().min(1, "What is your company name?"),
   companySize: z.string().min(1, "Please select your company size"),
   currentRevenue: z.string().min(1, "What is your current revenue?"),
@@ -39,6 +41,7 @@ const HiringIntake = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [showNurtureScreen, setShowNurtureScreen] = useState(false);
   const navigate = useNavigate();
   
   const totalSteps = 2;
@@ -50,6 +53,8 @@ const HiringIntake = () => {
       name: '',
       email: '',
       phone: '',
+      first_name: '',
+      last_name: '',
       companyName: '',
       companySize: '',
       currentRevenue: '',
@@ -62,12 +67,26 @@ const HiringIntake = () => {
     setIsSubmitting(true);
     
     try {
+      // Determine lead status and market
+      const isQualified = (data.lookingForEA === "Yes, immediately" || data.lookingForEA === "Yes, within 3 months") &&
+                         (data.location === "United States" || data.location === "USA" || data.location === "US" || data.location === "Canada");
+      
+      const leadStatus = isQualified ? "qualified_to_book" : "nurture_no_link";
+      const market = (data.location === "United States" || data.location === "USA" || data.location === "US" || data.location === "Canada") ? "US_CA" : "INTL";
+
       const { error } = await supabase
         .from('lead_captures')
         .insert({
           name: data.name,
           email: data.email,
           phone: data.phone,
+          first_name: data.first_name,
+          last_name: data.last_name,
+          company_name: data.companyName,
+          location_country: data.location,
+          looking_for_ea: data.lookingForEA,
+          lead_status: leadStatus,
+          market: market,
           source: 'hiring_intake'
         });
 
@@ -75,8 +94,17 @@ const HiringIntake = () => {
         throw error;
       }
 
-      setIsCompleted(true);
       toast.success('Thank you! We\'ve received your hiring requirements and will be in touch soon.');
+      
+      // Determine next action based on routing logic
+      if (isQualified) {
+        // Redirect to Google Calendar booking
+        const bookingUrl = `https://calendly.com/your-calendar?name=${encodeURIComponent(data.first_name)}%20${encodeURIComponent(data.last_name)}&company=${encodeURIComponent(data.companyName)}&email=${encodeURIComponent(data.email)}`;
+        window.location.href = bookingUrl;
+      } else {
+        // Show nurture screen
+        setShowNurtureScreen(true);
+      }
       
     } catch (error) {
       console.error('Error saving data:', error);
@@ -102,13 +130,51 @@ const HiringIntake = () => {
   const getFieldsForStep = (step: number): (keyof FormData)[] => {
     switch (step) {
       case 1:
-        return ['name', 'email', 'phone'];
+        return ['name', 'email', 'phone', 'first_name', 'last_name'];
       case 2:
         return ['companyName', 'companySize', 'currentRevenue', 'lookingForEA', 'location'];
       default:
         return [];
     }
   };
+
+  if (showNurtureScreen) {
+    return (
+      <div className="min-h-screen bg-slate-50">
+        <Navigation />
+        
+        <div className="flex items-center justify-center min-h-screen p-4">
+          <Card className="max-w-2xl w-full p-8 text-center bg-white shadow-lg">
+            <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <CheckCircle className="w-10 h-10 text-white" />
+            </div>
+            
+            <h2 className="text-3xl font-bold mb-4 text-slate-900">Thanks—You're on our radar.</h2>
+            <p className="text-slate-600 text-lg mb-8">
+              We'll reach out with next steps. If timing changes, reply to our email and we'll fast-track your call.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                onClick={() => window.open('/assets/ea-hiring-playbook.pdf', '_blank')}
+                className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg"
+              >
+                Get our EA Hiring Playbook (PDF)
+              </Button>
+              
+              <Button 
+                onClick={() => navigate('/')} 
+                variant="outline" 
+                className="px-6 py-3 rounded-lg border-gray-300 text-gray-700 hover:bg-gray-50"
+              >
+                Return to Home
+              </Button>
+            </div>
+          </Card>
+        </div>
+      </div>
+    );
+  }
 
   if (isCompleted) {
     return (
@@ -248,6 +314,36 @@ const HiringIntake = () => {
                         </FormItem>
                       )}
                     />
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="first_name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>First Name *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="First name" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+
+                      <FormField
+                        control={form.control}
+                        name="last_name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel>Last Name *</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Last name" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
                   </div>
                 )}
 
