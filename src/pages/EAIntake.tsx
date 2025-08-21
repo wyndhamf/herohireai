@@ -237,13 +237,17 @@ const EAIntake = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
-            <Button 
+            <a
+              href="https://calendar.app.google/Jw4zcfa5fovfv9io6"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full"
-              onClick={() => window.open('https://calendar.app.google/Jw4zcfa5fovfv9io6', '_blank')}
             >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Open Scheduling Link
-            </Button>
+              <Button className="w-full">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Open Scheduling Link
+              </Button>
+            </a>
             <Button 
               variant="outline" 
               onClick={() => setShowCalendlyDialog(false)}
