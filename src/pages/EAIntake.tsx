@@ -219,7 +219,7 @@ const EAIntake = () => {
             onClick={() => window.open('/assets/ea-hiring-playbook.pdf', '_blank')}
             className="w-full"
           >
-            Get our EA Hiring Playbook (PDF)
+            You'll hear from us soon
           </Button>
           <p className="text-sm text-muted-foreground mt-4">Redirecting to home page in a few seconds...</p>
         </Card>

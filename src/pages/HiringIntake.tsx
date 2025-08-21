@@ -153,7 +153,7 @@ const HiringIntake = () => {
                 onClick={() => window.open('/assets/ea-hiring-playbook.pdf', '_blank')}
                 className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg"
               >
-                Get our EA Hiring Playbook (PDF)
+                You'll hear from us soon
               </Button>
               
               <Button 
