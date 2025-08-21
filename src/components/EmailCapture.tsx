@@ -208,9 +208,9 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
               className="relative my-8"
             >
               {/* Background Elements */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-3xl" />
-              <div className="absolute top-6 right-6 w-32 h-32 bg-blue-200/30 rounded-full blur-2xl" />
-              <div className="absolute bottom-6 left-6 w-24 h-24 bg-purple-200/30 rounded-full blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 rounded-3xl" />
+              <div className="absolute top-6 right-6 w-32 h-32 bg-emerald-200/30 rounded-full blur-2xl" />
+              <div className="absolute bottom-6 left-6 w-24 h-24 bg-green-200/30 rounded-full blur-xl" />
               
               {/* Content */}
               <div className="relative z-10 text-center p-12">
@@ -219,7 +219,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium shadow-lg"
+                  className="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-emerald-600 text-white rounded-full text-sm font-medium shadow-lg"
                 >
                   <Sparkles className="w-4 h-4" />
                   Limited Time Offer
@@ -233,7 +233,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                   transition={{ delay: 0.1 }}
                   className="text-4xl md:text-5xl font-light mb-4 text-slate-900 leading-tight"
                 >
-                  Skip the line. <span className="text-blue-600 font-medium">Hire fast.</span>
+                  Skip the line. <span className="text-emerald-600 font-medium">Hire fast.</span>
                 </motion.h2>
 
                 <motion.p
@@ -261,7 +261,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required
-                      className="w-full py-6 text-lg border-2 border-slate-200 focus:border-blue-500 bg-white/80 backdrop-blur-sm"
+                      className="w-full py-6 text-lg border-2 border-slate-200 focus:border-emerald-500 bg-white/80 backdrop-blur-sm"
                     />
                     <Input
                       type="email"
@@ -269,7 +269,7 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full py-6 text-lg border-2 border-slate-200 focus:border-blue-500 bg-white/80 backdrop-blur-sm"
+                      className="w-full py-6 text-lg border-2 border-slate-200 focus:border-emerald-500 bg-white/80 backdrop-blur-sm"
                     />
                     <Input
                       type="tel"
@@ -277,14 +277,12 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       required
-                      className="w-full py-6 text-lg border-2 border-slate-200 focus:border-blue-500 bg-white/80 backdrop-blur-sm"
+                      className="w-full py-6 text-lg border-2 border-slate-200 focus:border-emerald-500 bg-white/80 backdrop-blur-sm"
                     />
                     <Button 
                       type="submit" 
                       disabled={isLoading}
-                      variant="gradient"
-                      size="xl"
-                      className="w-full"
+                      className="w-full py-6 text-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg"
                     >
                       {isLoading ? (
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -307,15 +305,15 @@ export const EmailCapture: React.FC<EmailCaptureProps> = ({ className = "", onCl
                   className="flex flex-wrap justify-center gap-6 text-sm text-slate-600"
                 >
                   <div className="flex items-center gap-2">
-                    <Timer className="w-4 h-4 text-blue-600" />
+                    <Timer className="w-4 h-4 text-emerald-600" />
                     <span>Quick delivery</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Zap className="w-4 h-4 text-blue-600" />
+                    <Zap className="w-4 h-4 text-emerald-600" />
                     <span>Pre-screened candidates</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-blue-600" />
+                    <CheckCircle className="w-4 h-4 text-emerald-600" />
                     <span>No setup fees</span>
                   </div>
                 </motion.div>
