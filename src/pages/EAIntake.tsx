@@ -74,6 +74,7 @@ const EAIntake = () => {
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
+    mode: "onSubmit", // Only validate on submit
     defaultValues: {
       name: "",
       email: "",
