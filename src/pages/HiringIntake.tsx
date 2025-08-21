@@ -114,8 +114,12 @@ const HiringIntake = () => {
 
       toast.success('Thank you! We\'ve received your hiring requirements and will be in touch soon.');
       
-      // Always show nurture screen for form completion
-      setShowNurtureScreen(true);
+      // Show booking popup if qualified, otherwise show nurture screen
+      if (isQualified) {
+        setShowCalendlyDialog(true);
+      } else {
+        setShowNurtureScreen(true);
+      }
       
     } catch (error) {
       console.error('Error saving data:', error);
@@ -460,13 +464,7 @@ const HiringIntake = () => {
                           <FormLabel>Are you currently looking for an EA? *</FormLabel>
                           <FormControl>
                             <RadioGroup
-                              onValueChange={(value) => {
-                                field.onChange(value);
-                                // Show booking popup immediately on urgent timeframe selections
-                                if (value === "Yes, immediately" || value === "Yes, within 3 months") {
-                                  setShowCalendlyDialog(true);
-                                }
-                              }}
+                              onValueChange={field.onChange}
                               defaultValue={field.value}
                               className="grid grid-cols-2 gap-4"
                             >

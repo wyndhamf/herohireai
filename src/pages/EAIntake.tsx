@@ -192,8 +192,12 @@ const EAIntake = () => {
       console.log('Form submitted successfully');
       toast.success('Form submitted successfully!');
       
-              // Always show nurture screen for form completion
-              setShowNurtureScreen(true);
+      // Show booking popup if qualified, otherwise show nurture screen
+      if (isQualified) {
+        setShowCalendlyDialog(true);
+      } else {
+        setShowNurtureScreen(true);
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('Failed to submit form. Please try again.');
@@ -393,18 +397,12 @@ const EAIntake = () => {
                        render={({ field }) => (
                          <FormItem>
                            <FormLabel>Are you currently looking for an EA?</FormLabel>
-                           <FormControl>
-                              <RadioGroup
-                                onValueChange={(value) => {
-                                  field.onChange(value);
-                                  // Show booking popup immediately on urgent timeframe selections
-                                  if (value === "Yes, immediately" || value === "Yes, within 3 months") {
-                                    setShowCalendlyDialog(true);
-                                  }
-                                }}
-                                value={field.value}
-                                className="flex flex-col gap-3 mt-2"
-                              >
+                             <FormControl>
+                               <RadioGroup
+                                 onValueChange={field.onChange}
+                                 value={field.value}
+                                 className="flex flex-col gap-3 mt-2"
+                               >
                                 <div className="flex items-center space-x-2">
                                   <RadioGroupItem value="Yes, immediately" id="immediately" />
                                   <label htmlFor="immediately" className="text-sm font-medium">Yes, immediately</label>
