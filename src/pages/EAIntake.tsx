@@ -237,17 +237,13 @@ const EAIntake = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
-            <a
-              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3nxfEM7cWe-X2MSNJHD9DBlIQgCfmNJ8TRhoEMcsdRROhEMYxxrVl0S1cSIHZCKYXZedU6VICD"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button 
               className="w-full"
+              onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3nxfEM7cWe-X2MSNJHD9DBlIQgCfmNJ8TRhoEMcsdRROhEMYxxrVl0S1cSIHZCKYXZedU6VICD', '_blank')}
             >
-              <Button className="w-full">
-                <ExternalLink className="w-4 h-4 mr-2" />
-                Open Scheduling Link
-              </Button>
-            </a>
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Open Scheduling Link
+            </Button>
             <Button 
               variant="outline" 
               onClick={() => setShowCalendlyDialog(false)}
