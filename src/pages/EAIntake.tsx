@@ -97,7 +97,7 @@ const EAIntake = () => {
   const watchedFields = form.watch();
   
   const getTotalProgress = () => {
-    const totalFields = 16; // Updated count
+    const totalFields = 16; // Fixed count to match actual fields
     let completedFields = 0;
     
     if (watchedFields.name?.trim()) completedFields++;
@@ -117,7 +117,8 @@ const EAIntake = () => {
     if (watchedFields.communication?.length > 0) completedFields++;
     if (watchedFields.leadershipStyle?.trim()) completedFields++;
     
-    return Math.round((completedFields / totalFields) * 100);
+    const progress = Math.round((completedFields / totalFields) * 100);
+    return Math.min(progress, 100); // Cap at 100%
   };
 
   const validateCurrentSection = async () => {

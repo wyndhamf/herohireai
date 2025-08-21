@@ -64,7 +64,7 @@ const HiringIntake = () => {
   const watchedFields = form.watch();
   
   const getProgress = () => {
-    const totalFields = 7; // All form fields
+    const totalFields = 8; // Fixed count to match actual fields
     let completedFields = 0;
     
     if (watchedFields.name?.trim()) completedFields++;
@@ -76,7 +76,8 @@ const HiringIntake = () => {
     if (watchedFields.lookingForEA?.trim()) completedFields++;
     if (watchedFields.location?.trim()) completedFields++;
     
-    return Math.round((completedFields / totalFields) * 100);
+    const progress = Math.round((completedFields / totalFields) * 100);
+    return Math.min(progress, 100); // Cap at 100%
   };
 
   const onSubmit = async (data: FormData) => {
