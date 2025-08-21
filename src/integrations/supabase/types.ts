@@ -188,6 +188,96 @@ export type Database = {
         }
         Relationships: []
       }
+      new_intake_submissions: {
+        Row: {
+          annual_revenue: string
+          assigned_to: string | null
+          company_name: string
+          company_size: string
+          created_at: string
+          email: string
+          full_name: string
+          how_did_you_hear: string | null
+          id: string
+          industry: string
+          job_title: string
+          lead_status: string | null
+          notes: string | null
+          phone: string
+          previous_experience: string | null
+          priority_level: string | null
+          project_budget: string
+          project_description: string
+          project_timeline: string
+          project_type: string
+          required_skills: string[]
+          specific_requirements: string | null
+          start_date: string
+          team_size_needed: string
+          updated_at: string
+          website_url: string | null
+          work_arrangement: string
+        }
+        Insert: {
+          annual_revenue: string
+          assigned_to?: string | null
+          company_name: string
+          company_size: string
+          created_at?: string
+          email: string
+          full_name: string
+          how_did_you_hear?: string | null
+          id?: string
+          industry: string
+          job_title: string
+          lead_status?: string | null
+          notes?: string | null
+          phone: string
+          previous_experience?: string | null
+          priority_level?: string | null
+          project_budget: string
+          project_description: string
+          project_timeline: string
+          project_type: string
+          required_skills?: string[]
+          specific_requirements?: string | null
+          start_date: string
+          team_size_needed: string
+          updated_at?: string
+          website_url?: string | null
+          work_arrangement: string
+        }
+        Update: {
+          annual_revenue?: string
+          assigned_to?: string | null
+          company_name?: string
+          company_size?: string
+          created_at?: string
+          email?: string
+          full_name?: string
+          how_did_you_hear?: string | null
+          id?: string
+          industry?: string
+          job_title?: string
+          lead_status?: string | null
+          notes?: string | null
+          phone?: string
+          previous_experience?: string | null
+          priority_level?: string | null
+          project_budget?: string
+          project_description?: string
+          project_timeline?: string
+          project_type?: string
+          required_skills?: string[]
+          specific_requirements?: string | null
+          start_date?: string
+          team_size_needed?: string
+          updated_at?: string
+          website_url?: string | null
+          work_arrangement?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string

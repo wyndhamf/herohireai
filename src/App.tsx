@@ -10,6 +10,7 @@ import PaymentSuccess from "./pages/PaymentSuccess";
 import EAIntake from "./pages/EAIntake";
 import HiringIntake from "./pages/HiringIntake";
 import BookCallRedirect from "./pages/BookCallRedirect";
+import NewIntakeForm from "./pages/NewIntakeForm";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ const App = () => {
               <Route path="/ea-intake" element={<EAIntake />} />
               <Route path="/hiring-intake" element={<HiringIntake />} />
               <Route path="/book-call" element={<BookCallRedirect />} />
+              <Route path="/new-intake-form" element={<NewIntakeForm />} />
             </Routes>
           </BrowserRouter>
         </div>

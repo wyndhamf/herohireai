@@ -56,6 +56,19 @@ const Navigation = () => {
             <span className="font-bold text-xl text-emerald-600">Hero</span>
           </Link>
 
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            <Link to="/new-intake-form" className="text-slate-600 hover:text-emerald-600 font-medium transition-colors">
+              New Intake Form
+            </Link>
+            <Link to="/hiring-intake" className="text-slate-600 hover:text-emerald-600 font-medium transition-colors">
+              Hiring Intake
+            </Link>
+            <Link to="/ea-intake" className="text-slate-600 hover:text-emerald-600 font-medium transition-colors">
+              EA Intake
+            </Link>
+          </div>
+
           {/* Right side */}
           <div className="flex items-center gap-4">
             {/* Mobile Navigation */}
@@ -84,6 +97,31 @@ const Navigation = () => {
                       <ProcessedLogo className="w-6 h-6 text-emerald-600" />
                       <span className="font-bold text-lg text-emerald-600">Hero</span>
                     </Link>
+
+                    {/* Mobile Menu Links */}
+                    <div className="flex flex-col gap-4 px-2">
+                      <Link 
+                        to="/new-intake-form" 
+                        className="text-slate-700 hover:text-emerald-600 font-medium py-2 transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        New Intake Form
+                      </Link>
+                      <Link 
+                        to="/hiring-intake" 
+                        className="text-slate-700 hover:text-emerald-600 font-medium py-2 transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Hiring Intake
+                      </Link>
+                      <Link 
+                        to="/ea-intake" 
+                        className="text-slate-700 hover:text-emerald-600 font-medium py-2 transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        EA Intake
+                      </Link>
+                    </div>
                   </div>
                 </SheetContent>
               </Sheet>
