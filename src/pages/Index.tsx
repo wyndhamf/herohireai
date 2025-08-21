@@ -63,11 +63,9 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className={`text-6xl md:text-8xl lg:text-9xl font-light mb-8 leading-[0.85] tracking-tight transition-colors duration-500 ${getHeroTextColor()}`}
+              className={`text-5xl md:text-7xl lg:text-8xl font-light mb-8 leading-tight tracking-tight transition-colors duration-500 ${getHeroTextColor()}`}
             >
-              <span>Hire</span>
-              <br />
-              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium drop-shadow-lg">Elite Talent</span>
+              Meet <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent font-medium">Hero</span>— the AI hiring system built for modern teams.
             </motion.h1>
             
             {/* Subheading */}
@@ -75,13 +73,10 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="max-w-3xl mx-auto mb-12"
+              className="max-w-4xl mx-auto mb-12"
             >
-              <p className={`text-xl md:text-2xl font-light leading-relaxed mb-6 transition-colors duration-500 ${getHeroSubtextColor()}`}>
-                Access pre-vetted global professionals without the overhead of traditional recruiting.
-              </p>
-              <p className={`text-lg transition-colors duration-500 ${getHeroSmallTextColor()}`}>
-                One platform. One process. Zero compromises.
+              <p className={`text-xl md:text-2xl font-light leading-relaxed transition-colors duration-500 ${getHeroSubtextColor()}`}>
+                Say goodbye to job boards, endless interviews, and hires that don't move the needle. Hero turns hiring into a repeatable system.
               </p>
             </motion.div>
             
@@ -90,16 +85,35 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
             >
               <Button 
                 size="xl" 
                 variant="gradient"
-                className="group px-12 py-6"
+                className="group px-8 py-4"
                 onClick={() => setShowEmailCapture(true)}
               >
-                Start Hiring Today
-                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Get Started
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              
+              <Button 
+                size="xl" 
+                variant="outline"
+                className="group px-8 py-4 bg-white/10 text-white border-white/20 hover:bg-white/20"
+                onClick={() => window.open('https://calendly.com/jackie-atlas', '_blank')}
+              >
+                Book a Call
+                <Calendar className="ml-2 w-5 h-5" />
+              </Button>
+              
+              <Button 
+                size="xl" 
+                variant="secondary"
+                className="group px-8 py-4"
+                onClick={() => window.location.href = '/auth'}
+              >
+                Login
               </Button>
             </motion.div>
             
