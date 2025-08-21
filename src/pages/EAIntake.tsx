@@ -184,8 +184,8 @@ const EAIntake = () => {
       
       // Determine next action based on routing logic
       if (isQualified) {
-        // Redirect to Google Calendar booking
-        const bookingUrl = `https://calendar.app.google/UTDXuBzYPAhD2sHRA?name=${encodeURIComponent(data.name)}&company=${encodeURIComponent(data.company_name)}&email=${encodeURIComponent(data.email)}`;
+        // Redirect to Calendly booking for immediate or 3-month leads
+        const bookingUrl = `https://calendly.com/your-calendar-link?name=${encodeURIComponent(data.name)}&company=${encodeURIComponent(data.company_name)}&email=${encodeURIComponent(data.email)}`;
         window.location.href = bookingUrl;
       } else {
         // Show nurture screen
