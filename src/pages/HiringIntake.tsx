@@ -162,7 +162,7 @@ const HiringIntake = () => {
               We'll reach out with next steps. If timing changes, reply to our email and we'll fast-track your call.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="space-y-6">
               <p className="text-emerald-600 font-medium text-lg">
                 You'll hear from us soon
               </p>

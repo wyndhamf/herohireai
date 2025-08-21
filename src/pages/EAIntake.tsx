@@ -209,13 +209,16 @@ const EAIntake = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md p-8 text-center">
-          <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
-          <h2 className="text-2xl font-semibold text-foreground mb-2">Thanks—You're on our radar.</h2>
+          <CheckCircle className="w-16 h-16 text-emerald-600 mx-auto mb-6" />
+          <h2 className="text-2xl font-semibold text-foreground mb-4">Thanks—You're on our radar.</h2>
           <p className="text-muted-foreground mb-6">We'll reach out with next steps. If timing changes, reply to our email and we'll fast-track your call.</p>
-          <p className="text-sm text-muted-foreground">
-            You'll hear from us soon
-          </p>
-          <p className="text-sm text-muted-foreground mt-4">Redirecting to home page in a few seconds...</p>
+          
+          <div className="space-y-4">
+            <p className="text-emerald-600 font-medium text-lg">
+              You'll hear from us soon
+            </p>
+            <p className="text-sm text-muted-foreground">Redirecting to home page in a few seconds...</p>
+          </div>
         </Card>
       </div>
     );
