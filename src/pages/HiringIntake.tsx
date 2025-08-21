@@ -234,18 +234,17 @@ const HiringIntake = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
-            <Button 
-              onClick={() => {
-                const formData = form.getValues();
-                const bookingUrl = `https://calendly.com/your-calendar-link?name=${encodeURIComponent(formData.name || '')}&company=${encodeURIComponent(formData.companyName || '')}&email=${encodeURIComponent(formData.email || '')}`;
-                window.open(bookingUrl, '_blank');
-                setShowCalendlyDialog(false);
-              }}
+            <a
+              href={`https://calendly.com/your-calendar-link?name=${encodeURIComponent((form.getValues().name || ''))}&company=${encodeURIComponent((form.getValues().companyName || ''))}&email=${encodeURIComponent((form.getValues().email || ''))}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full"
             >
-              <ExternalLink className="w-4 h-4 mr-2" />
-              Schedule Discovery Call
-            </Button>
+              <Button className="w-full">
+                <ExternalLink className="w-4 h-4 mr-2" />
+                Open Scheduling Link
+              </Button>
+            </a>
             <Button 
               variant="outline" 
               onClick={() => setShowCalendlyDialog(false)}
