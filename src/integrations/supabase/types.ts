@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      calendar_bookings: {
+        Row: {
+          booking_url: string
+          company_name: string | null
+          created_at: string
+          email: string
+          first_name: string
+          id: string
+          last_name: string
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          booking_url: string
+          company_name?: string | null
+          created_at?: string
+          email: string
+          first_name: string
+          id?: string
+          last_name: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          booking_url?: string
+          company_name?: string | null
+          created_at?: string
+          email?: string
+          first_name?: string
+          id?: string
+          last_name?: string
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       ea_intake_submissions: {
         Row: {
           budget: string
@@ -26,7 +62,11 @@ export type Database = {
           focus: string
           hours_and_timezone: string
           id: string
+          lead_status: string | null
           leadership_style: string
+          location_country: string | null
+          looking_for_ea: string | null
+          market: string | null
           name: string
           outcomes: string
           phone: string | null
@@ -50,7 +90,11 @@ export type Database = {
           focus: string
           hours_and_timezone: string
           id?: string
+          lead_status?: string | null
           leadership_style: string
+          location_country?: string | null
+          looking_for_ea?: string | null
+          market?: string | null
           name?: string
           outcomes: string
           phone?: string | null
@@ -74,7 +118,11 @@ export type Database = {
           focus?: string
           hours_and_timezone?: string
           id?: string
+          lead_status?: string | null
           leadership_style?: string
+          location_country?: string | null
+          looking_for_ea?: string | null
+          market?: string | null
           name?: string
           outcomes?: string
           phone?: string | null
@@ -91,27 +139,48 @@ export type Database = {
       }
       lead_captures: {
         Row: {
+          company_name: string | null
+          company_size: string | null
           created_at: string
+          current_revenue: string | null
           email: string
           id: string
+          lead_status: string | null
+          location_country: string | null
+          looking_for_ea: string | null
+          market: string | null
           name: string
           phone: string
           source: string | null
           updated_at: string
         }
         Insert: {
+          company_name?: string | null
+          company_size?: string | null
           created_at?: string
+          current_revenue?: string | null
           email: string
           id?: string
+          lead_status?: string | null
+          location_country?: string | null
+          looking_for_ea?: string | null
+          market?: string | null
           name: string
           phone: string
           source?: string | null
           updated_at?: string
         }
         Update: {
+          company_name?: string | null
+          company_size?: string | null
           created_at?: string
+          current_revenue?: string | null
           email?: string
           id?: string
+          lead_status?: string | null
+          location_country?: string | null
+          looking_for_ea?: string | null
+          market?: string | null
           name?: string
           phone?: string
           source?: string | null
