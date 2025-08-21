@@ -198,7 +198,7 @@ const HiringIntake = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3nxfEM7cWe-X2MSNJHD9DBlIQgCfmNJ8TRhoEMcsdRROhEMYxxrVl0S1cSIHZCKYXZedU6VICD', '_blank')}
+                onClick={() => window.open('https://calendar.app.google/Jw4zcfa5fovfv9io6', '_blank')}
                 className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg"
               >
                 <Calendar className="w-5 h-5" />
@@ -236,7 +236,7 @@ const HiringIntake = () => {
           <div className="flex flex-col gap-4 py-4">
             <Button 
               className="w-full"
-              onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3nxfEM7cWe-X2MSNJHD9DBlIQgCfmNJ8TRhoEMcsdRROhEMYxxrVl0S1cSIHZCKYXZedU6VICD', '_blank')}
+              onClick={() => window.open('https://calendar.app.google/Jw4zcfa5fovfv9io6', '_blank')}
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               Open Scheduling Link

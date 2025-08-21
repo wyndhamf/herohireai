@@ -239,7 +239,7 @@ const EAIntake = () => {
           <div className="flex flex-col gap-4 py-4">
             <Button 
               className="w-full"
-              onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3nxfEM7cWe-X2MSNJHD9DBlIQgCfmNJ8TRhoEMcsdRROhEMYxxrVl0S1cSIHZCKYXZedU6VICD', '_blank')}
+              onClick={() => window.open('https://calendar.app.google/Jw4zcfa5fovfv9io6', '_blank')}
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               Open Scheduling Link
