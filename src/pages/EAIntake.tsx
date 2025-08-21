@@ -377,9 +377,8 @@ const EAIntake = () => {
                               <RadioGroup
                                 onValueChange={(value) => {
                                   field.onChange(value);
-                                  // Show popup for qualified leads if they're in North America
-                                  if ((value === "Yes, immediately" || value === "Yes, within 3 months") && 
-                                      watchedFields.location_country === "North America") {
+                                  // Show booking popup immediately on urgent timeframe selections
+                                  if (value === "Yes, immediately" || value === "Yes, within 3 months") {
                                     setShowCalendlyDialog(true);
                                   }
                                 }}

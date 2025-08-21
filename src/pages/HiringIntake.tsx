@@ -198,7 +198,7 @@ const HiringIntake = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                onClick={() => window.open('https://calendar.app.google/UTDXuBzYPAhD2sHRA', '_blank')}
+                onClick={() => window.open('https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3nxfEM7cWe-X2MSNJHD9DBlIQgCfmNJ8TRhoEMcsdRROhEMYxxrVl0S1cSIHZCKYXZedU6VICD', '_blank')}
                 className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg"
               >
                 <Calendar className="w-5 h-5" />
@@ -432,10 +432,8 @@ const HiringIntake = () => {
                             <RadioGroup
                               onValueChange={(value) => {
                                 field.onChange(value);
-                                // Show popup for qualified leads if they're in North America
-                                const currentLocation = form.getValues('location');
-                                if ((value === "Yes, immediately" || value === "Yes, within 3 months") && 
-                                    currentLocation === "North America") {
+                                // Show booking popup immediately on urgent timeframe selections
+                                if (value === "Yes, immediately" || value === "Yes, within 3 months") {
                                   setShowCalendlyDialog(true);
                                 }
                               }}
