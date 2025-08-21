@@ -48,97 +48,90 @@ const Navigation = () => {
   };
 
   return (
-    <header
-      className={`fixed top-3.5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 rounded-full ${
-        isScrolled 
-          ? "h-14 bg-[#1B1B1B]/40 backdrop-blur-xl border border-white/10 scale-95 w-[90%] max-w-6xl" 
-          : "h-14 bg-[#1B1B1B] w-[95%] max-w-6xl"
-      }`}
-    >
-      <div className="mx-auto h-full px-6">
-        <nav className="flex items-center justify-between h-full">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+      <div className="container mx-auto px-6">
+        <nav className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <ProcessedLogo className="w-5 h-5" />
-            <span className="font-bold text-base text-white">Hero</span>
+            <ProcessedLogo className="w-6 h-6" />
+            <span className="font-bold text-xl text-slate-900">Hero</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden">  {/* Hidden desktop navigation */}
-            <Link 
-              to="/buyback-blueprint" 
-              className="relative group px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full hover:from-blue-400 hover:via-indigo-400 hover:to-purple-400 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm border border-white/10"
-            >
-              <span className="relative z-10">Buyback Blueprint</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+          <div className="hidden md:flex items-center gap-8">
+            <Link to="#" className="text-slate-600 hover:text-slate-900 font-medium">
+              Learn
             </Link>
-            
-            {/* CTAs */}
-            <div className="flex items-center gap-3 ml-4">
-            <Button size="sm" variant="glass" className="bg-white/20 text-white hover:bg-white/30 backdrop-blur-md">
-                Get Started
-              </Button>
-            </div>
+            <Link to="#" className="text-slate-600 hover:text-slate-900 font-medium">
+              Pricing
+            </Link>
           </div>
 
-          {/* Mobile Navigation */}
-          <div className="flex items-center">
-            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="h-10 w-10 text-white hover:bg-white/10 rounded-full transition-colors border border-white/20"
-                >
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="bg-background/95 backdrop-blur-xl border-l border-white/10">
-                <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                <SheetDescription className="sr-only">Mobile navigation menu</SheetDescription>
-                <div className="flex flex-col h-full pt-12">
-                  {/* Logo Section */}
-                  <Link 
-                    to="/" 
-                    className="flex items-center gap-2 mb-8 px-2"
-                    onClick={() => setIsMobileMenuOpen(false)}
+          {/* Right side */}
+          <div className="flex items-center gap-4">
+            <Button variant="ghost" className="text-slate-600 hover:text-slate-900">
+              Sign in
+            </Button>
+            
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button 
+                    variant="ghost" 
+                    size="icon" 
+                    className="h-10 w-10 text-slate-600 hover:bg-slate-100"
                   >
-                    <ProcessedLogo className="w-6 h-6" />
-                    <span className="font-bold text-lg text-foreground">Hero</span>
-                  </Link>
-                  
-                   {/* Navigation Links */}
-                   <div className="flex flex-col gap-4 flex-1">
-                     <Link 
-                       to="/buyback-blueprint" 
-                       className="px-4 py-3 text-sm font-medium text-foreground bg-primary/10 hover:bg-primary/20 rounded-xl transition-colors border border-primary/20"
-                       onClick={() => setIsMobileMenuOpen(false)}
-                     >
-                       Buyback Blueprint
-                     </Link>
-                     
-                     <Link 
-                       to="/ea-intake" 
-                       className="px-4 py-3 text-sm font-medium text-foreground bg-primary/10 hover:bg-primary/20 rounded-xl transition-colors border border-primary/20"
-                       onClick={() => setIsMobileMenuOpen(false)}
-                     >
-                       EA Intake Form
-                     </Link>
-                   </div>
-
-                  {/* Bottom CTA */}
-                  <div className="mt-auto pb-8">
-                    <Button 
-                      onClick={() => setIsMobileMenuOpen(false)} 
-                      variant="default"
-                      className="w-full"
+                    <Menu className="h-6 w-6" />
+                    <span className="sr-only">Toggle menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent className="bg-white">
+                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                  <SheetDescription className="sr-only">Mobile navigation menu</SheetDescription>
+                  <div className="flex flex-col h-full pt-12">
+                    {/* Logo Section */}
+                    <Link 
+                      to="/" 
+                      className="flex items-center gap-2 mb-8 px-2"
+                      onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Get Started
-                    </Button>
+                      <ProcessedLogo className="w-6 h-6" />
+                      <span className="font-bold text-lg text-slate-900">Hero</span>
+                    </Link>
+                    
+                     {/* Navigation Links */}
+                     <div className="flex flex-col gap-4 flex-1">
+                       <Link 
+                         to="#" 
+                         className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                         onClick={() => setIsMobileMenuOpen(false)}
+                       >
+                         Learn
+                       </Link>
+                       
+                       <Link 
+                         to="#" 
+                         className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
+                         onClick={() => setIsMobileMenuOpen(false)}
+                       >
+                         Pricing
+                       </Link>
+                     </div>
+
+                    {/* Bottom CTA */}
+                    <div className="mt-auto pb-8">
+                      <Button 
+                        onClick={() => setIsMobileMenuOpen(false)} 
+                        variant="ghost"
+                        className="w-full text-slate-600"
+                      >
+                        Sign in
+                      </Button>
+                    </div>
                   </div>
-                </div>
-              </SheetContent>
-            </Sheet>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </nav>
       </div>

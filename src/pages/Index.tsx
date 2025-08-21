@@ -18,16 +18,6 @@ const Index = () => {
       {/* Hero Section - Pin.com style */}
       <section className="relative pt-32 pb-20 px-6">
         <div className="container mx-auto max-w-4xl text-center">
-          {/* Announcement Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-sm font-medium text-orange-800 mb-8"
-          >
-            <Zap className="w-4 h-4" />
-            The most advanced AI Recruiter in 2025!
-          </motion.div>
 
           {/* Main Headline */}
           <motion.h1
