@@ -91,7 +91,7 @@ const Index = () => {
                 size="xl" 
                 variant="gradient"
                 className="group px-8 py-4"
-                onClick={() => setShowEmailCapture(true)}
+                onClick={() => window.location.href = '/hiring-intake'}
               >
                 Get Started
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

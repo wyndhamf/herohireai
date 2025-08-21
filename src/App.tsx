@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import BuybackBlueprint from "./pages/BuybackBlueprint";
 import PaymentSuccess from "./pages/PaymentSuccess";
 import EAIntake from "./pages/EAIntake";
+import HiringIntake from "./pages/HiringIntake";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,6 +31,7 @@ const App = () => {
               <Route path="/buyback-blueprint" element={<BuybackBlueprint />} />
               <Route path="/payment-success" element={<PaymentSuccess />} />
               <Route path="/ea-intake" element={<EAIntake />} />
+              <Route path="/hiring-intake" element={<HiringIntake />} />
             </Routes>
           </BrowserRouter>
         </div>
