@@ -65,10 +65,10 @@ const HiringIntake = () => {
     try {
       // Determine lead status and market
       const isQualified = (data.lookingForEA === "Yes, immediately" || data.lookingForEA === "Yes, within 3 months") &&
-                         (data.location === "United States" || data.location === "USA" || data.location === "US" || data.location === "Canada");
+                         (data.location === "North America");
       
       const leadStatus = isQualified ? "qualified_to_book" : "nurture_no_link";
-      const market = (data.location === "United States" || data.location === "USA" || data.location === "US" || data.location === "Canada") ? "US_CA" : "INTL";
+      const market = (data.location === "North America") ? "US_CA" : "INTL";
 
       const { error } = await supabase
         .from('lead_captures')
@@ -421,19 +421,33 @@ const HiringIntake = () => {
                       )}
                     />
 
-                    <FormField
-                      control={form.control}
-                      name="location"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Where are you located? *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="e.g., New York, San Francisco, Remote" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                     <FormField
+                       control={form.control}
+                       name="location"
+                       render={({ field }) => (
+                         <FormItem>
+                           <FormLabel>Where are you located? *</FormLabel>
+                           <FormControl>
+                             <RadioGroup
+                               onValueChange={field.onChange}
+                               defaultValue={field.value}
+                               className="grid grid-cols-2 gap-4"
+                             >
+                               {[
+                                 'North America',
+                                 'Other'
+                               ].map((location) => (
+                                 <div key={location} className="flex items-center space-x-2">
+                                   <RadioGroupItem value={location} id={location} />
+                                   <label htmlFor={location} className="cursor-pointer">{location}</label>
+                                 </div>
+                               ))}
+                             </RadioGroup>
+                           </FormControl>
+                           <FormMessage />
+                         </FormItem>
+                       )}
+                     />
                   </div>
                 )}
 

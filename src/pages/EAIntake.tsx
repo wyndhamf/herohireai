@@ -145,10 +145,10 @@ const EAIntake = () => {
     try {
       // Determine lead status and market
       const isQualified = (data.looking_for_ea === "Yes, immediately" || data.looking_for_ea === "Yes, within 3 months") &&
-                         (data.location_country === "United States" || data.location_country === "USA" || data.location_country === "US" || data.location_country === "Canada");
+                         (data.location_country === "North America");
       
       const leadStatus = isQualified ? "qualified_to_book" : "nurture_no_link";
-      const market = (data.location_country === "United States" || data.location_country === "USA" || data.location_country === "US" || data.location_country === "Canada") ? "US_CA" : "INTL";
+      const market = (data.location_country === "North America") ? "US_CA" : "INTL";
 
       const { error } = await supabase
         .from('ea_intake_submissions')
@@ -320,19 +320,14 @@ const EAIntake = () => {
                        name="location_country"
                        render={({ field }) => (
                          <FormItem>
-                           <FormLabel>Country</FormLabel>
+                           <FormLabel>Where are you located?</FormLabel>
                            <FormControl>
                              <select 
                                {...field} 
                                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                              >
-                               <option value="">Select your country</option>
-                               <option value="United States">United States</option>
-                               <option value="Canada">Canada</option>
-                               <option value="United Kingdom">United Kingdom</option>
-                               <option value="Australia">Australia</option>
-                               <option value="Germany">Germany</option>
-                               <option value="France">France</option>
+                               <option value="">Select your location</option>
+                               <option value="North America">North America</option>
                                <option value="Other">Other</option>
                              </select>
                            </FormControl>
