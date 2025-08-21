@@ -85,7 +85,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+              className="flex justify-center items-center mb-16"
             >
               <Button 
                 size="xl" 
@@ -95,16 +95,6 @@ const Index = () => {
               >
                 Get Started
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              
-              <Button 
-                size="xl" 
-                variant="outline"
-                className="group px-8 py-4 bg-white/10 text-white border-white/20 hover:bg-white/20"
-                onClick={() => window.open('https://calendly.com/jackie-atlas', '_blank')}
-              >
-                Book a Call
-                <Calendar className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
             
