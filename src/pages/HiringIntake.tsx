@@ -144,7 +144,7 @@ const HiringIntake = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 onClick={() => window.open('https://calendly.com/jackie-atlas', '_blank')}
-                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg"
+                className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg"
               >
                 <Calendar className="w-5 h-5" />
                 Book Discovery Call
@@ -165,27 +165,15 @@ const HiringIntake = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gray-50">
       <Navigation />
       
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-8">
-            <div className="flex items-center gap-4 mb-6">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => navigate('/')}
-                className="flex items-center gap-2"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back to Home
-              </Button>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-light mb-4 text-slate-900">
-              Tell us about your <span className="text-blue-600 font-medium">hiring needs</span>
+          <div className="text-center mb-8 pt-16">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900">
+              Tell us about your <span className="text-emerald-600 font-bold">hiring needs</span>
             </h1>
             <p className="text-xl text-slate-600 mb-8">
               Help us understand your requirements so we can find you the perfect candidate
@@ -197,7 +185,12 @@ const HiringIntake = () => {
                 <span>Step {currentStep} of {totalSteps}</span>
                 <span>{Math.round(progress)}% Complete</span>
               </div>
-              <Progress value={progress} className="h-2" />
+              <div className="w-full bg-gray-200 rounded-full h-2">
+                <div 
+                  className="bg-emerald-600 h-2 rounded-full transition-all duration-300" 
+                  style={{ width: `${progress}%` }}
+                ></div>
+              </div>
             </div>
           </div>
 
@@ -401,7 +394,7 @@ const HiringIntake = () => {
                     <Button
                       type="button"
                       onClick={nextStep}
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white"
                     >
                       Next
                       <ChevronRight className="w-4 h-4" />
@@ -410,8 +403,7 @@ const HiringIntake = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="flex items-center gap-2"
-                      variant="gradient"
+                      className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white"
                     >
                       {isSubmitting ? (
                         <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
