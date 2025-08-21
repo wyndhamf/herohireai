@@ -58,10 +58,6 @@ const Navigation = () => {
 
           {/* Right side */}
           <div className="flex items-center gap-4">
-            <Button variant="ghost" className="text-slate-600 hover:text-slate-900">
-              Sign in
-            </Button>
-            
             {/* Mobile Navigation */}
             <div className="md:hidden">
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -88,17 +84,6 @@ const Navigation = () => {
                       <ProcessedLogo className="w-6 h-6 text-emerald-600" />
                       <span className="font-bold text-lg text-emerald-600">Hero</span>
                     </Link>
-
-                    {/* Bottom CTA */}
-                    <div className="mt-auto pb-8">
-                      <Button 
-                        onClick={() => setIsMobileMenuOpen(false)} 
-                        variant="ghost"
-                        className="w-full text-slate-600"
-                      >
-                        Sign in
-                      </Button>
-                    </div>
                   </div>
                 </SheetContent>
               </Sheet>
