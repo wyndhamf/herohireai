@@ -54,30 +54,8 @@ const Index = () => {
               Get Started
             </Button>
           </motion.div>
-
-          {/* Feature Callouts */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-8 justify-center items-center text-sm text-slate-500"
-          >
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-slate-400" />
-              <span>Free Trial</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-slate-400" />
-              <span>No Credit Card Required</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle className="w-4 h-4 text-slate-400" />
-              <span>Expert Support</span>
-            </div>
-          </motion.div>
         </div>
       </section>
-
 
       {/* Features Section */}
       <section className="py-20 px-6 bg-gray-50">
