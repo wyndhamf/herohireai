@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { ChevronRight, ChevronLeft, CheckCircle, ArrowLeft, Calendar, ExternalLink } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
@@ -197,16 +197,12 @@ const HiringIntake = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/book-call"
-                target="_top"
-                rel="noopener noreferrer"
-              >
+              <Link to="/book-call">
                 <Button className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg">
                   <Calendar className="w-5 h-5" />
                   Book Discovery Call
                 </Button>
-              </a>
+              </Link>
               
               <Button 
                 onClick={() => navigate('/')} 
@@ -237,17 +233,12 @@ const HiringIntake = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
-            <a
-              href="/book-call"
-              target="_top"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
+            <Link to="/book-call" className="w-full">
               <Button className="w-full">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Open Scheduling Link
               </Button>
-            </a>
+            </Link>
             <Button 
               variant="outline" 
               onClick={() => setShowCalendlyDialog(false)}

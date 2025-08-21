@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { ChevronRight, ChevronLeft, CheckCircle, Calendar, ExternalLink } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
@@ -237,17 +237,12 @@ const EAIntake = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
-            <a
-              href="/book-call"
-              target="_top"
-              rel="noopener noreferrer"
-              className="w-full"
-            >
+            <Link to="/book-call" className="w-full">
               <Button className="w-full">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Open Scheduling Link
               </Button>
-            </a>
+            </Link>
             <Button 
               variant="outline" 
               onClick={() => setShowCalendlyDialog(false)}
