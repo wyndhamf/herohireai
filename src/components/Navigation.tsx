@@ -52,19 +52,9 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <nav className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <ProcessedLogo className="w-6 h-6" />
-            <span className="font-bold text-xl text-slate-900">Hero</span>
+            <ProcessedLogo className="w-6 h-6 text-emerald-600" />
+            <span className="font-bold text-xl text-emerald-600">Hero</span>
           </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link to="#" className="text-slate-600 hover:text-slate-900 font-medium">
-              Learn
-            </Link>
-            <Link to="#" className="text-slate-600 hover:text-slate-900 font-medium">
-              Pricing
-            </Link>
-          </div>
 
           {/* Right side */}
           <div className="flex items-center gap-4">
@@ -95,28 +85,9 @@ const Navigation = () => {
                       className="flex items-center gap-2 mb-8 px-2"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <ProcessedLogo className="w-6 h-6" />
-                      <span className="font-bold text-lg text-slate-900">Hero</span>
+                      <ProcessedLogo className="w-6 h-6 text-emerald-600" />
+                      <span className="font-bold text-lg text-emerald-600">Hero</span>
                     </Link>
-                    
-                     {/* Navigation Links */}
-                     <div className="flex flex-col gap-4 flex-1">
-                       <Link 
-                         to="#" 
-                         className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
-                         onClick={() => setIsMobileMenuOpen(false)}
-                       >
-                         Learn
-                       </Link>
-                       
-                       <Link 
-                         to="#" 
-                         className="px-4 py-3 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors"
-                         onClick={() => setIsMobileMenuOpen(false)}
-                       >
-                         Pricing
-                       </Link>
-                     </div>
 
                     {/* Bottom CTA */}
                     <div className="mt-auto pb-8">
