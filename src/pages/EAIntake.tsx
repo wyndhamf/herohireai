@@ -161,8 +161,8 @@ const EAIntake = () => {
           name: data.name,
           email: data.email,
           phone: data.phone,
-          company_name: data.company_name,
-          location_country: data.location_country,
+          business_name: data.company_name,
+          business_location: data.location_country,
           looking_for_ea: data.looking_for_ea,
           lead_status: leadStatus,
           market: market,
@@ -176,6 +176,11 @@ const EAIntake = () => {
           previous_experience: data.previousExperience,
           communication_preferences: data.communication,
           leadership_style: data.leadershipStyle,
+          // Set default values for required fields
+          business_description: '',
+          team_size: '',
+          team_modality: '',
+          referral_source: ''
         });
 
       if (error) {
