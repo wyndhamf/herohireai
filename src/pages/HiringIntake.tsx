@@ -26,34 +26,14 @@ const formSchema = z.object({
   phone: z.string().min(1, "Please enter your phone number"),
   
   // Company Information
-  companyName: z.string().min(1, "Please enter your company name"),
+  companyName: z.string().min(1, "What is your company name?"),
   companySize: z.string().min(1, "Please select your company size"),
-  industry: z.string().min(1, "Please enter your industry"),
-  
-  // Hiring Needs
-  roleTitle: z.string().min(1, "Please enter the role title"),
-  roleDescription: z.string().min(1, "Please describe the role"),
-  urgency: z.string().min(1, "Please select urgency level"),
-  budget: z.string().min(1, "Please provide your budget"),
-  
-  // Requirements
-  experience: z.string().min(1, "Please specify experience requirements"),
-  skills: z.array(z.string()).min(1, "Please select at least one skill area"),
-  location: z.string().min(1, "Please specify location requirements"),
-  
-  // Additional Information
-  previousHiring: z.string().min(1, "This field is required"),
-  timeline: z.string().min(1, "Please specify your timeline"),
-  additionalInfo: z.string().optional(),
+  currentRevenue: z.string().min(1, "What is your current revenue?"),
+  lookingForEA: z.string().min(1, "Are you currently looking for an EA?"),
+  location: z.string().min(1, "Where are you located?"),
 });
 
 type FormData = z.infer<typeof formSchema>;
-
-const skillOptions = [
-  'Software Development', 'Marketing', 'Sales', 'Design', 'Data Analysis',
-  'Customer Success', 'Operations', 'Finance', 'HR', 'Product Management',
-  'Business Development', 'Engineering', 'Content Creation', 'Project Management'
-];
 
 const HiringIntake = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -61,7 +41,7 @@ const HiringIntake = () => {
   const [isCompleted, setIsCompleted] = useState(false);
   const navigate = useNavigate();
   
-  const totalSteps = 4;
+  const totalSteps = 2;
   const progress = (currentStep / totalSteps) * 100;
 
   const form = useForm<FormData>({
@@ -72,17 +52,9 @@ const HiringIntake = () => {
       phone: '',
       companyName: '',
       companySize: '',
-      industry: '',
-      roleTitle: '',
-      roleDescription: '',
-      urgency: '',
-      budget: '',
-      experience: '',
-      skills: [],
+      currentRevenue: '',
+      lookingForEA: '',
       location: '',
-      previousHiring: '',
-      timeline: '',
-      additionalInfo: '',
     },
   });
 
@@ -132,11 +104,7 @@ const HiringIntake = () => {
       case 1:
         return ['name', 'email', 'phone'];
       case 2:
-        return ['companyName', 'companySize', 'industry'];
-      case 3:
-        return ['roleTitle', 'roleDescription', 'urgency', 'budget'];
-      case 4:
-        return ['experience', 'skills', 'location', 'previousHiring', 'timeline'];
+        return ['companyName', 'companySize', 'currentRevenue', 'lookingForEA', 'location'];
       default:
         return [];
     }
@@ -297,7 +265,7 @@ const HiringIntake = () => {
                       name="companyName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Company Name *</FormLabel>
+                          <FormLabel>What is your company name? *</FormLabel>
                           <FormControl>
                             <Input placeholder="Enter your company name" {...field} />
                           </FormControl>
@@ -334,68 +302,10 @@ const HiringIntake = () => {
 
                       <FormField
                         control={form.control}
-                        name="industry"
+                        name="currentRevenue"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Industry *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="e.g., Technology, Healthcare, Finance" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {/* Step 3: Role Details */}
-                {currentStep === 3 && (
-                  <div className="space-y-6">
-                    <div className="text-center mb-8">
-                      <h2 className="text-2xl font-semibold mb-2">Role Details</h2>
-                      <p className="text-slate-600">Describe the position you're looking to fill</p>
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="roleTitle"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Role Title *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="e.g., Senior Software Engineer, Marketing Manager" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="roleDescription"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Role Description *</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Describe the key responsibilities and requirements for this role..."
-                              className="min-h-[120px]"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="urgency"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>How urgent is this hire? *</FormLabel>
+                            <FormLabel>What is your current revenue? *</FormLabel>
                             <FormControl>
                               <RadioGroup
                                 onValueChange={field.onChange}
@@ -403,45 +313,15 @@ const HiringIntake = () => {
                                 className="grid grid-cols-1 gap-2"
                               >
                                 {[
-                                  'ASAP (within 2 weeks)',
-                                  'Soon (within 1 month)',
-                                  'Standard (1-2 months)',
-                                  'Flexible (2+ months)'
-                                ].map((option) => (
-                                  <div key={option} className="flex items-center space-x-2">
-                                    <RadioGroupItem value={option} id={option} />
-                                    <label htmlFor={option} className="cursor-pointer">{option}</label>
-                                  </div>
-                                ))}
-                              </RadioGroup>
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="budget"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Budget Range *</FormLabel>
-                            <FormControl>
-                              <RadioGroup
-                                onValueChange={field.onChange}
-                                defaultValue={field.value}
-                                className="grid grid-cols-1 gap-2"
-                              >
-                                {[
-                                  '$50k - $75k',
-                                  '$75k - $100k',
-                                  '$100k - $150k',
-                                  '$150k - $200k',
-                                  '$200k+'
-                                ].map((range) => (
-                                  <div key={range} className="flex items-center space-x-2">
-                                    <RadioGroupItem value={range} id={range} />
-                                    <label htmlFor={range} className="cursor-pointer">{range}</label>
+                                  'Under $1M',
+                                  '$1M - $5M',
+                                  '$5M - $10M',
+                                  '$10M - $50M',
+                                  'Over $50M'
+                                ].map((revenue) => (
+                                  <div key={revenue} className="flex items-center space-x-2">
+                                    <RadioGroupItem value={revenue} id={revenue} />
+                                    <label htmlFor={revenue} className="cursor-pointer">{revenue}</label>
                                   </div>
                                 ))}
                               </RadioGroup>
@@ -451,23 +331,13 @@ const HiringIntake = () => {
                         )}
                       />
                     </div>
-                  </div>
-                )}
-
-                {/* Step 4: Requirements & Additional Info */}
-                {currentStep === 4 && (
-                  <div className="space-y-6">
-                    <div className="text-center mb-8">
-                      <h2 className="text-2xl font-semibold mb-2">Requirements & Timeline</h2>
-                      <p className="text-slate-600">Final details to help us find the right match</p>
-                    </div>
 
                     <FormField
                       control={form.control}
-                      name="experience"
+                      name="lookingForEA"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Experience Level Required *</FormLabel>
+                          <FormLabel>Are you currently looking for an EA? *</FormLabel>
                           <FormControl>
                             <RadioGroup
                               onValueChange={field.onChange}
@@ -475,46 +345,17 @@ const HiringIntake = () => {
                               className="grid grid-cols-2 gap-4"
                             >
                               {[
-                                'Entry Level (0-2 years)',
-                                'Mid Level (3-5 years)',
-                                'Senior Level (6-10 years)',
-                                'Executive Level (10+ years)'
-                              ].map((level) => (
-                                <div key={level} className="flex items-center space-x-2">
-                                  <RadioGroupItem value={level} id={level} />
-                                  <label htmlFor={level} className="cursor-pointer">{level}</label>
+                                'Yes, immediately',
+                                'Yes, within 3 months',
+                                'Maybe in the future',
+                                'No, just exploring'
+                              ].map((option) => (
+                                <div key={option} className="flex items-center space-x-2">
+                                  <RadioGroupItem value={option} id={option} />
+                                  <label htmlFor={option} className="cursor-pointer">{option}</label>
                                 </div>
                               ))}
                             </RadioGroup>
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="skills"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Key Skill Areas *</FormLabel>
-                          <FormControl>
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                              {skillOptions.map((skill) => (
-                                <div key={skill} className="flex items-center space-x-2">
-                                  <Checkbox
-                                    checked={field.value?.includes(skill)}
-                                    onCheckedChange={(checked) => {
-                                      const updatedSkills = checked
-                                        ? [...(field.value || []), skill]
-                                        : field.value?.filter((s) => s !== skill) || [];
-                                      field.onChange(updatedSkills);
-                                    }}
-                                  />
-                                  <label className="text-sm cursor-pointer">{skill}</label>
-                                </div>
-                              ))}
-                            </div>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -526,79 +367,9 @@ const HiringIntake = () => {
                       name="location"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Location Requirements *</FormLabel>
+                          <FormLabel>Where are you located? *</FormLabel>
                           <FormControl>
-                            <RadioGroup
-                              onValueChange={field.onChange}
-                              defaultValue={field.value}
-                              className="grid grid-cols-1 gap-2"
-                            >
-                              {[
-                                'Remote (anywhere)',
-                                'Hybrid (specific city)',
-                                'On-site (specific location)',
-                                'Flexible'
-                              ].map((location) => (
-                                <div key={location} className="flex items-center space-x-2">
-                                  <RadioGroupItem value={location} id={location} />
-                                  <label htmlFor={location} className="cursor-pointer">{location}</label>
-                                </div>
-                              ))}
-                            </RadioGroup>
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="previousHiring"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Have you worked with recruiting agencies before? *</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Tell us about your previous hiring experiences, what worked well, what didn't..."
-                              className="min-h-[100px]"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="timeline"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Ideal Timeline *</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="When would you like to start interviews? Any specific milestones or deadlines?"
-                              className="min-h-[80px]"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="additionalInfo"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Additional Information</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Anything else you'd like us to know about this role or your company culture?"
-                              className="min-h-[80px]"
-                              {...field}
-                            />
+                            <Input placeholder="e.g., New York, San Francisco, Remote" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
