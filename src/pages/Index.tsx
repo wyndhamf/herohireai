@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import { EmailCapture } from "@/components/EmailCapture";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  const [showEmailCapture, setShowEmailCapture] = useState(false);
-  const [showThankYou, setShowThankYou] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowEmailCapture(true);
-    }, 3000); // Show popup after 3 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -154,48 +143,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Email Capture Modal */}
-      {showEmailCapture && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-3xl w-full">
-            <button 
-              onClick={() => setShowEmailCapture(false)}
-              className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center text-slate-600 hover:text-slate-900 shadow-lg z-10"
-            >
-              ✕
-            </button>
-            <EmailCapture 
-              className="bg-white rounded-2xl shadow-2xl" 
-              onClose={() => setShowEmailCapture(false)} 
-              onSubmit={() => {
-                setShowEmailCapture(false);
-                setShowThankYou(true);
-                setTimeout(() => setShowThankYou(false), 5000);
-              }}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* Thank You Message */}
-      {showThankYou && (
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
-          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-emerald-50 border border-emerald-200 rounded-lg shadow-lg p-6 max-w-md w-full mx-4"
-        >
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-              <CheckCircle className="w-5 h-5 text-emerald-600" />
-            </div>
-            <div>
-              <h3 className="font-semibold text-emerald-900">Thank You!</h3>
-              <p className="text-sm text-emerald-700">We'll contact you shortly to discuss your hiring needs.</p>
-            </div>
-          </div>
-        </motion.div>
-      )}
 
       <Footer />
     </div>
