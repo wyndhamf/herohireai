@@ -26,8 +26,6 @@ const formSchema = z.object({
   phone: z.string().min(1, "Please enter your phone number"),
   
   // Company Information
-  first_name: z.string().min(1, "Please enter your first name"),
-  last_name: z.string().min(1, "Please enter your last name"),
   companyName: z.string().min(1, "What is your company name?"),
   companySize: z.string().min(1, "Please select your company size"),
   currentRevenue: z.string().min(1, "What is your current revenue?"),
@@ -53,8 +51,6 @@ const HiringIntake = () => {
       name: '',
       email: '',
       phone: '',
-      first_name: '',
-      last_name: '',
       companyName: '',
       companySize: '',
       currentRevenue: '',
@@ -80,8 +76,6 @@ const HiringIntake = () => {
           name: data.name,
           email: data.email,
           phone: data.phone,
-          first_name: data.first_name,
-          last_name: data.last_name,
           company_name: data.companyName,
           location_country: data.location,
           looking_for_ea: data.lookingForEA,
@@ -99,7 +93,7 @@ const HiringIntake = () => {
       // Determine next action based on routing logic
       if (isQualified) {
         // Redirect to Google Calendar booking
-        const bookingUrl = `https://calendly.com/your-calendar?name=${encodeURIComponent(data.first_name)}%20${encodeURIComponent(data.last_name)}&company=${encodeURIComponent(data.companyName)}&email=${encodeURIComponent(data.email)}`;
+        const bookingUrl = `https://calendly.com/your-calendar?name=${encodeURIComponent(data.name)}&company=${encodeURIComponent(data.companyName)}&email=${encodeURIComponent(data.email)}`;
         window.location.href = bookingUrl;
       } else {
         // Show nurture screen
@@ -130,7 +124,7 @@ const HiringIntake = () => {
   const getFieldsForStep = (step: number): (keyof FormData)[] => {
     switch (step) {
       case 1:
-        return ['name', 'email', 'phone', 'first_name', 'last_name'];
+        return ['name', 'email', 'phone'];
       case 2:
         return ['companyName', 'companySize', 'currentRevenue', 'lookingForEA', 'location'];
       default:
@@ -314,36 +308,6 @@ const HiringIntake = () => {
                         </FormItem>
                       )}
                     />
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <FormField
-                        control={form.control}
-                        name="first_name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>First Name *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="First name" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="last_name"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Last Name *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Last name" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
                   </div>
                 )}
 

@@ -24,8 +24,6 @@ const formSchema = z.object({
   phone: z.string().min(1, "Please enter your phone number"),
   
   // Company Information
-  first_name: z.string().min(1, "Please enter your first name"),
-  last_name: z.string().min(1, "Please enter your last name"),
   company_name: z.string().min(1, "Please enter your company name"),
   location_country: z.string().min(1, "Please select your country"),
   looking_for_ea: z.string().min(1, "Please select an option"),
@@ -77,8 +75,6 @@ const EAIntake = () => {
       name: "",
       email: "",
       phone: "",
-      first_name: "",
-      last_name: "",
       company_name: "",
       location_country: "",
       looking_for_ea: "",
@@ -98,14 +94,12 @@ const EAIntake = () => {
   const watchedFields = form.watch();
   
   const getTotalProgress = () => {
-    const totalFields = 17;
+    const totalFields = 15;
     let completedFields = 0;
     
     if (watchedFields.name) completedFields++;
     if (watchedFields.email) completedFields++;
     if (watchedFields.phone) completedFields++;
-    if (watchedFields.first_name) completedFields++;
-    if (watchedFields.last_name) completedFields++;
     if (watchedFields.company_name) completedFields++;
     if (watchedFields.location_country) completedFields++;
     if (watchedFields.looking_for_ea) completedFields++;
@@ -125,7 +119,7 @@ const EAIntake = () => {
 
   const validateCurrentSection = async () => {
     const fields = {
-      1: ['name', 'email', 'phone', 'first_name', 'last_name', 'company_name', 'location_country', 'looking_for_ea', 'outcomes', 'timeWasters', 'hoursAndTimezone'],
+      1: ['name', 'email', 'phone', 'company_name', 'location_country', 'looking_for_ea', 'outcomes', 'timeWasters', 'hoursAndTimezone'],
       2: ['remoteEA', 'budget', 'focus', 'tools'],
       3: ['previousExperience', 'communication', 'leadershipStyle']
     };
@@ -162,8 +156,6 @@ const EAIntake = () => {
           name: data.name,
           email: data.email,
           phone: data.phone,
-          first_name: data.first_name,
-          last_name: data.last_name,
           company_name: data.company_name,
           location_country: data.location_country,
           looking_for_ea: data.looking_for_ea,
@@ -193,7 +185,7 @@ const EAIntake = () => {
       // Determine next action based on routing logic
       if (isQualified) {
         // Redirect to Google Calendar booking
-        const bookingUrl = `https://calendly.com/your-calendar?name=${encodeURIComponent(data.first_name)}%20${encodeURIComponent(data.last_name)}&company=${encodeURIComponent(data.company_name)}&email=${encodeURIComponent(data.email)}`;
+        const bookingUrl = `https://calendly.com/your-calendar?name=${encodeURIComponent(data.name)}&company=${encodeURIComponent(data.company_name)}&email=${encodeURIComponent(data.email)}`;
         window.location.href = bookingUrl;
       } else {
         // Show nurture screen
@@ -308,36 +300,6 @@ const EAIntake = () => {
                          </FormItem>
                        )}
                      />
-
-                     <div className="grid grid-cols-2 gap-4">
-                       <FormField
-                         control={form.control}
-                         name="first_name"
-                         render={({ field }) => (
-                           <FormItem>
-                             <FormLabel>First Name</FormLabel>
-                             <FormControl>
-                               <Input placeholder="First name" {...field} />
-                             </FormControl>
-                             <FormMessage />
-                           </FormItem>
-                         )}
-                       />
-
-                       <FormField
-                         control={form.control}
-                         name="last_name"
-                         render={({ field }) => (
-                           <FormItem>
-                             <FormLabel>Last Name</FormLabel>
-                             <FormControl>
-                               <Input placeholder="Last name" {...field} />
-                             </FormControl>
-                             <FormMessage />
-                           </FormItem>
-                         )}
-                       />
-                     </div>
 
                      <FormField
                        control={form.control}
