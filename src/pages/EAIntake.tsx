@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { ChevronRight, ChevronLeft, CheckCircle } from 'lucide-react';
+import { ChevronRight, ChevronLeft, CheckCircle, Calendar, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -14,6 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Progress } from '@/components/ui/progress';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 
 // Form validation schema
@@ -67,6 +68,7 @@ const EAIntake = () => {
   const [currentSection, setCurrentSection] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showNurtureScreen, setShowNurtureScreen] = useState(false);
+  const [showCalendlyDialog, setShowCalendlyDialog] = useState(false);
   const navigate = useNavigate();
 
   const form = useForm<FormData>({
@@ -182,15 +184,8 @@ const EAIntake = () => {
       console.log('Form submitted successfully');
       toast.success('Form submitted successfully!');
       
-      // Determine next action based on routing logic
-      if (isQualified) {
-        // Redirect to Calendly booking for immediate or 3-month leads
-        const bookingUrl = `https://calendly.com/your-calendar-link?name=${encodeURIComponent(data.name)}&company=${encodeURIComponent(data.company_name)}&email=${encodeURIComponent(data.email)}`;
-        window.location.href = bookingUrl;
-      } else {
-        // Show nurture screen
-        setShowNurtureScreen(true);
-      }
+              // Always show nurture screen for form completion
+              setShowNurtureScreen(true);
     } catch (error) {
       console.error('Error submitting form:', error);
       toast.error('Failed to submit form. Please try again.');
@@ -228,6 +223,43 @@ const EAIntake = () => {
   }
 
   return (
+    <>
+      {/* Calendly Booking Dialog */}
+      <Dialog open={showCalendlyDialog} onOpenChange={setShowCalendlyDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-primary" />
+              Book Your Discovery Call
+            </DialogTitle>
+            <DialogDescription>
+              Perfect! Since you're looking for an EA soon, let's schedule a quick discovery call to discuss your needs.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-4 py-4">
+            <Button 
+              onClick={() => {
+                const formData = form.getValues();
+                const bookingUrl = `https://calendly.com/your-calendar-link?name=${encodeURIComponent(formData.name || '')}&company=${encodeURIComponent(formData.company_name || '')}&email=${encodeURIComponent(formData.email || '')}`;
+                window.open(bookingUrl, '_blank');
+                setShowCalendlyDialog(false);
+              }}
+              className="w-full"
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Schedule Discovery Call
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => setShowCalendlyDialog(false)}
+              className="w-full"
+            >
+              Continue Form First
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+      
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/95">
       {/* Fixed Progress Bar */}
       <div className="fixed top-0 left-0 right-0 bg-card/95 backdrop-blur-sm border-b border-border/50 z-50">
@@ -343,28 +375,35 @@ const EAIntake = () => {
                          <FormItem>
                            <FormLabel>Are you currently looking for an EA?</FormLabel>
                            <FormControl>
-                             <RadioGroup
-                               onValueChange={field.onChange}
-                               value={field.value}
-                               className="flex flex-col gap-3 mt-2"
-                             >
-                               <div className="flex items-center space-x-2">
-                                 <RadioGroupItem value="Yes, immediately" id="immediately" />
-                                 <label htmlFor="immediately" className="text-sm font-medium">Yes, immediately</label>
-                               </div>
-                               <div className="flex items-center space-x-2">
-                                 <RadioGroupItem value="Yes, within 3 months" id="within3months" />
-                                 <label htmlFor="within3months" className="text-sm font-medium">Yes, within 3 months</label>
-                               </div>
-                               <div className="flex items-center space-x-2">
-                                 <RadioGroupItem value="Maybe in the future" id="maybefuture" />
-                                 <label htmlFor="maybefuture" className="text-sm font-medium">Maybe in the future</label>
-                               </div>
-                               <div className="flex items-center space-x-2">
-                                 <RadioGroupItem value="No, just exploring" id="exploring" />
-                                 <label htmlFor="exploring" className="text-sm font-medium">No, just exploring</label>
-                               </div>
-                             </RadioGroup>
+                              <RadioGroup
+                                onValueChange={(value) => {
+                                  field.onChange(value);
+                                  // Show popup for qualified leads if they're in North America
+                                  if ((value === "Yes, immediately" || value === "Yes, within 3 months") && 
+                                      watchedFields.location_country === "North America") {
+                                    setShowCalendlyDialog(true);
+                                  }
+                                }}
+                                value={field.value}
+                                className="flex flex-col gap-3 mt-2"
+                              >
+                                <div className="flex items-center space-x-2">
+                                  <RadioGroupItem value="Yes, immediately" id="immediately" />
+                                  <label htmlFor="immediately" className="text-sm font-medium">Yes, immediately</label>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                  <RadioGroupItem value="Yes, within 3 months" id="within3months" />
+                                  <label htmlFor="within3months" className="text-sm font-medium">Yes, within 3 months</label>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                  <RadioGroupItem value="Maybe in the future" id="maybefuture" />
+                                  <label htmlFor="maybefuture" className="text-sm font-medium">Maybe in the future</label>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                  <RadioGroupItem value="No, just exploring" id="exploring" />
+                                  <label htmlFor="exploring" className="text-sm font-medium">No, just exploring</label>
+                                </div>
+                              </RadioGroup>
                            </FormControl>
                            <FormMessage />
                          </FormItem>
@@ -725,6 +764,7 @@ const EAIntake = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

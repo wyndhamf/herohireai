@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { ChevronRight, ChevronLeft, CheckCircle, ArrowLeft, Calendar } from 'lucide-react';
+import { ChevronRight, ChevronLeft, CheckCircle, ArrowLeft, Calendar, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -14,6 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Progress } from '@/components/ui/progress';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { cn } from '@/lib/utils';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -40,6 +41,7 @@ const HiringIntake = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [showNurtureScreen, setShowNurtureScreen] = useState(false);
+  const [showCalendlyDialog, setShowCalendlyDialog] = useState(false);
   const navigate = useNavigate();
   
   const totalSteps = 2;
@@ -90,15 +92,8 @@ const HiringIntake = () => {
 
       toast.success('Thank you! We\'ve received your hiring requirements and will be in touch soon.');
       
-      // Determine next action based on routing logic
-      if (isQualified) {
-        // Redirect to Calendly booking for immediate or 3-month leads
-        const bookingUrl = `https://calendly.com/your-calendar-link?name=${encodeURIComponent(data.name)}&company=${encodeURIComponent(data.companyName)}&email=${encodeURIComponent(data.email)}`;
-        window.location.href = bookingUrl;
-      } else {
-        // Show nurture screen
-        setShowNurtureScreen(true);
-      }
+      // Always show nurture screen for form completion
+      setShowNurtureScreen(true);
       
     } catch (error) {
       console.error('Error saving data:', error);
@@ -225,6 +220,43 @@ const HiringIntake = () => {
   }
 
   return (
+    <>
+      {/* Calendly Booking Dialog */}
+      <Dialog open={showCalendlyDialog} onOpenChange={setShowCalendlyDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Calendar className="w-5 h-5 text-primary" />
+              Book Your Discovery Call
+            </DialogTitle>
+            <DialogDescription>
+              Perfect! Since you're looking for an EA soon, let's schedule a quick discovery call to discuss your needs.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-4 py-4">
+            <Button 
+              onClick={() => {
+                const formData = form.getValues();
+                const bookingUrl = `https://calendly.com/your-calendar-link?name=${encodeURIComponent(formData.name || '')}&company=${encodeURIComponent(formData.companyName || '')}&email=${encodeURIComponent(formData.email || '')}`;
+                window.open(bookingUrl, '_blank');
+                setShowCalendlyDialog(false);
+              }}
+              className="w-full"
+            >
+              <ExternalLink className="w-4 h-4 mr-2" />
+              Schedule Discovery Call
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => setShowCalendlyDialog(false)}
+              className="w-full"
+            >
+              Continue Form First
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+      
     <div className="min-h-screen bg-gray-50">
       <Navigation />
       
@@ -399,7 +431,15 @@ const HiringIntake = () => {
                           <FormLabel>Are you currently looking for an EA? *</FormLabel>
                           <FormControl>
                             <RadioGroup
-                              onValueChange={field.onChange}
+                              onValueChange={(value) => {
+                                field.onChange(value);
+                                // Show popup for qualified leads if they're in North America
+                                const currentLocation = form.getValues('location');
+                                if ((value === "Yes, immediately" || value === "Yes, within 3 months") && 
+                                    currentLocation === "North America") {
+                                  setShowCalendlyDialog(true);
+                                }
+                              }}
                               defaultValue={field.value}
                               className="grid grid-cols-2 gap-4"
                             >
@@ -496,6 +536,7 @@ const HiringIntake = () => {
       
       <Footer />
     </div>
+    </>
   );
 };
 
