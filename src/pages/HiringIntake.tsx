@@ -18,6 +18,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { cn } from '@/lib/utils';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { QRCodeCanvas } from 'qrcode.react';
 
 // Form validation schema
 const formSchema = z.object({
@@ -233,12 +234,29 @@ const HiringIntake = () => {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
-            <Link to="/book-call" className="w-full">
+            <a
+              href="https://calendar.app.google/Jw4zcfa5fovfv9io6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
               <Button className="w-full">
                 <ExternalLink className="w-4 h-4 mr-2" />
                 Open Scheduling Link
               </Button>
-            </Link>
+            </a>
+            <div className="flex items-center gap-2">
+              <Button 
+                variant="outline" 
+                className="flex-1"
+                onClick={() => { navigator.clipboard.writeText('https://calendar.app.google/Jw4zcfa5fovfv9io6'); toast.success('Link copied to clipboard'); }}
+              >
+                Copy Link
+              </Button>
+              <div className="p-2 border rounded-md bg-white">
+                <QRCodeCanvas value="https://calendar.app.google/Jw4zcfa5fovfv9io6" size={96} includeMargin />
+              </div>
+            </div>
             <Button 
               variant="outline" 
               onClick={() => setShowCalendlyDialog(false)}
