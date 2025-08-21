@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { ChevronRight, ChevronLeft, CheckCircle, ArrowLeft } from 'lucide-react';
+import { ChevronRight, ChevronLeft, CheckCircle, ArrowLeft, Calendar } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
@@ -170,9 +170,21 @@ const HiringIntake = () => {
             </div>
           </div>
           
-          <Button onClick={() => navigate('/')} variant="gradient" size="lg">
-            Return to Home
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              onClick={() => window.open('https://calendly.com/jackie-atlas', '_blank')}
+              variant="gradient" 
+              size="lg"
+              className="flex items-center gap-2"
+            >
+              <Calendar className="w-5 h-5" />
+              Book Discovery Call
+            </Button>
+            
+            <Button onClick={() => navigate('/')} variant="outline" size="lg">
+              Return to Home
+            </Button>
+          </div>
         </Card>
       </div>
     );
