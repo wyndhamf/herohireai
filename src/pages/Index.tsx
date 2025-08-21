@@ -34,10 +34,9 @@ const Index = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-slate-900"
           >
-            <span className="text-emerald-600">Hero</span>, your 24/7<br />
-            <span className="text-emerald-600">Recruiting Assistant</span>
+            Meet <span className="text-emerald-600">Hero</span>— the AI hiring system built for modern teams.
           </motion.h1>
 
           {/* Subtitle */}
@@ -47,31 +46,22 @@ const Index = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed"
           >
-            Source candidates, send outreach, schedule interviews, and screen ATS resumes—all with your digital recruiting assistant.
+            Say goodbye to job boards, endless interviews, and hires that don't move the needle. Hero turns hiring into a repeatable system.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+            className="flex justify-center items-center mb-12"
           >
             <Button 
               size="lg" 
               className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold"
               onClick={() => window.location.href = '/hiring-intake'}
             >
-              Start for Free
-            </Button>
-            
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="px-8 py-4 border-2 border-slate-300 text-slate-700 hover:bg-slate-50 rounded-lg font-semibold"
-              onClick={() => setShowEmailCapture(true)}
-            >
-              Book a Demo
+              Get Started
             </Button>
           </motion.div>
 
@@ -98,24 +88,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Logo Strip */}
-      <section className="py-16 px-6 bg-white border-t border-gray-100">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap justify-center items-center gap-12 opacity-60"
-          >
-            {/* Placeholder logos - you can replace with actual client logos */}
-            <div className="text-2xl font-bold text-slate-400">TECHFLOW</div>
-            <div className="text-2xl font-bold text-slate-400">DATAVAULT</div>
-            <div className="text-2xl font-bold text-slate-400">INNOVATE</div>
-            <div className="text-2xl font-bold text-slate-400">STARTUP</div>
-            <div className="text-2xl font-bold text-slate-400">GROWTH</div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Features Section */}
       <section className="py-20 px-6 bg-gray-50">
@@ -192,23 +164,14 @@ const Index = () => {
               Join hundreds of companies who've already built world-class teams with Hero.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex justify-center items-center">
               <Button 
                 size="lg" 
                 className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold"
                 onClick={() => window.location.href = '/hiring-intake'}
               >
-                Start for Free
+                Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="px-8 py-4 border-2 border-slate-300 text-slate-700 hover:bg-slate-50 rounded-lg font-semibold"
-                onClick={() => setShowEmailCapture(true)}
-              >
-                Book a Demo
               </Button>
             </div>
           </motion.div>
