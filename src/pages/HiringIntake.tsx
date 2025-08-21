@@ -163,12 +163,9 @@ const HiringIntake = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={() => window.open('/assets/ea-hiring-playbook.pdf', '_blank')}
-                className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg"
-              >
+              <p className="text-emerald-600 font-medium text-lg">
                 You'll hear from us soon
-              </Button>
+              </p>
               
               <Button 
                 onClick={() => navigate('/')} 

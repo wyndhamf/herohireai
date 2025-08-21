@@ -212,12 +212,9 @@ const EAIntake = () => {
           <CheckCircle className="w-16 h-16 text-primary mx-auto mb-4" />
           <h2 className="text-2xl font-semibold text-foreground mb-2">Thanks—You're on our radar.</h2>
           <p className="text-muted-foreground mb-6">We'll reach out with next steps. If timing changes, reply to our email and we'll fast-track your call.</p>
-          <Button 
-            onClick={() => window.open('/assets/ea-hiring-playbook.pdf', '_blank')}
-            className="w-full"
-          >
+          <p className="text-sm text-muted-foreground">
             You'll hear from us soon
-          </Button>
+          </p>
           <p className="text-sm text-muted-foreground mt-4">Redirecting to home page in a few seconds...</p>
         </Card>
       </div>
