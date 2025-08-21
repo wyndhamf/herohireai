@@ -93,7 +93,7 @@ const HiringIntake = () => {
       // Determine next action based on routing logic
       if (isQualified) {
         // Redirect to Google Calendar booking
-        const bookingUrl = `https://calendly.com/your-calendar?name=${encodeURIComponent(data.name)}&company=${encodeURIComponent(data.companyName)}&email=${encodeURIComponent(data.email)}`;
+        const bookingUrl = `https://calendar.app.google/UTDXuBzYPAhD2sHRA?name=${encodeURIComponent(data.name)}&company=${encodeURIComponent(data.companyName)}&email=${encodeURIComponent(data.email)}`;
         window.location.href = bookingUrl;
       } else {
         // Show nurture screen
@@ -203,7 +203,7 @@ const HiringIntake = () => {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                onClick={() => window.open('https://calendly.com/jackie-atlas', '_blank')}
+                onClick={() => window.open('https://calendar.app.google/UTDXuBzYPAhD2sHRA', '_blank')}
                 className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg"
               >
                 <Calendar className="w-5 h-5" />
