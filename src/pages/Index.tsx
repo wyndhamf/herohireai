@@ -1,134 +1,124 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Users, CheckCircle, Target, Star, Zap, Shield, Award } from "lucide-react";
+import { ArrowRight, CheckCircle, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 import { EmailCapture } from "@/components/EmailCapture";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const Index = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [showEmailCapture, setShowEmailCapture] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section - Pinterest-inspired clean design */}
-      <section className="relative pt-24 pb-16 px-6">
-        <div className="container mx-auto max-w-6xl">
+      {/* Hero Section - Pin.com style */}
+      <section className="relative pt-32 pb-20 px-6">
+        <div className="container mx-auto max-w-4xl text-center">
+          {/* Announcement Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full text-sm font-medium text-orange-800 mb-8"
           >
-            <h1 className="text-5xl md:text-7xl font-light mb-6 text-slate-900 leading-tight">
-              Meet <span className="text-blue-600 font-medium">Hero</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              The AI hiring system built for modern teams. Say goodbye to endless interviews and mismatched hires.
-            </p>
-            <Button 
-              size="lg" 
-              variant="default"
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              onClick={() => window.location.href = '/hiring-intake'}
-            >
-              Get Started
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <Zap className="w-4 h-4" />
+            The most advanced AI Recruiter in 2025!
           </motion.div>
 
-          {/* Hero Cards Grid */}
+          {/* Main Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+          >
+            <span className="text-emerald-600">Hero</span>, your 24/7<br />
+            <span className="text-emerald-600">Recruiting Assistant</span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed"
+          >
+            Source candidates, send outreach, schedule interviews, and screen ATS resumes—all with your digital recruiting assistant.
+          </motion.p>
+
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
           >
-            <Card className="p-6 shadow-sm border-gray-100 hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <Clock className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-900">Save Time</h3>
-              <p className="text-slate-600 text-sm">Streamlined hiring process that delivers results in days, not months.</p>
-            </Card>
+            <Button 
+              size="lg" 
+              className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold"
+              onClick={() => window.location.href = '/hiring-intake'}
+            >
+              Start for Free
+            </Button>
+            
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="px-8 py-4 border-2 border-slate-300 text-slate-700 hover:bg-slate-50 rounded-lg font-semibold"
+              onClick={() => setShowEmailCapture(true)}
+            >
+              Book a Demo
+            </Button>
+          </motion.div>
 
-            <Card className="p-6 shadow-sm border-gray-100 hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-emerald-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-900">Pre-Vetted Talent</h3>
-              <p className="text-slate-600 text-sm">All candidates are thoroughly screened and reference-checked.</p>
-            </Card>
-
-            <Card className="p-6 shadow-sm border-gray-100 hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                <Target className="w-6 h-6 text-purple-600" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2 text-slate-900">Perfect Match</h3>
-              <p className="text-slate-600 text-sm">Our AI matches candidates to your exact requirements.</p>
-            </Card>
+          {/* Feature Callouts */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-8 justify-center items-center text-sm text-slate-500"
+          >
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-slate-400" />
+              <span>Free Trial</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-slate-400" />
+              <span>No Credit Card Required</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-4 h-4 text-slate-400" />
+              <span>Expert Support</span>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Problem Statement Section */}
+      {/* Logo Strip */}
+      <section className="py-16 px-6 bg-white border-t border-gray-100">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-wrap justify-center items-center gap-12 opacity-60"
+          >
+            {/* Placeholder logos - you can replace with actual client logos */}
+            <div className="text-2xl font-bold text-slate-400">TECHFLOW</div>
+            <div className="text-2xl font-bold text-slate-400">DATAVAULT</div>
+            <div className="text-2xl font-bold text-slate-400">INNOVATE</div>
+            <div className="text-2xl font-bold text-slate-400">STARTUP</div>
+            <div className="text-2xl font-bold text-slate-400">GROWTH</div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features Section */}
       <section className="py-20 px-6 bg-gray-50">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="inline-block px-4 py-2 bg-red-100 text-red-700 rounded-full text-sm font-medium mb-6">
-              The Problem
-            </span>
-            <h2 className="text-4xl md:text-5xl font-light mb-6 text-slate-900">
-              Traditional hiring <span className="text-red-500 font-medium">wastes time</span>
-            </h2>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              Companies spend months sorting through unqualified candidates, paying hefty recruiter fees, 
-              and still end up with mismatched hires.
-            </p>
-          </motion.div>
-
-          {/* Solution Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-2xl mx-auto"
-          >
-            <Card className="p-8 text-center shadow-sm border-gray-100">
-              <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6">
-                Our Solution
-              </span>
-              <h3 className="text-3xl font-light mb-4 text-slate-900">
-                <span className="text-emerald-600 font-medium">Pre-vetted talent</span> ready to work
-              </h3>
-              <p className="text-lg text-slate-600">
-                We handle everything from sourcing to screening, delivering only qualified candidates 
-                who match your exact requirements.
-              </p>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Features Grid */}
-      <section className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -136,51 +126,39 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-light mb-6 text-slate-900">
-              Why choose <span className="text-blue-600 font-medium">Hero</span>?
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
+              Everything you need to hire <span className="text-emerald-600">faster</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Everything you need to build your dream team, without the traditional hiring headaches.
+              Our AI-powered platform handles every step of your recruitment process.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Shield className="w-8 h-8" />,
-                color: "blue",
-                title: "Quality Guarantee",
-                description: "Perfect hire or we keep working until you're satisfied"
+                title: "AI Candidate Sourcing",
+                description: "Find qualified candidates from our extensive database and partner networks."
               },
               {
-                icon: <Zap className="w-8 h-8" />,
-                color: "emerald",
-                title: "Lightning Fast",
-                description: "Get qualified candidates in days, not months"
+                title: "Automated Outreach",
+                description: "Personalized messages sent automatically to engage top talent."
               },
               {
-                icon: <Star className="w-8 h-8" />,
-                color: "purple",
-                title: "Elite Talent",
-                description: "Access to top-tier professionals across all industries"
+                title: "Smart Screening",
+                description: "AI-powered resume analysis and initial candidate screening."
               },
               {
-                icon: <Award className="w-8 h-8" />,
-                color: "amber",
-                title: "Proven Results",
-                description: "95% of our placements exceed performance expectations"
+                title: "Interview Scheduling",
+                description: "Seamlessly coordinate interviews between candidates and your team."
               },
               {
-                icon: <Users className="w-8 h-8" />,
-                color: "rose",
-                title: "Perfect Match",
-                description: "AI-powered matching ensures cultural and skill fit"
+                title: "ATS Integration",
+                description: "Works with your existing ATS and hiring workflow."
               },
               {
-                icon: <CheckCircle className="w-8 h-8" />,
-                color: "indigo",
-                title: "No Risk",
-                description: "Free replacement guarantee for complete peace of mind"
+                title: "24/7 Support",
+                description: "Round-the-clock assistance from our expert team."
               }
             ].map((feature, index) => (
               <motion.div
@@ -189,70 +167,10 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
+                className="bg-white p-6 rounded-lg shadow-sm border border-gray-100"
               >
-                <Card className="p-6 h-full shadow-sm border-gray-100 hover:shadow-md transition-all duration-300 group">
-                  <div className={`w-14 h-14 bg-${feature.color}-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className={`text-${feature.color}-600`}>
-                      {feature.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-slate-900">{feature.title}</h3>
-                  <p className="text-slate-600 text-sm">{feature.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="container mx-auto max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-light mb-6 text-slate-900">
-              Loved by <span className="text-blue-600 font-medium">founders</span>
-            </h2>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                quote: "Hero transformed our hiring process. We went from 3 months to 2 weeks for quality hires.",
-                author: "Sarah Chen",
-                role: "CEO, TechFlow"
-              },
-              {
-                quote: "The quality of candidates is unmatched. Every person they sent was interview-ready.",
-                author: "Marcus Rodriguez",
-                role: "CTO, DataVault"
-              }
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-              >
-                <Card className="p-8 shadow-sm border-gray-100">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <blockquote className="text-lg text-slate-700 mb-6 italic">
-                    "{testimonial.quote}"
-                  </blockquote>
-                  <div>
-                    <div className="font-semibold text-slate-900">{testimonial.author}</div>
-                    <div className="text-slate-600 text-sm">{testimonial.role}</div>
-                  </div>
-                </Card>
+                <h3 className="text-lg font-semibold mb-3 text-slate-900">{feature.title}</h3>
+                <p className="text-slate-600">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -267,37 +185,31 @@ const Index = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-light mb-6 text-slate-900">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
               Ready to transform your hiring?
             </h2>
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
               Join hundreds of companies who've already built world-class teams with Hero.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button 
                 size="lg" 
-                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                onClick={() => setShowEmailCapture(true)}
+                className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-semibold"
+                onClick={() => window.location.href = '/hiring-intake'}
               >
-                Get Started Today
+                Start for Free
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center text-sm text-slate-500">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-500" />
-                <span>No setup fees</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-500" />
-                <span>Quality guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-emerald-500" />
-                <span>Free consultation</span>
-              </div>
+              
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="px-8 py-4 border-2 border-slate-300 text-slate-700 hover:bg-slate-50 rounded-lg font-semibold"
+                onClick={() => setShowEmailCapture(true)}
+              >
+                Book a Demo
+              </Button>
             </div>
           </motion.div>
         </div>
