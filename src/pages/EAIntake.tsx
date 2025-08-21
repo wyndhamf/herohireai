@@ -238,7 +238,7 @@ const EAIntake = () => {
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
             <a
-              href={`https://calendly.com/your-calendar-link?name=${encodeURIComponent((form.getValues().name || ''))}&company=${encodeURIComponent((form.getValues().company_name || ''))}&email=${encodeURIComponent((form.getValues().email || ''))}`}
+              href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ3nxfEM7cWe-X2MSNJHD9DBlIQgCfmNJ8TRhoEMcsdRROhEMYxxrVl0S1cSIHZCKYXZedU6VICD"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full"
