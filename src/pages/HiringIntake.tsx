@@ -46,7 +46,6 @@ const HiringIntake = () => {
   const navigate = useNavigate();
   
   const totalSteps = 2;
-  const progress = (currentStep / totalSteps) * 100;
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -61,6 +60,24 @@ const HiringIntake = () => {
       location: '',
     },
   });
+
+  const watchedFields = form.watch();
+  
+  const getProgress = () => {
+    const totalFields = 7; // All form fields
+    let completedFields = 0;
+    
+    if (watchedFields.name?.trim()) completedFields++;
+    if (watchedFields.email?.trim()) completedFields++;
+    if (watchedFields.phone?.trim()) completedFields++;
+    if (watchedFields.companyName?.trim()) completedFields++;
+    if (watchedFields.companySize?.trim()) completedFields++;
+    if (watchedFields.currentRevenue?.trim()) completedFields++;
+    if (watchedFields.lookingForEA?.trim()) completedFields++;
+    if (watchedFields.location?.trim()) completedFields++;
+    
+    return Math.round((completedFields / totalFields) * 100);
+  };
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
@@ -286,12 +303,12 @@ const HiringIntake = () => {
             <div className="max-w-md mx-auto mb-8">
               <div className="flex justify-between text-sm text-slate-600 mb-2">
                 <span>Step {currentStep} of {totalSteps}</span>
-                <span>{Math.round(progress)}% Complete</span>
+                <span>{getProgress()}% Complete</span>
               </div>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div 
                   className="bg-emerald-600 h-2 rounded-full transition-all duration-300" 
-                  style={{ width: `${progress}%` }}
+                  style={{ width: `${getProgress()}%` }}
                 ></div>
               </div>
             </div>

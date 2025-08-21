@@ -97,25 +97,25 @@ const EAIntake = () => {
   const watchedFields = form.watch();
   
   const getTotalProgress = () => {
-    const totalFields = 15;
+    const totalFields = 16; // Updated count
     let completedFields = 0;
     
-    if (watchedFields.name) completedFields++;
-    if (watchedFields.email) completedFields++;
-    if (watchedFields.phone) completedFields++;
-    if (watchedFields.company_name) completedFields++;
-    if (watchedFields.location_country) completedFields++;
-    if (watchedFields.looking_for_ea) completedFields++;
-    if (watchedFields.outcomes) completedFields++;
-    if (watchedFields.timeWasters) completedFields++;
-    if (watchedFields.hoursAndTimezone) completedFields++;
-    if (watchedFields.remoteEA) completedFields++;
-    if (watchedFields.budget) completedFields++;
-    if (watchedFields.focus) completedFields++;
+    if (watchedFields.name?.trim()) completedFields++;
+    if (watchedFields.email?.trim()) completedFields++;
+    if (watchedFields.phone?.trim()) completedFields++;
+    if (watchedFields.company_name?.trim()) completedFields++;
+    if (watchedFields.location_country?.trim()) completedFields++;
+    if (watchedFields.looking_for_ea?.trim()) completedFields++;
+    if (watchedFields.outcomes?.trim()) completedFields++;
+    if (watchedFields.timeWasters?.trim()) completedFields++;
+    if (watchedFields.hoursAndTimezone?.trim()) completedFields++;
+    if (watchedFields.remoteEA?.trim()) completedFields++;
+    if (watchedFields.budget?.trim()) completedFields++;
+    if (watchedFields.focus?.trim()) completedFields++;
     if (watchedFields.tools?.length > 0) completedFields++;
-    if (watchedFields.previousExperience) completedFields++;
+    if (watchedFields.previousExperience?.trim()) completedFields++;
     if (watchedFields.communication?.length > 0) completedFields++;
-    if (watchedFields.leadershipStyle) completedFields++;
+    if (watchedFields.leadershipStyle?.trim()) completedFields++;
     
     return Math.round((completedFields / totalFields) * 100);
   };
