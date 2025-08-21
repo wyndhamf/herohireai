@@ -106,15 +106,6 @@ const Index = () => {
                 Book a Call
                 <Calendar className="ml-2 w-5 h-5" />
               </Button>
-              
-              <Button 
-                size="xl" 
-                variant="secondary"
-                className="group px-8 py-4"
-                onClick={() => window.location.href = '/auth'}
-              >
-                Login
-              </Button>
             </motion.div>
             
           </motion.div>
