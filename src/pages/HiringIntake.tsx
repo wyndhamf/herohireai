@@ -242,8 +242,8 @@ const HiringIntake = () => {
       <Dialog open={showCalendlyDialog} onOpenChange={setShowCalendlyDialog}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-primary" />
+            <DialogTitle className="flex items-center gap-2 text-emerald-700">
+              <Calendar className="w-5 h-5 text-emerald-600" />
               Book Your Discovery Call
             </DialogTitle>
             <DialogDescription>
@@ -270,7 +270,7 @@ const HiringIntake = () => {
               >
                 Copy Link
               </Button>
-              <div className="p-2 border rounded-md bg-white">
+              <div className="p-2 border border-emerald-200 rounded-md bg-emerald-50">
                 <QRCodeCanvas value="https://calendly.com/jackie-herohire" size={96} includeMargin />
               </div>
             </div>
